@@ -1,0 +1,71 @@
+{
+  "version": "0.9-mvp",
+  "source": [
+    "knowledge/04-Visual-Rules.md",
+    "compiler/validation-checklist.md"
+  ],
+  "principle": "监管平台保持克制、专业、可信；颜色承担状态表达，不承担装饰。",
+  "radius": {
+    "button": 4,
+    "tag": 4,
+    "input": 4,
+    "select": 4,
+    "table": 4,
+    "card": 8,
+    "drawer": 12,
+    "dialog": 12
+  },
+  "spacing": {
+    "pagePadding": 20,
+    "cardPadding": 20,
+    "xxs": 4,
+    "xs": 8,
+    "sm": 12,
+    "md": 16,
+    "lg": 20,
+    "xl": 24,
+    "xxl": 32
+  },
+  "height": {
+    "input": 32,
+    "buttonDefault": 32,
+    "tableHeader": 44,
+    "tableRow": 44
+  },
+  "color": {
+    "pageBg": "#F5F7FA",
+    "cardBg": "#FFFFFF",
+    "primary": "#2F54EB",
+    "success": "#52C41A",
+    "warning": "#FAAD14",
+    "danger": "#FF4D4F",
+    "textPrimary": "#1D2129",
+    "textSecondary": "#4E5969",
+    "textTertiary": "#86909C",
+    "border": "#E5E6EB"
+  },
+  "density": "high",
+  "layout": {
+    "pagePadding": "20px",
+    "preferredHierarchy": [
+      "border",
+      "spacing",
+      "grouping"
+    ],
+    "shadowUsage": "not primary hierarchy"
+  },
+  "forbidden": [
+    "random spacing",
+    "random radius",
+    "random font size",
+    "random background",
+    "Hero Banner",
+    "glassmorphism",
+    "transparent floating layer",
+    "colored shadow",
+    "heavy shadow",
+    "gradient background",
+    "capsule button",
+    "large radius"
+  ]
+}

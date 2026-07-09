@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dorami Component System"
+  short_description: "Use a Dorami-derived component protocol without forcing a tech stack."
+  default_prompt: "Use the Dorami component protocol for base UI controls, then choose static demo, Figma-like, or Vue/Dorami output based on the request."

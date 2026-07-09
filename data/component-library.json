@@ -1,0 +1,135 @@
+{
+  "components": {
+    "PageHeader": {
+      "role": "页面定位",
+      "usage": "说明当前页面业务对象、监管范围和主要判断目标。",
+      "forbidden": [
+        "HeroBanner"
+      ]
+    },
+    "SearchPanel": {
+      "role": "数据范围定义",
+      "position": "below PageHeader",
+      "padding": 16,
+      "fieldGap": 16,
+      "buttonGap": 8,
+      "requiredIn": [
+        "ListPage"
+      ],
+      "layout": "筛选字段保持紧凑排列，查询与重置按钮固定右侧。"
+    },
+    "StatisticPanel": {
+      "role": "业务状态概览",
+      "requiredIn": [
+        "Dashboard"
+      ],
+      "optionalIn": [
+        "ListPage"
+      ],
+      "cardCount": "4-8",
+      "contentPriority": "数字优先，辅助说明克制，不使用营销式大标题。"
+    },
+    "Toolbar": {
+      "role": "表格操作",
+      "position": "above DataTable",
+      "usage": "承载批量操作、导出、刷新等表格相关动作。"
+    },
+    "DataTable": {
+      "role": "业务主体",
+      "headerHeight": 44,
+      "rowHeight": 44,
+      "usage": "列表页最重要组件，应保留业务列、状态、时间、责任主体和操作入口。"
+    },
+    "StatusTag": {
+      "role": "状态表达",
+      "radius": 4,
+      "usage": "表达风险、处理状态、审核状态等，不作为按钮使用。"
+    },
+    "InfoCard": {
+      "role": "信息承载",
+      "radius": 8,
+      "padding": 20,
+      "usage": "用于概要信息、分组信息和监管判断依据。"
+    },
+    "OverviewCard": {
+      "role": "详情概要",
+      "basedOn": "InfoCard",
+      "status": "referenced_in_page_pattern",
+      "todo": "知识库未给出独立视觉定义，暂按 InfoCard 承载。"
+    },
+    "DescriptionList": {
+      "role": "主体信息展示",
+      "usage": "用于 DetailPage 的字段化信息展示，保留字段名称和值。"
+    },
+    "RelatedTable": {
+      "role": "关联信息列表",
+      "basedOn": "DataTable",
+      "status": "referenced_in_page_pattern",
+      "todo": "知识库未给出独立视觉定义，暂按 DataTable 承载。"
+    },
+    "Timeline": {
+      "role": "操作记录",
+      "status": "referenced_in_page_pattern",
+      "todo": "知识库未给出详细结构，仅用于 DetailPage 的操作记录。"
+    },
+    "FormCard": {
+      "role": "表单承载",
+      "basedOn": "InfoCard",
+      "status": "referenced_in_page_pattern",
+      "todo": "知识库未给出独立视觉定义，暂按 InfoCard 承载。"
+    },
+    "FormGroup": {
+      "role": "表单分组",
+      "status": "referenced_in_page_pattern",
+      "todo": "知识库未给出字段布局细则。"
+    },
+    "ActionBar": {
+      "role": "表单操作",
+      "status": "referenced_in_page_pattern",
+      "todo": "知识库未给出按钮数量和位置细则。"
+    },
+    "Dialog": {
+      "role": "局部任务",
+      "radius": 12,
+      "usage": "用于确认、短流程处理、局部编辑，不承载复杂详情。"
+    },
+    "DialogTitle": {
+      "role": "弹窗标题",
+      "status": "referenced_in_dialog_pattern"
+    },
+    "Content": {
+      "role": "弹窗内容",
+      "status": "referenced_in_dialog_pattern"
+    },
+    "FooterAction": {
+      "role": "弹窗底部操作",
+      "status": "referenced_in_dialog_pattern"
+    },
+    "Drawer": {
+      "role": "复杂信息查看",
+      "radius": 12,
+      "usage": "用于较复杂的侧向信息查看。"
+    },
+    "TrendChart": {
+      "role": "趋势变化",
+      "status": "referenced_in_dashboard_pattern",
+      "todo": "知识库未给出图表色板和图表类型细则，禁止使用彩虹图表。"
+    },
+    "AnalysisPanel": {
+      "role": "重点风险分析",
+      "status": "referenced_in_page_pattern",
+      "todo": "知识库仅提到 Dashboard 可出现，未给出独立组件定义。"
+    },
+    "BusinessTable": {
+      "role": "Dashboard 明细数据",
+      "basedOn": "DataTable",
+      "status": "referenced_in_dashboard_pattern",
+      "todo": "知识库未说明与 DataTable 的差异，暂按 DataTable 承载。"
+    },
+    "Pagination": {
+      "role": "列表分页",
+      "status": "referenced_in_list_pattern",
+      "todo": "知识库未给出分页尺寸与位置细则。"
+    }
+  }
+}

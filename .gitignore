@@ -1,0 +1,21 @@
+.DS_Store
+*.log
+*.tmp
+*.tar.gz
+node_modules/
+dist/
+build/
+.vite/
+.cache/
+
+# 如需提交设计资源，优先提交可直接引用的图片、字体和 SVG，不提交原始压缩包
+*.zip
+
+# 本仓库只保留可复用知识库，不提交一次性 Demo 或预览稿
+*demo*.html
+*preview*.html
+*workbench*.html
+chatgpt-share.html
+SupervisionWarningWorkbench.vue
+mh-supervision-refine.css
+skills/

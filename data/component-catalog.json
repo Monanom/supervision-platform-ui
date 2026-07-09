@@ -1,0 +1,46 @@
+{
+  "version": "0.9-mvp",
+  "catalog": {
+    "defined": [
+      "PageHeader",
+      "SearchPanel",
+      "StatisticPanel",
+      "Toolbar",
+      "DataTable",
+      "StatusTag",
+      "InfoCard",
+      "DescriptionList",
+      "Dialog",
+      "Drawer"
+    ],
+    "referencedByPattern": [
+      "OverviewCard",
+      "RelatedTable",
+      "Timeline",
+      "FormCard",
+      "FormGroup",
+      "ActionBar",
+      "DialogTitle",
+      "Content",
+      "FooterAction",
+      "TrendChart",
+      "AnalysisPanel",
+      "BusinessTable",
+      "Pagination"
+    ],
+    "aliases": {
+      "BusinessTable": "DataTable",
+      "RelatedTable": "DataTable",
+      "OverviewCard": "InfoCard",
+      "FormCard": "InfoCard"
+    },
+    "todo": [
+      "TrendChart 缺少图表类型、状态色和坐标规则。",
+      "AnalysisPanel 缺少结构定义。",
+      "Timeline 缺少操作记录字段结构。",
+      "Pagination 缺少尺寸和位置规则。",
+      "FormGroup 与 ActionBar 缺少表单布局细则。"
+    ]
+  },
+  "usageRule": "AI 只能使用 defined 与 referencedByPattern 中的名称；若需要未列出的组件，必须写 TODO，不得自创。"
+}
