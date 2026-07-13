@@ -36,14 +36,56 @@
     },
     "DataTable": {
       "role": "业务主体",
-      "headerHeight": 44,
-      "rowHeight": 44,
-      "usage": "列表页最重要组件，应保留业务列、状态、时间、责任主体和操作入口。"
+      "headerHeight": 48,
+      "rowHeight": 56,
+      "usage": "列表页最重要组件，应保留业务列、状态、时间、责任主体和操作入口。",
+      "stateCoverage": ["loading", "empty", "filtered-empty", "error", "selection"],
+      "rules": [
+        "时间字段使用独立列，不放在编号或标题下方。",
+        "生命周期状态默认使用 StatusIndicator。",
+        "操作列固定在右侧，最多 3 个直接操作，更多操作进入 More。"
+      ]
     },
     "StatusTag": {
       "role": "状态表达",
       "radius": 4,
-      "usage": "表达风险、处理状态、审核状态等，不作为按钮使用。"
+      "usage": "表达风险、处理状态、审核状态等，不作为按钮使用。",
+      "note": "表格生命周期状态优先使用 StatusIndicator；Tag 更适合风险等级、类别和高权重标签。"
+    },
+    "StatusIndicator": {
+      "role": "表格生命周期状态",
+      "usage": "用于已通知、处理中、已完成、已驳回等表格状态，采用彩色点加文字。",
+      "forbidden": [
+        "填充背景",
+        "圆角标签容器",
+        "关闭图标",
+        "点击态"
+      ]
+    },
+    "RiskTag": {
+      "role": "风险等级",
+      "basedOn": "StatusTag",
+      "usage": "用于高风险、中风险、低风险、黄色预警等高优先级风险信息。"
+    },
+    "IdentifierText": {
+      "role": "业务编号",
+      "usage": "用于项目编号、预警编号、合同编号等可识别主键，可带复制动作。"
+    },
+    "PrimaryText": {
+      "role": "核心业务标题",
+      "usage": "用于项目名称、合同名称、采购事项等主标题字段，长文本截断时用 Tooltip。"
+    },
+    "OrgText": {
+      "role": "组织机构字段",
+      "usage": "用于采购人、供应商、代理机构、监管单位和责任单位。"
+    },
+    "AmountText": {
+      "role": "金额字段",
+      "usage": "用于预算金额、成交金额、合同金额等，保持数字可扫描。"
+    },
+    "DateText": {
+      "role": "时间字段",
+      "usage": "用于创建、触发、审核、截止等时间，列表页应独立成列。"
     },
     "InfoCard": {
       "role": "信息承载",
@@ -70,7 +112,7 @@
     "Timeline": {
       "role": "操作记录",
       "status": "referenced_in_page_pattern",
-      "todo": "知识库未给出详细结构，仅用于 DetailPage 的操作记录。"
+      "usage": "用于审批记录、处置记录和操作流转，包含操作人、时间、动作、意见和附件。"
     },
     "FormCard": {
       "role": "表单承载",
@@ -86,12 +128,13 @@
     "ActionBar": {
       "role": "表单操作",
       "status": "referenced_in_page_pattern",
-      "todo": "知识库未给出按钮数量和位置细则。"
+      "usage": "用于页面级提交、取消、保存、返回等动作；同一区域最多一个主按钮。"
     },
     "Dialog": {
       "role": "局部任务",
       "radius": 12,
-      "usage": "用于确认、短流程处理、局部编辑，不承载复杂详情。"
+      "usage": "用于确认、短流程处理、局部编辑，不承载复杂详情。",
+      "stateCoverage": ["validation-error", "submitting", "submit-failed", "disabled"]
     },
     "DialogTitle": {
       "role": "弹窗标题",
@@ -108,7 +151,7 @@
     "Drawer": {
       "role": "复杂信息查看",
       "radius": 12,
-      "usage": "用于较复杂的侧向信息查看。"
+      "usage": "用于较复杂的侧向信息查看，适合列表页保留上下文时查看详情、证据和流转。"
     },
     "TrendChart": {
       "role": "趋势变化",
@@ -129,7 +172,26 @@
     "Pagination": {
       "role": "列表分页",
       "status": "referenced_in_list_pattern",
-      "todo": "知识库未给出分页尺寸与位置细则。"
+      "usage": "用于 DataTable 底部右侧分页，包含上一页、下一页、页码、禁用和当前页状态。"
+    },
+    "RowActionGroup": {
+      "role": "表格行操作",
+      "usage": "承载查看、处理、导出、撤回等行级动作；超过 3 个动作进入 More。",
+      "basedOn": "Button / Dropdown / Popconfirm"
+    },
+    "ToolbarActionGroup": {
+      "role": "批量或表格工具操作",
+      "usage": "承载批量处理、导出、刷新、下发等表格上方动作。",
+      "basedOn": "Button / Dropdown"
+    },
+    "FileList": {
+      "role": "附件和证据",
+      "usage": "展示文件名称、状态、上传人、上传时间和下载/移除操作。",
+      "basedOn": "Upload"
+    },
+    "Empty": {
+      "role": "局部空状态",
+      "usage": "用于无数据、筛选为空、无权限或加载失败状态，保持安静，不占据整个页面。"
     }
   }
 }

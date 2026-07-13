@@ -12,17 +12,21 @@
 4. `data/design-token.json`
 5. `data/component-library.json`
 6. `data/page-recipe.json`
-7. `data/component-catalog.json`
+7. `data/business-semantics.json`
+8. `data/field-component-map.json`
+9. `data/component-catalog.json`
 
 ## 执行步骤
 
-1. 识别 Demo 页面类型：Dashboard、ListPage、DetailPage、Form 或 Dialog。
-2. 选择对应 Page Recipe。
-3. 把原 Demo 区块映射到 KB 组件。
+1. 输出页面理解：页面类型、业务对象、使用角色、目标、字段、操作、状态和 TODO。
+2. 选择对应 Page Recipe，并输出结构规划。
+3. 把原 Demo 区块、字段、状态和操作映射到 KB 组件。
 4. 保留原业务结构、字段、状态、流程和操作。
-5. 应用 Design Token。
-6. 检查 Anti Patterns。
-7. 输出重构结果和 TODO。
+5. 按 `data/business-semantics.json` 判断业务优先级。
+6. 按 `data/field-component-map.json` 映射字段、状态和操作。
+7. 应用 Design Token。
+8. 检查 Anti Patterns。
+9. 输出重构结果和 TODO。
 
 ## 组件使用规则
 
@@ -38,8 +42,8 @@
 - Card Radius: `8px`
 - Button / Tag / Input / Select Radius: `4px`
 - Dialog / Drawer Radius: `12px`
-- Table Header Height: `44px`
-- Table Row Height: `44px`
+- Table Header Height: `48px`
+- Table Row Height: `56px`
 - Input Height: `32px`
 - Spacing Scale: `4 / 8 / 12 / 16 / 20 / 24 / 32`
 
@@ -67,11 +71,14 @@
 页面类型：
 [Dashboard / ListPage / DetailPage / Form / Dialog]
 
-Page Recipe：
-[按 data/page-recipe.json 输出]
+页面理解：
+[页面名称、页面类型、业务对象、使用角色、目标、字段、操作、状态、TODO]
+
+结构规划：
+[按 data/page-recipe.json 输出 Page Recipe、阅读顺序和区域]
 
 组件映射：
-[原 Demo 区块] -> [KB 组件] -> [保留信息] -> [TODO]
+[原 Demo 区块 / 字段 / 状态 / 操作] -> [KB 组件] -> [Dorami 基础协议] -> [保留信息] -> [TODO]
 
 重构说明：
 [说明保留了什么、调整了什么、没有改什么]

@@ -5,7 +5,7 @@ description: Use when Codex needs a Dorami-derived component protocol for button
 
 # Dorami Component System
 
-Skill Version: v0.8.0
+Skill Version: v0.9.0
 
 Use this skill to avoid inventing basic UI controls. Treat Dorami as a component protocol first, and as a Vue component library only when the target output explicitly needs production Vue/Dorami code.
 
@@ -53,6 +53,7 @@ Use three layers:
 - Let the active product/business skill decide layout, information density, page shell, business table columns, row actions, and forbidden visual directions.
 - Business skills decide the content placed inside component slots, not the basic Modal/Drawer/Button/Select/Pagination shell.
 - If a business skill needs a visual difference for a base component, express it as a `--dcp-*` component token or named component variant instead of a one-off handmade component.
+- Business skills own page compilation, business semantics, field-to-component mapping, status priority, and output contracts. Do not add supervision-specific business objects, workflows, or page recipes to this Dorami protocol skill.
 
 ## Mandatory Workflow
 
@@ -128,6 +129,7 @@ Use this order:
 Never let generic Ant Design or default Dorami visuals override a product-specific design contract.
 
 ## Versioning
+- `v0.9.0`: Clarify that page compilation, supervision business semantics, field mapping, and output contracts belong to the active business skill, not this base component protocol.
 
 - `v0.1.0`: Initial Dorami component-system extraction.
 - `v0.2.0`: Reframe Dorami as a technology-neutral component protocol with `static-demo`, `figma-like`, and `vue-dorami` output modes.

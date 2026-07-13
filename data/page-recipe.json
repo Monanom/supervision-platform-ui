@@ -37,6 +37,14 @@
         "Toolbar",
         "DataTable",
         "Pagination"
+      ],
+      "stateCoverage": [
+        "loading",
+        "empty",
+        "filtered-empty",
+        "error",
+        "permission",
+        "selection"
       ]
     },
     "DetailPage": {
@@ -55,6 +63,12 @@
         "OverviewCard",
         "DescriptionList",
         "RelatedTable / Timeline"
+      ],
+      "stateCoverage": [
+        "loading",
+        "missing-section",
+        "attachment-error",
+        "permission"
       ]
     },
     "Form": {
@@ -85,6 +99,66 @@
         "DialogTitle",
         "Content",
         "FooterAction"
+      ],
+      "stateCoverage": [
+        "validation-error",
+        "submitting",
+        "submit-failed",
+        "disabled"
+      ]
+    },
+    "EmptyState": {
+      "readingOrder": "当前范围 -> 空状态原因 -> 可执行动作",
+      "required": [
+        "PageHeader",
+        "Empty",
+        "OptionalAction"
+      ],
+      "optional": [
+        "SearchPanel",
+        "PermissionHint"
+      ],
+      "sequence": [
+        "PageHeader",
+        "SearchPanel(optional)",
+        "Empty",
+        "OptionalAction"
+      ],
+      "stateCoverage": [
+        "no-data",
+        "filtered-empty",
+        "no-permission",
+        "load-failed"
+      ]
+    },
+    "MixedWorkflow": {
+      "readingOrder": "流程定位 -> 当前任务 -> 业务表单/详情 -> 处理记录 -> 下一步操作",
+      "required": [
+        "PageHeader",
+        "WorkflowSteps",
+        "BusinessSection",
+        "FooterAction"
+      ],
+      "optional": [
+        "DescriptionList",
+        "FormGroup",
+        "Timeline",
+        "RelatedTable",
+        "Drawer"
+      ],
+      "sequence": [
+        "PageHeader",
+        "WorkflowSteps",
+        "BusinessSection",
+        "Timeline(optional)",
+        "FooterAction"
+      ],
+      "stateCoverage": [
+        "loading",
+        "validation-error",
+        "saving",
+        "permission",
+        "closed"
       ]
     }
   },
@@ -93,6 +167,8 @@
     "ListPage": "用于可筛选、可分页、以表格为主体的数据管理页面。",
     "DetailPage": "用于单个监管对象、事件、项目或记录的详情查看。",
     "Form": "用于创建、编辑、提交监管相关信息。",
-    "Dialog": "用于局部任务、确认或短流程处理。"
+    "Dialog": "用于局部任务、确认或短流程处理。",
+    "EmptyState": "用于无数据、筛选为空、无权限或加载失败的局部状态。",
+    "MixedWorkflow": "用于包含详情、表单、附件、流转和下一步处理的复合业务流程。"
   }
 }

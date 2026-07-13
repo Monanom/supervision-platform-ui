@@ -14,14 +14,27 @@
 - 适合业务人员反复操作
 - 保留原业务流程和字段
 
-## 页面类型
+## 页面理解
 
-先判断页面属于哪一类：
+先把需求编译成页面理解：
+
+- 页面名称
+- 页面类型
+- 业务对象
+- 使用角色
+- 核心目标
+- 关键字段
+- 主要操作
+- 业务状态
+- TODO
+
+页面类型包括：
 
 - list：列表页、筛选、表格、批量操作
 - detail：详情页、基础信息、流程记录、关联内容
 - dialog：弹窗、确认、表单、反馈
 - dashboard：业务看板、指标、趋势、待办
+- empty state：无数据、筛选为空、无权限或加载失败
 - mixed workflow：多个类型组合的流程页
 
 ## 必须复用的规则
@@ -32,7 +45,9 @@
 4. 功能图标优先来自 `assets/icons/`。
 5. 英文和数字字体可使用 `assets/fonts/D-DIN-PRO-*.otf`。
 6. 控件结构遵守 Dorami 组件协议。
-7. 页面输出前必须按 `compiler/validation-checklist.md` 自检。
+7. 字段、状态、操作按 `data/field-component-map.json` 映射。
+8. 业务对象、操作、状态优先级按 `data/business-semantics.json` 判断。
+9. 页面输出前必须按 `compiler/validation-checklist.md` 自检。
 
 ## 禁止方向
 
@@ -47,11 +62,10 @@
 
 让 AI 输出：
 
-1. 页面类型判断
-2. 使用的 Page Recipe
+1. 页面理解
+2. 结构规划
 3. 组件映射
 4. token 和资源引用说明
 5. 页面代码或页面结构
 6. 校验清单结果
 7. TODO 和信息缺口
-

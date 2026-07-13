@@ -1,58 +1,40 @@
 # Supervision KB
 
-当前版本：v1.0.0  
-更新时间：2026-07-10
+当前版本：v1.1.0  
+更新时间：2026-07-13
 
-这是一个给 AI 使用的监管平台页面规范知识库。它帮助 ChatGPT、Claude、Cursor、Codex 等工具在改造后台页面时，尽量生成符合监管平台风格的页面结构、组件和视觉规则。
+`Supervision KB` 是一套给 AI 使用的监管平台页面规范包。它帮助 ChatGPT、Claude、Cursor、Codex 等工具，把产品需求或页面功能提示词转成符合监管平台风格的页面 demo。
 
-它不是业务系统源码，也不是可直接运行的前端项目。本包已去掉之前生成的 DEMO 页面、预览 HTML、Vue 临时代码、本机 skill 文件和 Git 历史，只保留可复用的规范资料。
+它不是业务系统源码，也不是可直接运行的前端项目。
 
-## 适合做什么
+## 现有能力
 
-- 生成符合监管平台规范的列表页、详情页、弹窗、看板等页面结构。
-- 根据页面功能提示词按监管平台统一的组件、颜色、密度、排版规则输出页面demo。
-- 给团队成员下载后，在自己的 AI 工具里复用同一套页面规范。
-- 把普通后台 Demo 改造成监管平台风格页面（谨慎使用）。
+- 根据产品文档或页面功能提示词，生成列表页、详情页、弹窗、看板、空状态、混合流程等页面 demo。
+- 先输出页面理解、结构规划、组件映射，再生成页面，减少 AI 直接乱画。
+- 统一监管平台的组件、颜色、密度、排版、状态、操作和视觉资源。
+- 支持任意 AI 读取 `compiler/`、`knowledge/`、`data/`、`ai-guides/` 后使用。
+- Codex 可额外安装两个 skill：
+  - `dorami-ui-protocol`：基础组件协议，约束按钮、表格、弹窗、抽屉、表单等控件。
+  - `supervision-page-builder`：监管平台页面生成规则，负责页面理解、业务语义、字段映射和视觉规范。
+- 支持改造已有后台 demo，但建议谨慎使用，优先从产品文档或功能提示词生成。
 
-## 目录说明
+## 推荐用法
 
-```text
-compiler/   给 AI 的总提示词、校验清单、Demo 改造提示词
-knowledge/  设计原则、页面模式、组件规则、视觉规则、反例
-data/       设计 token、组件库、页面配方、组件目录
-docs/       面向使用者的流程说明
-examples/   页面结构示例，不是可运行 Demo
-assets/     监管平台背景图、图标、D-DIN-PRO 字体资源
-ai-guides/  给任何 AI 阅读的通用能力指南
-ai-prompts/ 可直接复制给任何 AI 的提示词
-codex-skills/ Codex 可选安装的两个 skill
-```
+### 方式一：根据产品文档或功能提示词生成页面
 
-## 使用方式
-
-把这个仓库放到你的业务项目旁边：
+适合从 0 生成页面 demo，推荐优先使用。
 
 ```text
-workspace/
-- Supervision-KB/
-- your-business-demo/
-```
-
-### 方式一：根据提示词或产品文档生成页面
-
-适合从 0 生成页面 demo。优先使用这种方式。
-
-建议提示词：
-
-```text
-请先阅读 Supervision-KB/compiler/system-prompt.md、compiler/validation-checklist.md、knowledge/、data/ 和 ai-guides/。
+请先阅读 Supervision-KB/compiler/system-prompt.md、
+compiler/validation-checklist.md、knowledge/、data/ 和 ai-guides/。
 
 请根据以下页面功能提示词 / 产品文档，生成符合监管平台规范的页面 demo：
 [粘贴页面功能提示词或产品文档]
 
-页面功能提示词建议结构：
+页面功能提示词格式：
 - 页面名称：
-- 页面类型：列表页 / 详情页 / 弹窗 / 看板 / 混合流程
+- 页面类型：列表页 / 详情页 / 弹窗 / 看板 / 空状态 / 混合流程
+- 业务对象：
 - 使用对象：
 - 核心目标：
 - 主要模块：
@@ -62,20 +44,19 @@ workspace/
 - 特殊说明：
 
 要求：
-- 判断页面类型：列表页、详情页、弹窗、看板或混合流程。
+- 先输出页面理解、结构规划、组件映射。
 - 使用监管平台统一的组件、颜色、密度、排版规则。
-- 输出页面结构、组件映射、关键样式和自检结果。
+- 输出页面 demo、关键样式和自检结果。
 - 不要生成营销页、大屏风或通用 SaaS 风格。
 ```
 
-### 方式二：改造现有 Demo
+### 方式二：改造现有 demo
 
-适合已有后台页面，但建议谨慎使用，避免旧 demo 的视觉风格影响输出。
-
-建议提示词：
+适合已有后台页面，但要谨慎使用，避免旧 demo 的视觉风格影响输出。
 
 ```text
-请先阅读 Supervision-KB/compiler/system-prompt.md、compiler/validation-checklist.md、knowledge/、data/ 和 ai-guides/。
+请先阅读 Supervision-KB/compiler/system-prompt.md、
+compiler/validation-checklist.md、knowledge/、data/ 和 ai-guides/。
 
 请将以下已有 demo 改造成符合监管平台规范的页面：
 [粘贴 demo 代码、截图说明或页面结构]
@@ -87,7 +68,7 @@ workspace/
 - 信息不足处写 TODO，不要编造。
 ```
 
-## 任意 AI 使用方式
+## 任意 AI 使用
 
 ChatGPT、Claude、Cursor、Gemini、通义、豆包等工具都可以使用本包。
 
@@ -101,28 +82,38 @@ data/
 ai-guides/
 ```
 
-也可以直接复制这些提示词：
+可直接复制的提示词在：
 
 ```text
-ai-prompts/page-refactor-prompt.md      页面重构
+ai-prompts/page-refactor-prompt.md      通用页面生成 / 重构
+ai-prompts/list-page.prompt.md          列表页
+ai-prompts/detail-page.prompt.md        详情页
+ai-prompts/dialog.prompt.md             弹窗 / 抽屉
+ai-prompts/dashboard.prompt.md          看板
+ai-prompts/empty-state.prompt.md        空状态
+ai-prompts/mixed-workflow.prompt.md     混合流程
 ai-prompts/component-style-prompt.md    组件样式优化
 ai-prompts/validation-prompt.md         页面校验
 ```
 
-## Codex Skill 使用方式
+## Codex Skill 安装
 
-如果使用 Codex，可以额外安装 `codex-skills/` 里的两个 skill：
+如果使用 Codex，可以额外安装 `codex-skills/` 下的两个 skill。
+
+复制：
 
 ```text
 codex-skills/dorami-ui-protocol/
 codex-skills/supervision-page-builder/
 ```
 
-安装方式：
+到：
 
-1. 复制这两个目录到你的 Codex skills 目录。
-2. 常见位置是 `~/.codex/skills/`。
-3. 重启 Codex。
+```text
+~/.codex/skills/
+```
+
+然后重启 Codex。
 
 安装后目录类似：
 
@@ -131,44 +122,33 @@ codex-skills/supervision-page-builder/
 ~/.codex/skills/supervision-page-builder/
 ```
 
-非 Codex 工具不能自动触发这些 skill，但可以直接阅读里面的 `SKILL.md`，当作高级说明文档使用。
+非 Codex 工具不能自动触发这些 skill，但可以直接阅读 `SKILL.md` 当作高级说明文档使用。
 
-## 推荐读取顺序
+## 目录说明
 
-1. `compiler/system-prompt.md`
-2. `compiler/validation-checklist.md`
-3. `knowledge/00-Core-Principles.md`
-4. `knowledge/01-Design-DNA.md`
-5. `knowledge/02-Component-DNA.md`
-6. `knowledge/03-Page-Patterns.md`
-7. `knowledge/04-Visual-Rules.md`
-8. `knowledge/05-Anti-Patterns.md`
-9. `knowledge/06-AI-Prompt.md`
-10. `data/design-token.json`
-11. `data/component-library.json`
-12. `data/page-recipe.json`
-13. `data/component-catalog.json`
+```text
+compiler/      AI 总提示词、页面编译流程、校验清单
+knowledge/     设计原则、页面模式、组件规则、视觉规则、反例
+data/          token、组件库、页面配方、业务语义、字段组件映射
+ai-guides/     给任意 AI 阅读的通用指南
+ai-prompts/    可复制给任意 AI 的提示词
+codex-skills/  Codex 可选安装的 skill
+assets/        背景图、图标、D-DIN-PRO 字体
+examples/      页面结构示例
+docs/          使用补充说明
+```
 
 ## AI 工作流程
 
-1. 先判断页面类型：列表页、详情页、弹窗、看板、表单或混合流程。
-2. 从 `data/page-recipe.json` 选择页面结构。
-3. 从 `data/component-library.json` 匹配组件。
-4. 从 `data/design-token.json` 应用颜色、间距、高度、圆角和密度。
-5. 用 `knowledge/05-Anti-Patterns.md` 和 `compiler/validation-checklist.md` 做自检。
-6. 输出页面代码、组件映射说明和仍需确认的问题。
-
-## 输出要求
-
-- 保留原页面的业务流程、字段、筛选项、表格列和操作入口。
-- 先说明识别到的页面类型，再说明使用的 Page Recipe。
-- 优先使用 KB 已列出的组件；信息不足时写 TODO，不要乱造组件。
-- 视觉表达保持克制、专业、高信息密度。
-- 如发现规则冲突，先列出冲突点和影响，不要擅自改设计规则。
+1. 输出页面理解：页面类型、业务对象、使用角色、核心目标、字段、操作、状态和 TODO。
+2. 输出结构规划：选择 Page Recipe、阅读顺序、页面区域和状态覆盖。
+3. 输出组件映射：字段、操作、状态映射到监管平台组件和 Dorami 基础控件。
+4. 生成页面 demo：使用统一 token、组件协议和监管平台视觉规则。
+5. 一致性自检：按 `compiler/validation-checklist.md` 和反例规则检查。
 
 ## 资源使用
 
-本包已内置监管平台常用视觉资源：
+本包内置监管平台常用资源：
 
 ```text
 assets/bg.jpg                 页面顶部背景图
@@ -176,7 +156,7 @@ assets/icons/                 功能图标 SVG
 assets/fonts/D-DIN-PRO-*.otf  英文和数字字体
 ```
 
-页面或 Demo 中请使用相对路径引用资源：
+示例：
 
 ```css
 background-image: url("./assets/bg.jpg");
@@ -190,7 +170,30 @@ background-image: url("./assets/bg.jpg");
 }
 ```
 
-如果本仓库需要公开发布，请先确认字体、图标、背景图的分发授权。
+如果公开发布，请先确认字体、图标、背景图的分发授权。
+
+## 更新方式
+
+首次下载：
+
+```bash
+git clone git@github.com:Monanom/supervision-platform-ui.git
+```
+
+后续更新：
+
+```bash
+git pull
+```
+
+如果安装了 Codex skill，更新仓库后需要重新复制 `codex-skills/` 下两个目录到 `~/.codex/skills/`，并重启 Codex。
+
+版本记录见：
+
+```text
+VERSION
+CHANGELOG.md
+```
 
 ## 不要做什么
 
@@ -198,4 +201,4 @@ background-image: url("./assets/bg.jpg");
 - 不要新增通用设计系统。
 - 不要新增与监管平台无关的组件。
 - 不要使用 Hero Banner、大渐变、胶囊按钮、大圆角、彩色阴影。
-- 不要把一次性 DEMO、预览 HTML、本机 skill 文件放回仓库。
+- 不要把一次性 demo、预览 HTML、本机临时文件放回仓库。

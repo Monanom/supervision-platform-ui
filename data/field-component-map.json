@@ -1,0 +1,83 @@
+{
+  "fieldMappings": [
+    {
+      "businessMeaning": "主编号",
+      "examples": ["项目编号", "预警编号", "合同编号", "订单编号"],
+      "component": "IdentifierText",
+      "baseProtocol": "Text / CopyAction"
+    },
+    {
+      "businessMeaning": "业务标题",
+      "examples": ["项目名称", "采购事项", "合同名称", "任务名称"],
+      "component": "PrimaryText",
+      "baseProtocol": "Text / Tooltip"
+    },
+    {
+      "businessMeaning": "组织机构",
+      "examples": ["采购人", "供应商", "代理机构", "监管单位", "责任单位"],
+      "component": "OrgText",
+      "baseProtocol": "Text / Tooltip"
+    },
+    {
+      "businessMeaning": "金额",
+      "examples": ["预算金额", "成交金额", "合同金额", "支付金额"],
+      "component": "AmountText",
+      "baseProtocol": "Text"
+    },
+    {
+      "businessMeaning": "时间",
+      "examples": ["创建时间", "触发时间", "审核时间", "截止时间", "更新时间"],
+      "component": "DateText",
+      "baseProtocol": "Text"
+    },
+    {
+      "businessMeaning": "风险等级",
+      "examples": ["高风险", "中风险", "低风险", "黄色预警", "红色预警"],
+      "component": "RiskTag",
+      "baseProtocol": "Tag"
+    },
+    {
+      "businessMeaning": "表格生命周期状态",
+      "examples": ["已通知", "处理中", "已完成", "已驳回", "已关闭"],
+      "component": "StatusIndicator",
+      "baseProtocol": "StatusIndicator"
+    },
+    {
+      "businessMeaning": "审批状态",
+      "examples": ["待审核", "审核中", "已通过", "已驳回"],
+      "component": "ApprovalStatus",
+      "baseProtocol": "StatusIndicator / Tag"
+    },
+    {
+      "businessMeaning": "附件证据",
+      "examples": ["附件", "凭证", "截图", "报告", "材料"],
+      "component": "FileList",
+      "baseProtocol": "Upload"
+    },
+    {
+      "businessMeaning": "流转记录",
+      "examples": ["操作记录", "审批记录", "处置记录", "流转记录"],
+      "component": "Timeline",
+      "baseProtocol": "Timeline"
+    },
+    {
+      "businessMeaning": "行操作",
+      "examples": ["查看", "处理", "导出", "撤回", "下发整改"],
+      "component": "RowActionGroup",
+      "baseProtocol": "Button / Dropdown / Popconfirm"
+    },
+    {
+      "businessMeaning": "批量操作",
+      "examples": ["批量处理", "批量导出", "批量下发", "批量关闭"],
+      "component": "ToolbarActionGroup",
+      "baseProtocol": "Button / Dropdown"
+    }
+  ],
+  "statusRules": [
+    "表格生命周期状态默认使用 StatusIndicator：彩色点加文字，不使用填充背景。",
+    "风险等级可以使用 RiskTag，并允许在预警列表中拥有更高视觉权重。",
+    "同一条数据同一状态维度只能出现一次。",
+    "危险操作必须使用 danger 语义，并根据风险使用 Popconfirm 或 Modal 二次确认。",
+    "行操作超过 3 个时，多余操作进入 More / Dropdown。"
+  ]
+}

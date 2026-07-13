@@ -5,7 +5,7 @@ description: Generate, critique, or adapt UI screens for the LeCaiYun procuremen
 
 # Supervision Platform UI
 
-Skill Version: v0.47.0
+Skill Version: v0.48.0
 
 Use this skill to produce UI that looks like the LeCaiYun procurement supervision platform, not a generic SaaS page, marketing page, or decorative dashboard. Treat these rules as a design contract.
 
@@ -23,12 +23,32 @@ Source basis:
 Before generating UI, do this:
 
 1. Identify the requested page type: list, detail, dialog, dashboard, empty state, or mixed workflow.
-2. Output "本次复用的监管平台规范" with concrete rules that will be reused.
-3. For base controls such as Button, Modal, Drawer, Select, Dropdown, Pagination, Table, Form, Input, Tooltip, and Popconfirm, follow the `dorami-ui-protocol` component protocol.
-4. Apply the supervision theme and business rules in this skill on top of the component protocol. Do not invent a new visual language.
-5. After generation, output "一致性自检". If any item fails, revise before presenting the final result.
+2. Compile the request into a page blueprint before writing UI.
+3. Output "页面理解" with page type, business object, user role, core goal, key fields, actions, states, and unknown TODOs.
+4. Output "结构规划" with the selected page pattern, reading order, page regions, and state coverage.
+5. Output "组件映射" with business fields, actions, and statuses mapped to supervision components and Dorami base protocols.
+6. Output "本次复用的监管平台规范" with concrete rules that will be reused.
+7. For base controls such as Button, Modal, Drawer, Select, Dropdown, Pagination, Table, Form, Input, Tooltip, and Popconfirm, follow the `dorami-ui-protocol` component protocol.
+8. Apply the supervision theme and business rules in this skill on top of the component protocol. Do not invent a new visual language.
+9. After generation, output "一致性自检". If any item fails, revise before presenting the final result.
 
 Never skip the pre-generation reuse statement or the final consistency check.
+
+## Page Compiler, Business Semantics, and Field Mapping
+
+Use the repository KB files as the portable source of truth:
+- `compiler/system-prompt.md` defines the page-understanding -> structure-planning -> component-mapping -> generation -> consistency-check workflow.
+- `data/business-semantics.json` defines common supervision objects, actions, statuses, and priority rules.
+- `data/field-component-map.json` maps business fields, risk levels, lifecycle statuses, row actions, batch actions, attachments, and timelines to components.
+- `data/page-recipe.json` defines the page patterns.
+- `data/component-library.json` defines the allowed supervision components.
+
+Compiler rules:
+- Preserve every business field, operation, status, route, and mock-data meaning unless the user explicitly asks to change it.
+- Put missing business facts in TODO instead of inventing them.
+- Table lifecycle statuses use StatusIndicator by default; risk level can use RiskTag when it is a primary supervision signal.
+- Row actions use RowActionGroup; toolbar or batch actions use ToolbarActionGroup; dangerous actions require Popconfirm or Modal depending on business risk.
+- Dorami owns base control shells and interactions. This skill owns supervision business layout, page compilation, semantics, field mapping, and output contract.
 
 ## Component Protocol Integration
 
@@ -598,16 +618,30 @@ Required checks:
 
 When answering a UI generation request, use this structure:
 
-1. `本次复用的监管平台规范`
+1. `页面理解`
+   - List page name, page type, business object, user role, core goal, fields, actions, states, and TODOs.
+
+2. `结构规划`
+   - List selected page pattern, reading order, page regions, state coverage, and mixed workflow steps if relevant.
+
+3. `组件映射`
+   - Map each business region, field, status, and action to the supervision component and Dorami base protocol.
+
+4. `本次复用的监管平台规范`
    - List the exact shell, layout, color, component, and page-type rules being used.
 
-2. `界面方案`
+5. `界面方案`
    - Describe the generated page structure or implement the requested frontend/Figma-like output.
 
-3. `一致性自检`
+6. `一致性自检`
    - Check each item below and revise before finalizing if any answer is no.
 
 Consistency checklist:
+- Preserves requested business fields, actions, statuses, routes, mock-data meaning, and workflow entry points.
+- Includes page understanding and component mapping before generation.
+- Maps risk, lifecycle, approval, data, and permission states to the correct component.
+- Uses table StatusIndicator for lifecycle statuses by default and reserves Tag/RiskTag for risk levels, categories, and high-salience labels.
+- Uses RowActionGroup, ToolbarActionGroup, Popconfirm, Modal, or Drawer according to business risk and action complexity.
 - Uses the 220px left nav and 56px top bar when generating a full page.
 - Keeps left navigation and right content as independent scroll areas; the nav does not scroll when its content fits.
 - Uses `dorami-ui-protocol` as the base control protocol: `static-demo` by default, `figma-like` for editable visual output, and `vue-dorami` only when explicitly requested.
@@ -622,6 +656,7 @@ Consistency checklist:
 - Uses source-derived frosted metric cards, fixed top JPG background, and Brand-1 bottom background, while keeping list/work cards plain white and avoiding decorative glassmorphism, marketing hero layout, and big-screen styling.
 - Keeps information density close to the source screenshots.
 - Uses best cases for calm hierarchy and bad cases as hard prohibitions.
+- Lists unresolved TODOs instead of inventing missing business facts.
 
 If implementing frontend code:
 - Encode the tokens as CSS variables or theme constants.
@@ -684,5 +719,6 @@ If creating Figma-like output:
 - `v0.45.0`: Require tables to use an internal overflow container and fixed-width time/status/action columns so responsive shrink does not bleed outside the work card.
 - `v0.46.0`: Align sidebar selected state with detail-page demo: translucent nav overlay plus 3px white left indicator, not bright Brand-blue fill.
 - `v0.47.0`: Clarify sidebar interaction states: hover is white 8% translucent overlay without indicator; selected is white 12% translucent overlay plus indicator.
+- `v0.48.0`: Add page compiler workflow, business semantics/field mapping references, and the page understanding -> structure planning -> component mapping -> generation -> consistency-check output contract.
 
 Update the `Skill Version` line whenever behavior changes.

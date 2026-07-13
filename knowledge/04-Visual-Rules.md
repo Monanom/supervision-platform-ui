@@ -6,8 +6,8 @@ Card Padding: 20px
 Card Radius: 8px
 Button / Tag / Input / Select Radius: 4px
 Dialog / Drawer Radius: 12px
-Table Header Height: 44px
-Table Row Height: 44px
+Table Header Height: 48px
+Table Row Height: 56px
 Input Height: 32px
 
 Spacing Scale:
