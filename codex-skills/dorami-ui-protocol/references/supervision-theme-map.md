@@ -8,7 +8,7 @@ Do not edit Dorami component source for supervision-only needs. In `static-demo`
 
 1. Runtime CSS variable overrides.
 2. A supervision wrapper class, for example `.supervision-theme`.
-3. Product-specific assets such as the close icon from `assets/icons/关闭.svg`.
+3. Product-specific assets such as the close icon from `supervision-page-builder/assets/icons/关闭.svg`.
 
 The supervision theme uses the lightweight Raw / Theme / Component token system. It adapts atoms only: color, text color, border color, radius, shadow, mask color, focus ring, icon asset, and control height tokens. It must not redefine the basic Modal, Drawer, Button, Select, Table, or Pagination shell. Business skills fill component slots with business content.
 
@@ -90,6 +90,10 @@ Map supervision tokens to Dorami CSS variables in this order:
   --theme-success: var(--state-success);
   --theme-warning: var(--state-warning);
   --theme-danger: var(--state-danger);
+  --theme-danger-hover: #C91616;
+  --theme-danger-light: rgba(223, 31, 31, 0.08);
+  --theme-disabled-opacity: 0.40;
+  --theme-popup-shadow: 0 8px 24px rgba(24, 28, 79, 0.12);
 
   /* Component tokens */
   --dcp-radius-sm: var(--radius-sm);
@@ -104,19 +108,68 @@ Map supervision tokens to Dorami CSS variables in this order:
   --dcp-button-default-bg: var(--theme-surface);
   --dcp-button-default-border: var(--theme-border);
   --dcp-button-default-text: var(--theme-text);
+  --dcp-button-default-bg-hover: var(--neutral-1);
+  --dcp-button-default-border-hover: var(--theme-primary);
   --dcp-button-danger-text: var(--theme-danger);
+  --dcp-button-danger-border: var(--theme-danger);
+  --dcp-button-danger-bg-hover: var(--theme-danger-light);
+  --dcp-button-danger-border-hover: var(--theme-danger-hover);
+  --dcp-control-disabled-opacity: var(--theme-disabled-opacity);
+  --dcp-tag-height-sm: 20px;
+  --dcp-tag-height-md: 24px;
+  --dcp-tag-radius: var(--radius-sm);
+  --dcp-tag-padding-x: 6px;
+  --dcp-tag-font-size: 12px;
+  --dcp-tag-light-bg: var(--brand-2);
+  --dcp-tag-outline-bg: transparent;
+  --dcp-tag-solid-text: #FFFFFF;
+  --dcp-tag-disabled-opacity: var(--theme-disabled-opacity);
+  --dcp-tag-close-hover-bg: rgba(32, 36, 44, 0.08);
+  --dcp-tag-collapse-bg: var(--neutral-2);
+  --dcp-tag-collapse-text: var(--theme-text-secondary);
+  --dcp-status-dot-size: 6px;
+  --dcp-status-text: var(--theme-text-secondary);
+  --dcp-status-info: var(--theme-primary);
+  --dcp-status-success: var(--theme-success);
+  --dcp-status-warning: var(--theme-warning);
+  --dcp-status-danger: var(--theme-danger);
+  --dcp-status-neutral: var(--neutral-8);
   --dcp-table-header-bg: var(--theme-table-head);
   --dcp-table-header-height: var(--height-table-header);
   --dcp-table-row-height: var(--height-table-row);
   --dcp-table-border-color: var(--theme-border-soft);
+  --dcp-table-row-hover-bg: rgba(67, 83, 255, 0.04);
+  --dcp-table-row-selected-bg: var(--brand-2);
+  --dcp-table-empty-text: var(--theme-text-muted);
   --dcp-select-bg: var(--theme-surface);
   --dcp-select-border: var(--theme-border);
+  --dcp-select-border-hover: var(--theme-primary);
   --dcp-select-focus-ring: var(--theme-focus-ring);
   --dcp-dropdown-bg: var(--theme-surface);
   --dcp-dropdown-radius: var(--dcp-radius-lg);
+  --dcp-dropdown-shadow: var(--theme-popup-shadow);
   --dcp-dropdown-option-gap: 4px;
+  --dcp-dropdown-option-hover-bg: var(--neutral-1);
+  --dcp-dropdown-option-selected-bg: var(--brand-2);
   --dcp-pagination-active-bg: var(--theme-primary);
   --dcp-pagination-active-text: #FFFFFF;
+  --dcp-checkbox-size: 16px;
+  --dcp-checkbox-border: var(--theme-border);
+  --dcp-checkbox-checked-bg: var(--theme-primary);
+  --dcp-radio-size: 16px;
+  --dcp-picker-panel-bg: var(--theme-surface);
+  --dcp-picker-panel-shadow: var(--theme-popup-shadow);
+  --dcp-upload-border: var(--theme-border);
+  --dcp-upload-hover-border: var(--theme-primary);
+  --dcp-tooltip-bg: rgba(32, 36, 44, 0.92);
+  --dcp-tooltip-text: #FFFFFF;
+  --dcp-popconfirm-bg: var(--theme-surface);
+  --dcp-popconfirm-shadow: var(--theme-popup-shadow);
+  --dcp-tabs-active-bg: var(--theme-primary);
+  --dcp-tabs-active-text: #FFFFFF;
+  --dcp-tabs-hover-bg: rgba(67, 83, 255, 0.08);
+  --dcp-menu-hover-bg: color-mix(in srgb, var(--theme-surface) 8%, transparent);
+  --dcp-menu-selected-bg: color-mix(in srgb, var(--theme-surface) 12%, transparent);
   --dcp-modal-bg: var(--theme-surface);
   --dcp-modal-mask-bg: var(--theme-overlay);
   --dcp-modal-shadow: var(--shadow-overlay);
@@ -158,10 +211,10 @@ Authoring rules:
 
 Apply these theme-token overrides on top of Dorami:
 
-- Modal and Drawer close controls use `assets/icons/关闭.svg`.
+- Modal and Drawer close controls use `supervision-page-builder/assets/icons/关闭.svg`.
 - Modal header and footer should not show internal divider lines unless a source screen explicitly requires them.
 - Modal footer buttons are 32px high.
-- Filter controls are 40px high on supervision list pages.
+- Filter controls are 32px high on supervision list pages.
 - Select and Dropdown option spacing is 4px.
 - Table header height is 48px; standard single-line row height is 56px.
 - Table operation column stays fixed when the business skill requires it; other columns stretch proportionally.

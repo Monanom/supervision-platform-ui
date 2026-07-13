@@ -133,7 +133,7 @@ data/          token、组件库、页面配方、业务语义、字段组件映
 ai-guides/     给任意 AI 阅读的通用指南
 ai-prompts/    可复制给任意 AI 的提示词
 codex-skills/  Codex 可选安装的 skill
-assets/        背景图、图标、D-DIN-PRO 字体
+assets/        背景图、平台 Logo、图标、D-DIN-PRO 字体
 examples/      页面结构示例
 docs/          使用补充说明
 ```
@@ -152,7 +152,9 @@ docs/          使用补充说明
 
 ```text
 assets/bg.jpg                 页面顶部背景图
+assets/supervision-platform-logo-2x.png  平台 Logo
 assets/icons/                 功能图标 SVG
+assets/组件库icon.zip          Dorami 原始 icon 包
 assets/fonts/D-DIN-PRO-*.otf  英文和数字字体
 ```
 

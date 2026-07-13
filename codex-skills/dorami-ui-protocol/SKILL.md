@@ -1,19 +1,20 @@
 ---
 name: dorami-ui-protocol
-description: Use when Codex needs a Dorami-derived component protocol for buttons, modals, drawers, selects, dropdowns, pagination, tables, forms, inputs, tooltips, or popconfirms in static demos, Figma-like UI, or real Vue/Dorami implementation.
+description: Use when Codex needs a Dorami-derived component protocol for buttons, tags, modals, drawers, selects, dropdowns, pagination, tables, forms, inputs, tooltips, or popconfirms in static demos, Figma-like UI, or real Vue/Dorami implementation.
 ---
 
 # Dorami Component System
 
-Skill Version: v0.9.0
+Skill Version: v0.16.0
 
 Use this skill to avoid inventing basic UI controls. Treat Dorami as a component protocol first, and as a Vue component library only when the target output explicitly needs production Vue/Dorami code.
 
 Source basis:
-- Component protocol extracted from the Dorami / LeCai component conventions captured in this repository.
-- Package name for production integrations: `@zcy/dorami`.
-- Production implementation reference: Vue 2, Ant Design Vue-style components, Less styles, prefix class `dorami`.
-- Theme mechanism reference: Less variables backed by runtime CSS variables.
+- Component package: `/Users/afeng/Desktop/lcy-dorami-front-antd-v5-git-ready-clean-20260622.zip`
+- Extracted component rule pages: `3.2 按钮`, `6.2 标签`, `7.8 对话框`, `7.10 侧滑抽屉`
+- Package name: `@zcy/dorami`
+- Production implementation reference: Vue 2, Ant Design Vue-style components, Less styles, prefix class `dorami`
+- Theme mechanism reference: Less variables backed by runtime CSS variables in `components/style/themes/css-variables.less`
 - Demo dependency rule: static demos do not need to import Vue or run Dorami. They must reproduce the Dorami-derived component protocol with HTML, CSS, and minimal JS.
 
 ## Output Modes
@@ -31,7 +32,7 @@ Do not require a technology stack during design/demo validation. Select the prod
 Use three layers:
 
 1. Dorami component protocol:
-- Use for stable base controls: Button, Tag, Modal, Drawer, Select, Dropdown, Pagination, Table, Form, Input, Tooltip, Popconfirm.
+- Use for stable base controls: Button, Tag, Modal, Drawer, Select, Dropdown, Pagination, Table, Form, Input, Textarea, Checkbox, Radio, DatePicker, TimePicker, Upload, Tooltip, Popconfirm, Tabs, Menu, DescriptionList, Timeline, and Empty.
 - Preserve component shell, semantics, keyboard behavior, popup behavior, disabled/loading states, and base interaction states.
 - For Modal and Drawer, the base shell includes mask, panel/container, title region, body region, footer region, close affordance position, scroll behavior, and footer action layout.
 - In `static-demo` and `figma-like`, reproduce this protocol without importing Dorami.
@@ -60,7 +61,7 @@ Use three layers:
 Before generating UI with this skill:
 
 1. Identify the output mode: `static-demo`, `figma-like`, or `vue-dorami`. Default to `static-demo` when no stack is specified.
-2. Map requested controls to the Dorami component protocol using `references/component-map.md`.
+2. Map requested controls to the Dorami component protocol using `references/component-map.md`; use `references/interaction-coverage-matrix.md` as the coverage checklist.
 3. If the request is for a supervision platform page, apply `references/supervision-theme-map.md` and the `supervision-page-builder` business rules.
 4. In `static-demo`, do not introduce Vue/Dorami imports. Use protocol-compatible HTML/CSS/JS and `dcp-*` protocol classes for base controls.
 5. In `static-demo` or theme constants, output Raw, Theme, and Component tokens in that order.
@@ -73,7 +74,7 @@ Use this section only when adapting an existing static HTML/CSS/JS demo. Do not 
 When a demo already exists:
 - Audit how UI is generated before editing. Static demos often have multiple helper families, such as `table()` plus `_tbl()`, `statCard()` plus `_stat()`, `badge()` plus `_bdg()`, or both `dialog()` and custom `_openDlg()` helpers.
 - Rewrite shared helpers first. A single old `_tbl()` or `_stat()` can keep many pages visually stale even after the shell and token system are updated.
-- Add protocol classes to generated controls: `dcp-button`, `dcp-input`, `dcp-select`, `dcp-table`, `dcp-pagination`, `dcp-modal-*`, and `dcp-drawer-*`.
+- Add protocol classes to generated controls: `dcp-button`, `dcp-input`, `dcp-select`, `dcp-table`, `dcp-pagination`, `dcp-modal-*`, `dcp-drawer-*`, `dcp-checkbox`, `dcp-radio`, `dcp-tabs`, `dcp-menu`, `dcp-upload`, `dcp-tooltip`, `dcp-popconfirm`, `dcp-empty`, `dcp-description-list`, and `dcp-timeline`.
 - If many page fragments are emitted by string templates, a post-render normalizer may add `dcp-*` classes and product wrapper classes after `innerHTML` assignment. This is allowed for static demos only, as a bridge to preserve business content while standardizing visuals.
 - The normalizer should be conservative: add protocol classes, classify primary/danger/text buttons by visible action words, and wrap or mark cards/tables/metrics. It must not delete rows, fields, menus, data, or handlers.
 - Keep product-specific wrapper classes separate from component protocol classes. For example, `sp-work-card`, `sp-filter-card`, `sp-metric-card`, and `sp-status` may style supervision surfaces while `dcp-*` keeps the base component protocol recognizable.
@@ -93,8 +94,9 @@ Dorami component protocol owns:
 - Select and Dropdown popup placement, option hover/selected/disabled states.
 - Pagination item behavior, active state, previous/next controls.
 - Table base structure, header/body/empty/pagination integration.
-- Form and Input validation, labels, placeholders, disabled/focus states.
+- Form, Input, Textarea, Checkbox, Radio, DatePicker, TimePicker, and Upload validation, labels, placeholders, disabled/focus states, popup/file-list states, and keyboard behavior.
 - Tooltip and Popconfirm trigger/popup behavior.
+- Tabs, Menu, Empty, DescriptionList, and Timeline base structure and interaction semantics.
 
 Product/business skills own:
 - Which action is primary.
@@ -114,6 +116,7 @@ Token ownership:
 ## References
 
 - `references/component-map.md`: mapping from common UI requests to Dorami-derived component protocols and stack-specific implementation notes.
+- `references/interaction-coverage-matrix.md`: coverage checklist for supervision-platform component interactions.
 - `references/supervision-theme-map.md`: supervision platform token mapping and override strategy for Dorami components.
 
 ## Conflict Priority
@@ -129,7 +132,6 @@ Use this order:
 Never let generic Ant Design or default Dorami visuals override a product-specific design contract.
 
 ## Versioning
-- `v0.9.0`: Clarify that page compilation, supervision business semantics, field mapping, and output contracts belong to the active business skill, not this base component protocol.
 
 - `v0.1.0`: Initial Dorami component-system extraction.
 - `v0.2.0`: Reframe Dorami as a technology-neutral component protocol with `static-demo`, `figma-like`, and `vue-dorami` output modes.
@@ -139,3 +141,11 @@ Never let generic Ant Design or default Dorami visuals override a product-specif
 - `v0.6.0`: Add component rule constraints for Button, Modal, and Drawer from the referenced design-system MHTML pages, excluding color token values.
 - `v0.7.0`: Add static-demo retrofit rules for existing HTML/JS demos with legacy helper functions and generated fragments.
 - `v0.8.0`: Add Tag to the Dorami component protocol, including `dcp-tag`, filled/light/neutral variants, and importance-based tag usage rules.
+- `v0.9.0`: Clarify that business skills decide whether table row actions use filled, outline, or text buttons; Dorami protocol does not default table operations to text links.
+- `v0.10.0`: Add standard static-demo Button modifiers such as `primary`, `secondary`, `small`, `medium`, and `large`; avoid ad hoc row-action button classes.
+- `v0.11.0`: Add detailed extracted rules for Button, Tag, Modal, and Drawer from the backend component specification pages.
+- `v0.12.0`: Add exact Button font-size, minimum-width, icon-text minimum-width, and horizontal padding mappings from the button specification screenshots.
+- `v0.13.0`: Add full supervision component interaction coverage, including form controls, tabs, menus, upload, tooltip, popconfirm, empty, description list, and timeline protocols.
+- `v0.14.0`: Add detailed Tag usage rules for semantic consistency, visual weight, interactive tags, truncation tooltip, disabled state, and table tag folding.
+- `v0.15.0`: Separate table status display into StatusIndicator protocol; table lifecycle statuses must not use Tag visuals by default.
+- `v0.16.0`: Clarify that page compilation, supervision business semantics, field mapping, and output contracts belong to the active business skill, not this base component protocol.
