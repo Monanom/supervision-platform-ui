@@ -29,8 +29,8 @@
   "height": {
     "input": 32,
     "buttonDefault": 32,
-    "tableHeader": 44,
-    "tableRow": 44
+    "tableHeader": 48,
+    "tableRow": 56
   },
   "color": {
     "pageBg": "#F5F7FA",

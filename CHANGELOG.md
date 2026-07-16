@@ -1,5 +1,28 @@
 # CHANGELOG
 
+## v1.3.0 - 2026-07-16
+
+将 Sketch 转换为可追溯、可重复生成的结构化组件合同。
+
+包含内容：
+- 新增 Sketch 自动提取脚本、组件名称映射和人工确认覆盖表。
+- 新增 `data/sketch-component-contract.json`，作为组件参数唯一机器数据源。
+- 新增五类按需读取的组件参数文档和冲突报告。
+- 明确用户确认规则、黄金 demo、人工覆盖、Sketch 证据、Dorami 协议的优先级。
+- 修正遗留表格指标为 48px 表头、56px 单行行高。
+- 同步更新知识包、Codex Skill 和通用 AI Skill。
+
+## v1.2.0 - 2026-07-13
+
+增强任意 AI 使用时的稳定性。
+
+包含内容：
+- 新增 `START-HERE-FOR-AI.md`，作为非 Codex AI 的统一读取入口。
+- 新增 `golden-demo/`，将当前最终 demo 作为黄金样例。
+- 新增 `templates/static-demo/`，提供静态 demo 生成骨架。
+- 新增 `compiler/golden-demo-checklist.md`，用于生成后对照黄金样例验收。
+- 更新 Codex skills，让自动触发时也优先参考黄金样例。
+
 ## v1.1.0 - 2026-07-13
 
 升级为更稳定的 AI 页面生成设计资产。

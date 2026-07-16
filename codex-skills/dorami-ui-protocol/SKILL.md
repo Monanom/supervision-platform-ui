@@ -5,7 +5,7 @@ description: Use when Codex needs a Dorami-derived component protocol for button
 
 # Dorami Component System
 
-Skill Version: v0.16.0
+Skill Version: v0.17.0
 
 Use this skill to avoid inventing basic UI controls. Treat Dorami as a component protocol first, and as a Vue component library only when the target output explicitly needs production Vue/Dorami code.
 
@@ -62,7 +62,7 @@ Before generating UI with this skill:
 
 1. Identify the output mode: `static-demo`, `figma-like`, or `vue-dorami`. Default to `static-demo` when no stack is specified.
 2. Map requested controls to the Dorami component protocol using `references/component-map.md`; use `references/interaction-coverage-matrix.md` as the coverage checklist.
-3. If the request is for a supervision platform page, apply `references/supervision-theme-map.md` and the `supervision-page-builder` business rules.
+3. If the request is for a supervision platform page, apply `references/supervision-theme-map.md`, the `supervision-page-builder` business rules, and the bundled golden demo from that skill.
 4. In `static-demo`, do not introduce Vue/Dorami imports. Use protocol-compatible HTML/CSS/JS and `dcp-*` protocol classes for base controls.
 5. In `static-demo` or theme constants, output Raw, Theme, and Component tokens in that order.
 6. In `vue-dorami`, use real Dorami components and apply the product theme through variables and wrapper classes.
@@ -131,6 +131,8 @@ Use this order:
 
 Never let generic Ant Design or default Dorami visuals override a product-specific design contract.
 
+For supervision-platform output, if an abstract component rule conflicts with the golden demo's final themed behavior, prefer the golden demo for the final visual expression while preserving Dorami interaction semantics.
+
 ## Versioning
 
 - `v0.1.0`: Initial Dorami component-system extraction.
@@ -149,3 +151,4 @@ Never let generic Ant Design or default Dorami visuals override a product-specif
 - `v0.14.0`: Add detailed Tag usage rules for semantic consistency, visual weight, interactive tags, truncation tooltip, disabled state, and table tag folding.
 - `v0.15.0`: Separate table status display into StatusIndicator protocol; table lifecycle statuses must not use Tag visuals by default.
 - `v0.16.0`: Clarify that page compilation, supervision business semantics, field mapping, and output contracts belong to the active business skill, not this base component protocol.
+- `v0.17.0`: Add golden-demo precedence for supervision-platform themed visuals while keeping Dorami interaction semantics.

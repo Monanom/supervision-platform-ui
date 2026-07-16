@@ -5,7 +5,7 @@ description: Generate, critique, or adapt UI screens for the LeCaiYun procuremen
 
 # Supervision Platform UI
 
-Skill Version: v0.64.0
+Skill Version: v0.66.0
 
 Use this skill to produce UI that looks like the LeCaiYun procurement supervision platform, not a generic SaaS page, marketing page, or decorative dashboard. Treat these rules as a design contract.
 
@@ -18,6 +18,9 @@ Bundled source assets:
 - Alphanumeric font source: `assets/fonts/D-DIN-PRO-*.otf`
 - Background asset: `assets/bg.jpg`
 - Platform logo asset: `assets/supervision-platform-logo-2x.png`
+- Golden demo: `references/golden-demo/supervision-warning-supervise-query.html`
+- Structured component contract: `references/data/sketch-component-contract.json`
+- Task-routed parameter tables: `references/component-contract/index.md`
 - Base component protocol skill: `dorami-ui-protocol`
 
 ## Portable Resource Contract
@@ -31,6 +34,38 @@ Rules:
 - Desktop or temporary paths may appear only in historical notes outside the generation contract; they must not be required to use the skill.
 - When generating static demos, copy or reference assets from this skill package, not from the original author's Desktop.
 
+## Golden Demo Alignment
+
+Use the bundled golden demo as the first visual and structural anchor for static demos.
+
+Before generating:
+- Read `references/golden-demo/README.md`.
+- Inspect `references/golden-demo/supervision-warning-supervise-query.html` for shell, token, component, and interaction patterns.
+- Read `references/golden-demo/page-structure.md` and `references/golden-demo/token-component-notes.md` when creating list pages, table-heavy pages, filters, metrics, or modal interactions.
+
+When generating:
+- Mirror the golden demo shell unless the user explicitly asks for another page type: fixed 220px sidebar, 56px translucent top bar, adaptive right content, top background image, Brand-1 base color.
+- Reuse golden demo treatment for Logo, D-DIN-PRO, frosted metric cards, plain white work cards, 32px filter controls, adaptive tables, dot-plus-text status, Dorami protocol row buttons, and icon-only modal close.
+- Change business content, fields, labels, data, and page modules according to the user's request; do not copy warning/supervision query data blindly.
+
+After generating:
+- Compare against the golden demo before final delivery.
+- Check background, sidebar, top bar, card surfaces, table, filters, buttons, modals, status indicators, fonts, and icons.
+- If the generated page visually drifts toward generic SaaS/admin/marketing/dashboard style, revise it before presenting.
+
+## Structured Component Contract
+
+Use `references/data/sketch-component-contract.json` as the only machine-readable source for extracted component parameters. Treat `sketchObserved` as evidence, not as a final rule.
+
+Before generating, read `references/component-contract/index.md`, then load only the parameter files needed by the page:
+- Full page shell or navigation: `page-shell-navigation.md`.
+- Filters, form controls, or buttons: `filter-form.md`.
+- Tables, lifecycle status, row actions, or pagination: `table-status-actions.md`.
+- Modal or drawer tasks: `modal-drawer.md`.
+- Metric cards or description lists: `data-display.md`.
+
+Use this conflict priority: explicit user requirement > golden demo > human-confirmed contract value > auto-extracted Sketch evidence > Dorami protocol > generic judgement. Never edit generated Markdown independently from the JSON contract.
+
 ## Mandatory Workflow
 
 Before generating UI, do this:
@@ -42,9 +77,11 @@ Before generating UI, do this:
 5. Output "组件映射" with the business field/action/status mapped to the supervision business component and the Dorami base protocol.
 6. Output "本次复用的监管平台规范" with concrete rules that will be reused.
 7. Output "本次复用的组件交互规则" and list the actual components used, such as Button, Table, Tag, Input, Select, Dropdown, Pagination, Modal, Drawer, Form, Checkbox, Radio, Date/Time Picker, Upload, Tooltip, Popconfirm, Tabs, Menu, DescriptionList, Timeline, or Empty.
-8. For base controls, follow the `dorami-ui-protocol` component protocol and check `dorami-ui-protocol/references/interaction-coverage-matrix.md`.
-9. Apply the supervision theme and business rules in this skill on top of the component protocol. Do not invent a new visual language.
-10. After generation, output "一致性自检" including business, component, token, interaction, anti-pattern, and output checks. If any item fails, revise before presenting the final result.
+8. Output "本次复用的黄金样例规则" and list the concrete golden-demo shell, token, component, and interaction patterns that will be reused.
+9. Output "本次复用的结构化组件参数" and list the relevant files under `references/component-contract/`.
+10. For base controls, follow the `dorami-ui-protocol` component protocol and check `dorami-ui-protocol/references/interaction-coverage-matrix.md`.
+11. Apply the supervision theme and business rules in this skill on top of the component protocol. Do not invent a new visual language.
+12. After generation, output "一致性自检" including business, golden-demo, structured contract, component, token, interaction, anti-pattern, and output checks. If any item fails, revise before presenting the final result.
 
 Never skip the pre-generation reuse statements or the final consistency check.
 
@@ -75,7 +112,7 @@ Compiler steps:
 5. Apply the Dorami component protocol only for base control shells and interaction states.
 6. Apply supervision Theme and Component tokens through the three-layer Raw / Theme / Component system.
 7. Generate the UI, prompt, Figma-like structure, or implementation requested by the user.
-8. Run the consistency checklist and revise failed items before final output.
+8. Compare with the golden demo and run the consistency checklist; revise failed items before final output.
 
 Do not skip the blueprint even for short requests. If the user provides too little information, compile the known fields and put missing business facts in TODO instead of inventing them.
 
@@ -949,6 +986,8 @@ If creating Figma-like output:
 - `v0.19.0`: Set standard table single-line row height to 56px, with auto expansion for multi-line rows.
 - `v0.20.0`: Remove generic non-business helper text from table cells by default.
 - `v0.64.0`: Add page compiler rules, business semantics, field/status/action mapping, and the page understanding -> structure planning -> component mapping -> generation -> consistency-check output contract.
+- `v0.65.0`: Add golden demo alignment workflow and require generated static demos to compare against the bundled final demo before delivery.
+- `v0.66.0`: Add the generated Sketch component contract, source UUID evidence, human override priority, task-routed parameter tables, and structured-contract self-check.
 - `v0.21.0`: Set filter spacing to 16px from the card title and 16px to the table.
 - `v0.22.0`: Add synchronized table/card width, top-aligned table cells, no-wrap short status fields, and capped two-row action buttons.
 - `v0.23.0`: Add 4px spacing between dropdown options.

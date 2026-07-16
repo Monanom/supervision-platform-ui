@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "1.0.0",
+  "components": {
+    "PageShell": {
+      "category": "page-shell-navigation",
+      "artboardNamePatterns": ["预警记录", "预警查询", "预警详情", "数据归集", "预警监控与分析"]
+    },
+    "TopNavigation": {
+      "category": "page-shell-navigation",
+      "artboardNamePatterns": ["预警记录", "预警查询", "预警详情", "数据归集"]
+    },
+    "Sidebar": {
+      "category": "page-shell-navigation",
+      "symbolNamePatterns": ["侧边导航"]
+    },
+    "BusinessSwitch": {
+      "category": "page-shell-navigation",
+      "symbolNamePatterns": ["tab/默认", "tab/选中"]
+    },
+    "MetricCard": {
+      "category": "data-display",
+      "symbolNamePatterns": ["督办数据", "预警数据"]
+    },
+    "SearchPanel": {
+      "category": "filter-form",
+      "artboardNamePatterns": ["预警记录-筛选展开", "预警记录", "预警查询-预警查询"]
+    },
+    "Button": {
+      "category": "filter-form",
+      "symbolNamePatterns": ["主按钮/28", "主按钮/32", "主按钮/40", "普通按钮/高度28", "普通按钮/高度32", "按钮组合"]
+    },
+    "DataTable": {
+      "category": "table-status-actions",
+      "symbolNamePatterns": ["预警记录/表格/条目"]
+    },
+    "StatusIndicator": {
+      "category": "table-status-actions",
+      "symbolNamePatterns": ["预警记录/状态/"]
+    },
+    "Pagination": {
+      "category": "table-status-actions",
+      "artboardNamePatterns": ["预警记录", "预警查询-预警查询", "预警查询-我的督办"]
+    },
+    "Modal": {
+      "category": "modal-drawer",
+      "artboardNamePatterns": ["弹窗", "预警查询-撤回", "预警查询-核实完结", "预警查询-发起督办", "预警查询-处理反馈"]
+    },
+    "Drawer": {
+      "category": "modal-drawer",
+      "artboardNamePatterns": ["预警查询-流转日志"]
+    },
+    "DescriptionList": {
+      "category": "data-display",
+      "symbolNamePatterns": ["带边框描述列表"]
+    }
+  },
+  "documentGroups": {
+    "page-shell-navigation": ["PageShell", "TopNavigation", "Sidebar", "BusinessSwitch"],
+    "filter-form": ["SearchPanel", "Button"],
+    "table-status-actions": ["DataTable", "StatusIndicator", "Pagination"],
+    "modal-drawer": ["Modal", "Drawer"],
+    "data-display": ["MetricCard", "DescriptionList"]
+  }
+}

@@ -1,0 +1,4016 @@
+{
+  "components": {
+    "BusinessSwitch": {
+      "appearance": {
+        "innerRadius": 16,
+        "outerFillToken": "--theme-frosted-white-60-100",
+        "outerRadius": 20,
+        "outerStrokeMode": "inner",
+        "outerStrokeToken": "--theme-white",
+        "selectedFillToken": "--theme-primary",
+        "shadow": "none"
+      },
+      "category": "page-shell-navigation",
+      "componentName": "BusinessSwitch",
+      "confidence": "human-confirmed",
+      "dimensions": {
+        "innerHeight": 32,
+        "outerHeight": 40,
+        "outerPadding": 4
+      },
+      "evidence": [
+        {
+          "id": "C65A8F22-9F17-4A51-8EA0-4B497212C26F",
+          "name": "tab/默认",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "id": "613B5642-6AB3-41F3-BA29-D72E54AA495E",
+          "name": "tab/选中",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "relativePath": "golden-demo/supervision-warning-supervise-query.html",
+          "type": "golden-demo"
+        }
+      ],
+      "layout": {
+        "contentSync": "switch page content with selection",
+        "indicator": "slide between equal-width segments"
+      },
+      "override": {
+        "applied": true,
+        "reason": "Outer frame stays 40px, inner item stays 32px, uses no shadow."
+      },
+      "responsive": {
+        "height": "fixed",
+        "segmentWidth": "equal within component"
+      },
+      "sketchObserved": {
+        "artboards": [],
+        "symbols": [
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [],
+              "observedFills": [],
+              "observedRadii": [
+                {
+                  "fixedRadius": 24
+                }
+              ],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 40,
+                "width": 96,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "height": 24,
+                "width": 32,
+                "x": 32,
+                "y": 8
+              }
+            ],
+            "frame": {
+              "height": 40,
+              "width": 96,
+              "x": 6670,
+              "y": 0
+            },
+            "id": "C65A8F22-9F17-4A51-8EA0-4B497212C26F",
+            "name": "tab/默认",
+            "resizingConstraint": 63,
+            "typography": [
+              {
+                "fontName": "PingFangSC-Medium",
+                "fontSize": 16,
+                "lineHeight": 24,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 0.172,
+                  "green": 0.14,
+                  "red": 0.1256
+                }
+              }
+            ]
+          },
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [],
+              "observedFills": [
+                {
+                  "color": {
+                    "alpha": 1.0,
+                    "blue": 1.0,
+                    "green": 0.3255,
+                    "red": 0.2627
+                  },
+                  "fillType": 0
+                }
+              ],
+              "observedRadii": [
+                {
+                  "fixedRadius": 24
+                }
+              ],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 40,
+                "width": 96,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "height": 24,
+                "width": 32,
+                "x": 32,
+                "y": 8
+              }
+            ],
+            "frame": {
+              "height": 40,
+              "width": 96,
+              "x": 6670,
+              "y": 140
+            },
+            "id": "613B5642-6AB3-41F3-BA29-D72E54AA495E",
+            "name": "tab/选中",
+            "resizingConstraint": 63,
+            "typography": [
+              {
+                "fontName": "PingFangSC-Medium",
+                "fontSize": 16,
+                "lineHeight": 24,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 1.0,
+                  "green": 1.0,
+                  "red": 1.0
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "sourceArtboardId": [],
+      "sourceSymbolId": [
+        "613B5642-6AB3-41F3-BA29-D72E54AA495E",
+        "C65A8F22-9F17-4A51-8EA0-4B497212C26F"
+      ],
+      "spacing": {
+        "equalInset": 4,
+        "innerGap": 0
+      },
+      "states": {
+        "active": "sliding indicator animation",
+        "default": "unselected text",
+        "hover": "tokenized low-emphasis hover",
+        "selected": "filled active segment"
+      },
+      "typography": {
+        "defaultTextToken": "--theme-text-secondary",
+        "fontSize": 14,
+        "selectedTextToken": "--theme-white"
+      }
+    },
+    "Button": {
+      "appearance": {
+        "danger": "--dcp-button-danger-*",
+        "disabledOpacity": 0.4,
+        "primary": "--dcp-button-primary-*",
+        "secondary": "--dcp-button-secondary-*"
+      },
+      "category": "filter-form",
+      "componentName": "Button",
+      "confidence": "human-confirmed",
+      "dimensions": {
+        "radius": 4,
+        "sizes": {
+          "28": {
+            "fontSize": 12,
+            "height": 28,
+            "horizontalPadding": 12,
+            "minWidthIconText": 76,
+            "minWidthText": 56
+          },
+          "32": {
+            "fontSize": 14,
+            "height": 32,
+            "horizontalPadding": 12,
+            "minWidthIconText": 84,
+            "minWidthText": 64
+          },
+          "36": {
+            "fontSize": 14,
+            "height": 36,
+            "horizontalPadding": 16,
+            "minWidthIconText": 92,
+            "minWidthText": 72
+          },
+          "40": {
+            "fontSize": 16,
+            "height": 40,
+            "horizontalPadding": 16,
+            "minWidthIconText": 96,
+            "minWidthText": 80
+          },
+          "44": {
+            "fontSize": 16,
+            "height": 44,
+            "horizontalPadding": 20,
+            "minWidthIconText": 104,
+            "minWidthText": 88
+          },
+          "48": {
+            "fontSize": 16,
+            "height": 48,
+            "horizontalPadding": 20,
+            "minWidthIconText": 108,
+            "minWidthText": 96
+          }
+        }
+      },
+      "evidence": [
+        {
+          "id": "0140381F-0983-47CE-9E16-146D85A97CE2",
+          "name": "1.全局样式/1.按钮/1.按钮组合/3.40/左次右主-次按钮灰",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "id": "285ED4C4-78CE-4650-8F26-3046D18CD492",
+          "name": "3.通用元素/3.1按钮🟢/B 普通按钮/高度28/10.浅灰描边+深灰字/01 Normal",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "id": "DEAC7624-5D27-4D21-94CD-061ED6D0CEC4",
+          "name": "1.全局样式/1.按钮/2.主按钮/40/1.默认",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "id": "D0D3A952-0D68-4AB0-9626-08C8EFEFD0B0",
+          "name": "1.全局样式/1.按钮/2.主按钮/32/1.默认",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "id": "7BA3FDFB-D0DF-40AD-9BE9-FC7832FAD94C",
+          "name": "3.通用元素/3.1按钮🟢/B 普通按钮/高度32/10.浅灰描边+深灰字/01 Normal",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "id": "C3F70649-9FCB-454B-8B07-35300AB1FAE3",
+          "name": "1.全局样式/1.按钮/1.按钮组合/1.28/左次右主-次按钮灰",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "id": "5C4DF08D-6654-4B2E-B9C0-41BA7120972F",
+          "name": "1.全局样式/1.按钮/2.主按钮/28/1.默认",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "id": "C395D1D7-0B6A-4140-825B-7A39328DF20C",
+          "name": "1.全局样式/1.按钮/1.按钮组合/1.28/左主右次-次按钮灰",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "id": "1ABB4789-DC5B-4C38-A45E-948DF69C397D",
+          "name": "1.全局样式/1.按钮/1.按钮组合/2.32/左次右主-次按钮灰",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "relativePath": "golden-demo/supervision-warning-supervise-query.html",
+          "type": "golden-demo"
+        }
+      ],
+      "layout": {
+        "danger": "never solid primary",
+        "overflow": "use More menu",
+        "rowActionDirectLimit": 3,
+        "rowActionPrimaryLimit": 1
+      },
+      "override": {
+        "applied": true,
+        "reason": "Exact button size, padding and table-action hierarchy were confirmed from the backend component rules."
+      },
+      "responsive": {
+        "height": "fixed by size",
+        "width": "content adaptive but not below minimum width"
+      },
+      "sketchObserved": {
+        "artboards": [],
+        "symbols": [
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [],
+              "observedFills": [],
+              "observedRadii": [],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 40,
+                "width": 76,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "height": 40,
+                "width": 76,
+                "x": 84,
+                "y": 0
+              }
+            ],
+            "frame": {
+              "height": 40,
+              "width": 160,
+              "x": 1340,
+              "y": 0
+            },
+            "id": "0140381F-0983-47CE-9E16-146D85A97CE2",
+            "name": "1.全局样式/1.按钮/1.按钮组合/3.40/左次右主-次按钮灰",
+            "resizingConstraint": 63,
+            "typography": []
+          },
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [],
+              "observedFills": [],
+              "observedRadii": [],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 28,
+                "width": 72,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "height": 18,
+                "width": 72,
+                "x": 0,
+                "y": 5
+              }
+            ],
+            "frame": {
+              "height": 28,
+              "width": 72,
+              "x": 6498,
+              "y": 0
+            },
+            "id": "285ED4C4-78CE-4650-8F26-3046D18CD492",
+            "name": "3.通用元素/3.1按钮🟢/B 普通按钮/高度28/10.浅灰描边+深灰字/01 Normal",
+            "resizingConstraint": 63,
+            "typography": [
+              {
+                "fontName": "PingFangSC-Regular",
+                "fontSize": 12,
+                "lineHeight": 18,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 0.1373,
+                  "green": 0.1373,
+                  "red": 0.1373
+                }
+              }
+            ]
+          },
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [],
+              "observedFills": [
+                {
+                  "color": {
+                    "alpha": 1.0,
+                    "blue": 1.0,
+                    "green": 0.3255,
+                    "red": 0.2627
+                  },
+                  "fillType": 1
+                }
+              ],
+              "observedRadii": [
+                {
+                  "fixedRadius": 4
+                }
+              ],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 40,
+                "width": 96,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "frame": {
+              "height": 40,
+              "width": 96,
+              "x": 6670,
+              "y": 280
+            },
+            "id": "DEAC7624-5D27-4D21-94CD-061ED6D0CEC4",
+            "name": "1.全局样式/1.按钮/2.主按钮/40/1.默认",
+            "resizingConstraint": 63,
+            "typography": [
+              {
+                "fontName": "PingFangSC-Regular",
+                "fontSize": 16,
+                "lineHeight": 24,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 1.0,
+                  "green": 1.0,
+                  "red": 1.0
+                }
+              }
+            ]
+          },
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [],
+              "observedFills": [
+                {
+                  "color": {
+                    "alpha": 1.0,
+                    "blue": 1.0,
+                    "green": 0.3255,
+                    "red": 0.2627
+                  },
+                  "fillType": 1
+                }
+              ],
+              "observedRadii": [
+                {
+                  "fixedRadius": 4
+                }
+              ],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 32,
+                "width": 80,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "height": 22,
+                "width": 56,
+                "x": 12,
+                "y": 5
+              }
+            ],
+            "frame": {
+              "height": 32,
+              "width": 80,
+              "x": 8278,
+              "y": 0
+            },
+            "id": "D0D3A952-0D68-4AB0-9626-08C8EFEFD0B0",
+            "name": "1.全局样式/1.按钮/2.主按钮/32/1.默认",
+            "resizingConstraint": 63,
+            "typography": [
+              {
+                "fontName": "PingFangSC-Regular",
+                "fontSize": 14,
+                "lineHeight": 22,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 1.0,
+                  "green": 1.0,
+                  "red": 1.0
+                }
+              }
+            ]
+          },
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [],
+              "observedFills": [],
+              "observedRadii": [],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 32,
+                "width": 80,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "height": 20,
+                "width": 80,
+                "x": 0,
+                "y": 6
+              }
+            ],
+            "frame": {
+              "height": 32,
+              "width": 80,
+              "x": 8278,
+              "y": 132
+            },
+            "id": "7BA3FDFB-D0DF-40AD-9BE9-FC7832FAD94C",
+            "name": "3.通用元素/3.1按钮🟢/B 普通按钮/高度32/10.浅灰描边+深灰字/01 Normal",
+            "resizingConstraint": 63,
+            "typography": [
+              {
+                "fontName": "PingFangSC-Regular",
+                "fontSize": 14,
+                "lineHeight": 20,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 0.172,
+                  "green": 0.14,
+                  "red": 0.1256
+                }
+              }
+            ]
+          },
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [],
+              "observedFills": [],
+              "observedRadii": [],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 28,
+                "width": 60,
+                "x": 68,
+                "y": 0
+              },
+              {
+                "height": 28,
+                "width": 60,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "frame": {
+              "height": 28,
+              "width": 128,
+              "x": 8458,
+              "y": 0
+            },
+            "id": "C3F70649-9FCB-454B-8B07-35300AB1FAE3",
+            "name": "1.全局样式/1.按钮/1.按钮组合/1.28/左次右主-次按钮灰",
+            "resizingConstraint": 63,
+            "typography": []
+          },
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [],
+              "observedFills": [
+                {
+                  "color": {
+                    "alpha": 1.0,
+                    "blue": 1.0,
+                    "green": 0.3255,
+                    "red": 0.2627
+                  },
+                  "fillType": 1
+                }
+              ],
+              "observedRadii": [
+                {
+                  "fixedRadius": 4
+                }
+              ],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 28,
+                "width": 72,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "height": 18,
+                "width": 48,
+                "x": 12,
+                "y": 5
+              }
+            ],
+            "frame": {
+              "height": 28,
+              "width": 72,
+              "x": 6498,
+              "y": 128
+            },
+            "id": "5C4DF08D-6654-4B2E-B9C0-41BA7120972F",
+            "name": "1.全局样式/1.按钮/2.主按钮/28/1.默认",
+            "resizingConstraint": 63,
+            "typography": [
+              {
+                "fontName": "PingFangSC-Regular",
+                "fontSize": 12,
+                "lineHeight": 18,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 1.0,
+                  "green": 1.0,
+                  "red": 1.0
+                }
+              }
+            ]
+          },
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [],
+              "observedFills": [],
+              "observedRadii": [],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 28,
+                "width": 60,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "height": 28,
+                "width": 60,
+                "x": 68,
+                "y": 0
+              }
+            ],
+            "frame": {
+              "height": 28,
+              "width": 128,
+              "x": 8458,
+              "y": 128
+            },
+            "id": "C395D1D7-0B6A-4140-825B-7A39328DF20C",
+            "name": "1.全局样式/1.按钮/1.按钮组合/1.28/左主右次-次按钮灰",
+            "resizingConstraint": 63,
+            "typography": []
+          },
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [],
+              "observedFills": [],
+              "observedRadii": [],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 32,
+                "width": 66,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "height": 32,
+                "width": 66,
+                "x": 74,
+                "y": 0
+              }
+            ],
+            "frame": {
+              "height": 32,
+              "width": 140,
+              "x": 9633,
+              "y": 0
+            },
+            "id": "1ABB4789-DC5B-4C38-A45E-948DF69C397D",
+            "name": "1.全局样式/1.按钮/1.按钮组合/2.32/左次右主-次按钮灰",
+            "resizingConstraint": 63,
+            "typography": []
+          }
+        ]
+      },
+      "sourceArtboardId": [],
+      "sourceSymbolId": [
+        "0140381F-0983-47CE-9E16-146D85A97CE2",
+        "1ABB4789-DC5B-4C38-A45E-948DF69C397D",
+        "285ED4C4-78CE-4650-8F26-3046D18CD492",
+        "5C4DF08D-6654-4B2E-B9C0-41BA7120972F",
+        "7BA3FDFB-D0DF-40AD-9BE9-FC7832FAD94C",
+        "C395D1D7-0B6A-4140-825B-7A39328DF20C",
+        "C3F70649-9FCB-454B-8B07-35300AB1FAE3",
+        "D0D3A952-0D68-4AB0-9626-08C8EFEFD0B0",
+        "DEAC7624-5D27-4D21-94CD-061ED6D0CEC4"
+      ],
+      "spacing": {
+        "controlGroupGap": 16,
+        "iconTextGap": 4,
+        "sameGroupGap": 8
+      },
+      "states": {
+        "active": "pressed token",
+        "disabled": "40% opacity and no action",
+        "focus": "visible focus ring",
+        "hover": "use component hover token",
+        "loading": "show loading and lock repeat click"
+      },
+      "typography": {
+        "fontBySize": "see dimensions.sizes",
+        "weight": 400
+      }
+    },
+    "DataTable": {
+      "appearance": {
+        "headerBackgroundToken": "--theme-table-header",
+        "headerBottomDivider": "none",
+        "headerTopDivider": "none",
+        "outerBorder": "none",
+        "rowDividerToken": "--theme-divider"
+      },
+      "category": "table-status-actions",
+      "componentName": "DataTable",
+      "confidence": "human-confirmed",
+      "dimensions": {
+        "headerHeight": 48,
+        "headerTopRadius": 4,
+        "operationColumnWidth": 224,
+        "singleLineRowMinHeight": 56,
+        "width": "100%"
+      },
+      "evidence": [
+        {
+          "id": "43E1BF89-CF92-4F1F-BF6B-AF94A9C26976",
+          "name": "预警记录/表格/条目",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "id": "EA7454BF-4B8B-405C-9406-5F62D3B513A0",
+          "name": "预警记录/表格/条目/采监",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "relativePath": "golden-demo/supervision-warning-supervise-query.html",
+          "type": "golden-demo"
+        }
+      ],
+      "layout": {
+        "multiline": "expand downward while preserving 14px vertical padding",
+        "operationColumn": "fixed width right column",
+        "otherColumns": "stretch proportionally from parent card width",
+        "status": "StatusIndicator only",
+        "tableLayout": "fixed",
+        "time": "independent column"
+      },
+      "override": {
+        "applied": true,
+        "reason": "Latest confirmed table contract replaces legacy 44px metrics and intrinsic-width behavior."
+      },
+      "responsive": {
+        "fixedProperties": [
+          "operation column width",
+          "row minimum height"
+        ],
+        "fluidProperties": [
+          "all non-operation column widths"
+        ],
+        "measurement": "observe parent work-card width",
+        "overflow": "remain inside work card; use internal overflow only as guard"
+      },
+      "sketchObserved": {
+        "artboards": [],
+        "symbols": [
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [],
+              "observedFills": [],
+              "observedRadii": [
+                {
+                  "fixedRadius": 0
+                }
+              ],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 156,
+                "width": 1140,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "height": 28,
+                "width": 56,
+                "x": 1044,
+                "y": 18
+              },
+              {
+                "height": 20,
+                "width": 56,
+                "x": 938,
+                "y": 18
+              },
+              {
+                "height": 20,
+                "width": 139,
+                "x": 758,
+                "y": 18
+              },
+              {
+                "height": 20,
+                "width": 56,
+                "x": 16,
+                "y": 18
+              },
+              {
+                "height": 20,
+                "width": 52,
+                "x": 938,
+                "y": 46
+              },
+              {
+                "height": 20,
+                "width": 101,
+                "x": 16,
+                "y": 42
+              },
+              {
+                "height": 116,
+                "width": 253,
+                "x": 153,
+                "y": 18
+              },
+              {
+                "height": 120,
+                "width": 288,
+                "x": 438,
+                "y": 18
+              },
+              {
+                "height": 1,
+                "width": 1140,
+                "x": 0,
+                "y": 155
+              }
+            ],
+            "frame": {
+              "height": 156,
+              "width": 1140,
+              "x": 100,
+              "y": 0
+            },
+            "id": "43E1BF89-CF92-4F1F-BF6B-AF94A9C26976",
+            "name": "预警记录/表格/条目",
+            "resizingConstraint": 63,
+            "typography": [
+              {
+                "fontName": "PingFangSC-Regular",
+                "fontSize": 14,
+                "lineHeight": 20,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 0.172,
+                  "green": 0.14,
+                  "red": 0.1256
+                }
+              },
+              {
+                "fontName": "PingFangSC-Regular",
+                "fontSize": 14,
+                "lineHeight": 20,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 0.5993,
+                  "green": 0.5439,
+                  "red": 0.5144
+                }
+              }
+            ]
+          },
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [],
+              "observedFills": [],
+              "observedRadii": [
+                {
+                  "fixedRadius": 0
+                }
+              ],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 153,
+                "width": 1140,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "height": 28,
+                "width": 120,
+                "x": 1000,
+                "y": 18
+              },
+              {
+                "height": 20,
+                "width": 56,
+                "x": 902,
+                "y": 18
+              },
+              {
+                "height": 20,
+                "width": 139,
+                "x": 724,
+                "y": 18
+              },
+              {
+                "height": 20,
+                "width": 56,
+                "x": 16,
+                "y": 18
+              },
+              {
+                "height": 20,
+                "width": 52,
+                "x": 902,
+                "y": 46
+              },
+              {
+                "height": 20,
+                "width": 101,
+                "x": 16,
+                "y": 42
+              },
+              {
+                "height": 116,
+                "width": 253,
+                "x": 153,
+                "y": 18
+              },
+              {
+                "height": 80,
+                "width": 254,
+                "x": 438,
+                "y": 18
+              },
+              {
+                "height": 1,
+                "width": 1140,
+                "x": 0,
+                "y": 152
+              }
+            ],
+            "frame": {
+              "height": 153,
+              "width": 1140,
+              "x": 100,
+              "y": 256
+            },
+            "id": "EA7454BF-4B8B-405C-9406-5F62D3B513A0",
+            "name": "预警记录/表格/条目/采监",
+            "resizingConstraint": 63,
+            "typography": [
+              {
+                "fontName": "PingFangSC-Regular",
+                "fontSize": 14,
+                "lineHeight": 20,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 0.172,
+                  "green": 0.14,
+                  "red": 0.1256
+                }
+              },
+              {
+                "fontName": "PingFangSC-Regular",
+                "fontSize": 14,
+                "lineHeight": 20,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 0.5993,
+                  "green": 0.5439,
+                  "red": 0.5144
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "sourceArtboardId": [],
+      "sourceSymbolId": [
+        "43E1BF89-CF92-4F1F-BF6B-AF94A9C26976",
+        "EA7454BF-4B8B-405C-9406-5F62D3B513A0"
+      ],
+      "spacing": {
+        "cellHorizontalPadding": 16,
+        "cellPaddingBottom": 14,
+        "cellPaddingTop": 14,
+        "rowActionGap": 8
+      },
+      "states": {
+        "empty": "quiet local Empty",
+        "error": "retryable table-local error",
+        "filteredEmpty": "preserve filters and show filtered empty",
+        "loading": "table-local loading",
+        "selection": "selected rows enable valid batch actions"
+      },
+      "typography": {
+        "bodyFontSize": 14,
+        "cellVerticalAlign": "top",
+        "headerFontSize": 14,
+        "statusWhiteSpace": "nowrap"
+      }
+    },
+    "DescriptionList": {
+      "appearance": {
+        "backgroundToken": "--theme-surface",
+        "borderToken": "--theme-divider",
+        "radius": 4
+      },
+      "category": "data-display",
+      "componentName": "DescriptionList",
+      "confidence": "sketch-and-manual-confirmed",
+      "dimensions": {
+        "contentReferenceWidth": 216,
+        "labelReferenceWidth": 112,
+        "multiLineMinHeight": 68,
+        "singleLineHeight": 48
+      },
+      "evidence": [
+        {
+          "id": "3E251B9B-6BAC-4A9F-9999-E9E40D8B1E64",
+          "name": "带边框描述列表/多行/小标题",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "id": "26F71EBE-5200-4216-B941-E6611D68EBCF",
+          "name": "带边框描述列表/单行/内容",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "id": "31A20B35-269D-4695-9BA1-450E00AEB1CF",
+          "name": "带边框描述列表/多行小标题",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "id": "93F5B6A9-8B54-4986-A18D-7043B74B5C75",
+          "name": "带边框描述列表/单行/多行内容",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "id": "2C7D03C7-4D41-4D33-B50B-8FE13FA7B015",
+          "name": "带边框描述列表/单行",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "id": "5DE8C8F1-D81D-4F10-88FB-F441506C03A5",
+          "name": "带边框描述列表/单行/小标题",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "relativePath": "golden-demo/supervision-warning-supervise-query.html",
+          "type": "golden-demo"
+        }
+      ],
+      "layout": {
+        "label": "fixed reference width",
+        "multiline": "expand downward",
+        "value": "fluid and top aligned"
+      },
+      "override": {
+        "applied": true,
+        "reason": "Uses Sketch description-list dimensions plus confirmed inline-link behavior."
+      },
+      "responsive": {
+        "labelWidth": "fixed unless page pattern explicitly changes columns",
+        "valueWidth": "fluid"
+      },
+      "sketchObserved": {
+        "artboards": [],
+        "symbols": [
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [
+                {
+                  "color": {
+                    "alpha": 1.0,
+                    "blue": 0.95,
+                    "green": 0.9331,
+                    "red": 0.9256
+                  },
+                  "position": 1,
+                  "thickness": 1
+                }
+              ],
+              "observedFills": [
+                {
+                  "color": {
+                    "alpha": 1.0,
+                    "blue": 0.9814,
+                    "green": 0.972,
+                    "red": 0.9673
+                  },
+                  "fillType": 0
+                }
+              ],
+              "observedRadii": [
+                {
+                  "fixedRadius": 0
+                }
+              ],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 68,
+                "width": 112,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "height": 20,
+                "width": 98,
+                "x": 2,
+                "y": 14
+              }
+            ],
+            "frame": {
+              "height": 68,
+              "width": 112,
+              "x": 6866,
+              "y": 0
+            },
+            "id": "3E251B9B-6BAC-4A9F-9999-E9E40D8B1E64",
+            "name": "带边框描述列表/多行/小标题",
+            "resizingConstraint": 63,
+            "typography": [
+              {
+                "fontName": "PingFangSC-Medium",
+                "fontSize": 14,
+                "lineHeight": 20,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 0.172,
+                  "green": 0.14,
+                  "red": 0.1256
+                }
+              }
+            ]
+          },
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [
+                {
+                  "color": {
+                    "alpha": 1.0,
+                    "blue": 0.95,
+                    "green": 0.9331,
+                    "red": 0.9256
+                  },
+                  "position": 1,
+                  "thickness": 1
+                }
+              ],
+              "observedFills": [
+                {
+                  "color": {
+                    "alpha": 1.0,
+                    "blue": 1.0,
+                    "green": 1.0,
+                    "red": 1.0
+                  },
+                  "fillType": 0
+                }
+              ],
+              "observedRadii": [
+                {
+                  "fixedRadius": 0
+                }
+              ],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 48,
+                "width": 216,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "height": 20,
+                "width": 192,
+                "x": 12,
+                "y": 14
+              }
+            ],
+            "frame": {
+              "height": 48,
+              "width": 216,
+              "x": 7962,
+              "y": 0
+            },
+            "id": "26F71EBE-5200-4216-B941-E6611D68EBCF",
+            "name": "带边框描述列表/单行/内容",
+            "resizingConstraint": 63,
+            "typography": [
+              {
+                "fontName": "PingFangSC-Regular",
+                "fontSize": 14,
+                "lineHeight": 20,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 0.172,
+                  "green": 0.14,
+                  "red": 0.1256
+                }
+              }
+            ]
+          },
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [],
+              "observedFills": [],
+              "observedRadii": [],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 68,
+                "width": 160,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "height": 68,
+                "width": 216,
+                "x": 159,
+                "y": 0
+              }
+            ],
+            "frame": {
+              "height": 68,
+              "width": 375,
+              "x": 8686,
+              "y": 0
+            },
+            "id": "31A20B35-269D-4695-9BA1-450E00AEB1CF",
+            "name": "带边框描述列表/多行小标题",
+            "resizingConstraint": 63,
+            "typography": []
+          },
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [
+                {
+                  "color": {
+                    "alpha": 1.0,
+                    "blue": 0.95,
+                    "green": 0.9331,
+                    "red": 0.9256
+                  },
+                  "position": 1,
+                  "thickness": 1
+                }
+              ],
+              "observedFills": [
+                {
+                  "color": {
+                    "alpha": 1.0,
+                    "blue": 1.0,
+                    "green": 1.0,
+                    "red": 1.0
+                  },
+                  "fillType": 0
+                }
+              ],
+              "observedRadii": [
+                {
+                  "fixedRadius": 0
+                }
+              ],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 68,
+                "width": 216,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "height": 40,
+                "width": 192,
+                "x": 12,
+                "y": 14
+              }
+            ],
+            "frame": {
+              "height": 68,
+              "width": 216,
+              "x": 7962,
+              "y": 148
+            },
+            "id": "93F5B6A9-8B54-4986-A18D-7043B74B5C75",
+            "name": "带边框描述列表/单行/多行内容",
+            "resizingConstraint": 63,
+            "typography": [
+              {
+                "fontName": "PingFangSC-Regular",
+                "fontSize": 14,
+                "lineHeight": 20,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 0.172,
+                  "green": 0.14,
+                  "red": 0.1256
+                }
+              }
+            ]
+          },
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [],
+              "observedFills": [],
+              "observedRadii": [],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 48,
+                "width": 216,
+                "x": 159,
+                "y": 0
+              },
+              {
+                "height": 48,
+                "width": 160,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "frame": {
+              "height": 48,
+              "width": 375,
+              "x": 8686,
+              "y": 168
+            },
+            "id": "2C7D03C7-4D41-4D33-B50B-8FE13FA7B015",
+            "name": "带边框描述列表/单行",
+            "resizingConstraint": 63,
+            "typography": []
+          },
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [
+                {
+                  "color": {
+                    "alpha": 1.0,
+                    "blue": 0.95,
+                    "green": 0.9331,
+                    "red": 0.9256
+                  },
+                  "position": 1,
+                  "thickness": 1
+                }
+              ],
+              "observedFills": [
+                {
+                  "color": {
+                    "alpha": 1.0,
+                    "blue": 0.9814,
+                    "green": 0.972,
+                    "red": 0.9673
+                  },
+                  "fillType": 0
+                }
+              ],
+              "observedRadii": [
+                {
+                  "fixedRadius": 0
+                }
+              ],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 48,
+                "width": 112,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "height": 20,
+                "width": 70,
+                "x": 30,
+                "y": 14
+              }
+            ],
+            "frame": {
+              "height": 48,
+              "width": 112,
+              "x": 6866,
+              "y": 168
+            },
+            "id": "5DE8C8F1-D81D-4F10-88FB-F441506C03A5",
+            "name": "带边框描述列表/单行/小标题",
+            "resizingConstraint": 63,
+            "typography": [
+              {
+                "fontName": "PingFangSC-Medium",
+                "fontSize": 14,
+                "lineHeight": 20,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 0.172,
+                  "green": 0.14,
+                  "red": 0.1256
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "sourceArtboardId": [],
+      "sourceSymbolId": [
+        "26F71EBE-5200-4216-B941-E6611D68EBCF",
+        "2C7D03C7-4D41-4D33-B50B-8FE13FA7B015",
+        "31A20B35-269D-4695-9BA1-450E00AEB1CF",
+        "3E251B9B-6BAC-4A9F-9999-E9E40D8B1E64",
+        "5DE8C8F1-D81D-4F10-88FB-F441506C03A5",
+        "93F5B6A9-8B54-4986-A18D-7043B74B5C75"
+      ],
+      "spacing": {
+        "cellHorizontalPadding": 16,
+        "cellVerticalPadding": 12
+      },
+      "states": {
+        "emptyValue": "use a consistent dash",
+        "link": "preserve row height",
+        "truncated": "show full value in Tooltip"
+      },
+      "typography": {
+        "labelColorToken": "--theme-text-secondary",
+        "labelFontSize": 14,
+        "valueColorToken": "--theme-text-primary",
+        "valueFontSize": 14
+      }
+    },
+    "Drawer": {
+      "appearance": {
+        "backgroundToken": "--theme-surface",
+        "closeIcon": "assets/icons/close.svg",
+        "divider": "none",
+        "overlayToken": "--dcp-overlay-mask"
+      },
+      "category": "modal-drawer",
+      "componentName": "Drawer",
+      "confidence": "manual-calibrated",
+      "dimensions": {
+        "closeIconSize": 16,
+        "defaultWidth": 520,
+        "maxWidth": "90vw",
+        "radius": 12,
+        "wideWidth": 640
+      },
+      "evidence": [
+        {
+          "id": "EF283AB9-4AF1-4765-810D-0A9AF4BCC159",
+          "name": "预警查询-流转日志",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "relativePath": "golden-demo/supervision-warning-supervise-query.html",
+          "type": "golden-demo"
+        }
+      ],
+      "layout": {
+        "body": "independent scroll",
+        "closeControl": "icon only",
+        "footer": "stable when actions exist",
+        "header": "stable",
+        "placement": "right"
+      },
+      "override": {
+        "applied": true,
+        "reason": "Base Drawer shell follows Dorami; business content remains in slots."
+      },
+      "responsive": {
+        "height": "viewport height",
+        "width": "variant width up to maxWidth"
+      },
+      "sketchObserved": {
+        "artboards": [
+          {
+            "frame": {
+              "height": 720,
+              "width": 1440,
+              "x": -792,
+              "y": 678
+            },
+            "id": "EF283AB9-4AF1-4765-810D-0A9AF4BCC159",
+            "name": "预警查询-流转日志"
+          }
+        ],
+        "symbols": []
+      },
+      "sourceArtboardId": [
+        "EF283AB9-4AF1-4765-810D-0A9AF4BCC159"
+      ],
+      "sourceSymbolId": [],
+      "spacing": {
+        "bodyPadding": 24,
+        "footerPadding": 24,
+        "headerPadding": 24
+      },
+      "states": {
+        "close": "restore focus to trigger",
+        "disabledAction": "show reason with Tooltip when required",
+        "loading": "body-local loading",
+        "open": "focus enters drawer"
+      },
+      "typography": {
+        "bodyFontSize": 14,
+        "titleFontSize": 18
+      }
+    },
+    "MetricCard": {
+      "appearance": {
+        "backdropBlur": 6,
+        "fillToken": "--theme-frosted-white-60-100",
+        "shadow": "none",
+        "strokeToken": "--theme-white"
+      },
+      "category": "data-display",
+      "componentName": "MetricCard",
+      "confidence": "human-confirmed",
+      "dimensions": {
+        "radius": 4,
+        "referenceHeight": 106,
+        "referenceWidth": 224
+      },
+      "evidence": [
+        {
+          "id": "DCE00270-68A2-48E5-84AB-5972A79A9C7F",
+          "name": "预警数据",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "id": "773527DC-310B-4F15-A8AD-F38A9BCA6E53",
+          "name": "督办数据/背景/半透明",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "id": "4CB21149-239F-4E99-ABD6-25432F022DA1",
+          "name": "督办数据/背景/白",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "id": "0C5A0185-FAA4-40D8-B5E4-032059A09963",
+          "name": "督办数据",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "relativePath": "golden-demo/supervision-warning-supervise-query.html",
+          "type": "golden-demo"
+        }
+      ],
+      "layout": {
+        "order": [
+          "number",
+          "status dot and label"
+        ],
+        "title": "no separate section title"
+      },
+      "override": {
+        "applied": true,
+        "reason": "Metric cards are non-clickable frosted display cards by default."
+      },
+      "responsive": {
+        "height": "fixed",
+        "width": "stretch evenly with sibling cards"
+      },
+      "sketchObserved": {
+        "artboards": [],
+        "symbols": [
+          {
+            "appearance": {
+              "observedBlurs": [
+                {
+                  "radius": 6,
+                  "type": 3
+                }
+              ],
+              "observedBorders": [
+                {
+                  "color": {
+                    "alpha": 1.0,
+                    "blue": 1.0,
+                    "green": 1.0,
+                    "red": 1.0
+                  },
+                  "position": 1,
+                  "thickness": 1
+                }
+              ],
+              "observedFills": [
+                {
+                  "color": {
+                    "alpha": 0.64,
+                    "blue": 1.0,
+                    "green": 1.0,
+                    "red": 1.0
+                  },
+                  "fillType": 1
+                }
+              ],
+              "observedRadii": [
+                {
+                  "fixedRadius": 4
+                }
+              ],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 188,
+                "width": 160,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "height": 56,
+                "width": 52.7536231884058,
+                "x": 9.53623188405809,
+                "y": 12
+              },
+              {
+                "height": 20,
+                "width": 56,
+                "x": 20,
+                "y": 126
+              },
+              {
+                "height": 12,
+                "width": 12,
+                "x": 80,
+                "y": 130
+              },
+              {
+                "height": 35,
+                "width": 47,
+                "x": 20,
+                "y": 84
+              },
+              {
+                "height": 18,
+                "width": 84,
+                "x": 20,
+                "y": 150
+              }
+            ],
+            "frame": {
+              "height": 188,
+              "width": 160,
+              "x": 1340,
+              "y": 140
+            },
+            "id": "DCE00270-68A2-48E5-84AB-5972A79A9C7F",
+            "name": "预警数据",
+            "resizingConstraint": 63,
+            "typography": [
+              {
+                "fontName": "PingFangSC-Medium",
+                "fontSize": 14,
+                "lineHeight": 20,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 0.172,
+                  "green": 0.14,
+                  "red": 0.1256
+                }
+              },
+              {
+                "fontName": "D-DIN-PRO-Bold",
+                "fontSize": 32,
+                "lineHeight": 30,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 0.172,
+                  "green": 0.14,
+                  "red": 0.1256
+                }
+              },
+              {
+                "fontName": "PingFangSC-Semibold",
+                "fontSize": 12,
+                "lineHeight": 30,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 0.172,
+                  "green": 0.14,
+                  "red": 0.1256
+                }
+              },
+              {
+                "fontName": "PingFangSC-Regular",
+                "fontSize": 12,
+                "lineHeight": 18,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 0.5993,
+                  "green": 0.5439,
+                  "red": 0.5144
+                }
+              }
+            ]
+          },
+          {
+            "appearance": {
+              "observedBlurs": [
+                {
+                  "radius": 6,
+                  "type": 3
+                }
+              ],
+              "observedBorders": [
+                {
+                  "color": {
+                    "alpha": 1.0,
+                    "blue": 1.0,
+                    "green": 1.0,
+                    "red": 1.0
+                  },
+                  "position": 1,
+                  "thickness": 1
+                }
+              ],
+              "observedFills": [
+                {
+                  "color": {
+                    "alpha": 0.64,
+                    "blue": 1.0,
+                    "green": 1.0,
+                    "red": 1.0
+                  },
+                  "fillType": 1
+                }
+              ],
+              "observedRadii": [
+                {
+                  "fixedRadius": 4
+                }
+              ],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 106,
+                "width": 224,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "frame": {
+              "height": 106,
+              "width": 224,
+              "x": 7346,
+              "y": 0
+            },
+            "id": "773527DC-310B-4F15-A8AD-F38A9BCA6E53",
+            "name": "督办数据/背景/半透明",
+            "resizingConstraint": 63,
+            "typography": []
+          },
+          {
+            "appearance": {
+              "observedBlurs": [
+                {
+                  "radius": 6,
+                  "type": 3
+                }
+              ],
+              "observedBorders": [
+                {
+                  "color": {
+                    "alpha": 1.0,
+                    "blue": 1.0,
+                    "green": 1.0,
+                    "red": 1.0
+                  },
+                  "position": 1,
+                  "thickness": 1
+                }
+              ],
+              "observedFills": [
+                {
+                  "color": {
+                    "alpha": 0.64,
+                    "blue": 1.0,
+                    "green": 1.0,
+                    "red": 1.0
+                  },
+                  "fillType": 1
+                }
+              ],
+              "observedRadii": [
+                {
+                  "fixedRadius": 4
+                }
+              ],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 106,
+                "width": 224,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "frame": {
+              "height": 106,
+              "width": 224,
+              "x": 7346,
+              "y": 206
+            },
+            "id": "4CB21149-239F-4E99-ABD6-25432F022DA1",
+            "name": "督办数据/背景/白",
+            "resizingConstraint": 63,
+            "typography": []
+          },
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [],
+              "observedFills": [],
+              "observedRadii": [],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 106,
+                "width": 224,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "height": 20,
+                "width": 56,
+                "x": 20,
+                "y": 66
+              },
+              {
+                "height": 35,
+                "width": 47,
+                "x": 20,
+                "y": 24
+              }
+            ],
+            "frame": {
+              "height": 106,
+              "width": 224,
+              "x": 7346,
+              "y": 412
+            },
+            "id": "0C5A0185-FAA4-40D8-B5E4-032059A09963",
+            "name": "督办数据",
+            "resizingConstraint": 63,
+            "typography": [
+              {
+                "fontName": "D-DIN-PRO-Bold",
+                "fontSize": 32,
+                "lineHeight": 30,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 0.172,
+                  "green": 0.14,
+                  "red": 0.1256
+                }
+              },
+              {
+                "fontName": "PingFangSC-Semibold",
+                "fontSize": 12,
+                "lineHeight": 30,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 0.172,
+                  "green": 0.14,
+                  "red": 0.1256
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "sourceArtboardId": [],
+      "sourceSymbolId": [
+        "0C5A0185-FAA4-40D8-B5E4-032059A09963",
+        "4CB21149-239F-4E99-ABD6-25432F022DA1",
+        "773527DC-310B-4F15-A8AD-F38A9BCA6E53",
+        "DCE00270-68A2-48E5-84AB-5972A79A9C7F"
+      ],
+      "spacing": {
+        "contentGap": 8,
+        "padding": 16
+      },
+      "states": {
+        "default": "display only",
+        "hover": "none unless the product explicitly adds interaction"
+      },
+      "typography": {
+        "labelFontSize": 14,
+        "numberFirst": true,
+        "numberFontToken": "--font-number"
+      }
+    },
+    "Modal": {
+      "appearance": {
+        "backgroundToken": "--theme-surface",
+        "closeIcon": "assets/icons/close.svg",
+        "divider": "none",
+        "overlayToken": "--dcp-overlay-mask"
+      },
+      "category": "modal-drawer",
+      "componentName": "Modal",
+      "confidence": "manual-calibrated",
+      "dimensions": {
+        "closeIconSize": 16,
+        "confirmWidth": 400,
+        "defaultWidth": 520,
+        "footerButtonHeight": 32,
+        "formWidth": 640,
+        "maxHeight": "calc(100vh - 48px)",
+        "maxWidth": "calc(100vw - 48px)",
+        "radius": 12
+      },
+      "evidence": [
+        {
+          "id": "8079E759-2356-40F7-B53C-E63D65326B9C",
+          "name": "预警查询-撤回",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "911A6217-896E-454B-96AB-CDB13A63E39E",
+          "name": "预警查询-核实完结",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "FAC5D152-CB18-43C7-A80F-B3E5F0B9CD05",
+          "name": "预警查询-发起督办",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "93811216-43EE-484E-A98F-4A9C214E8162",
+          "name": "预警查询-处理反馈",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "446578C5-D814-4FC5-BD9E-C5B6668AFE70",
+          "name": "退回原因弹窗",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "6C5E3809-968A-435E-AB6C-8EE93ACAEDF2",
+          "name": "标项风险详情弹窗",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "ED8BEF09-3C43-4A78-90AC-7C730786A2E2",
+          "name": "投诉质疑详情弹窗",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "relativePath": "golden-demo/supervision-warning-supervise-query.html",
+          "type": "golden-demo"
+        }
+      ],
+      "layout": {
+        "body": "scroll when content exceeds max height",
+        "closeControl": "icon only",
+        "footer": "stable and right aligned",
+        "header": "stable"
+      },
+      "override": {
+        "applied": true,
+        "reason": "Base Modal shell follows Dorami; supervision theme only supplies atomic tokens."
+      },
+      "responsive": {
+        "bodyScroll": "internal",
+        "width": "use size variant up to maxWidth"
+      },
+      "sketchObserved": {
+        "artboards": [
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": 2354,
+              "y": -427
+            },
+            "id": "8079E759-2356-40F7-B53C-E63D65326B9C",
+            "name": "预警查询-撤回"
+          },
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": 765,
+              "y": 678
+            },
+            "id": "911A6217-896E-454B-96AB-CDB13A63E39E",
+            "name": "预警查询-核实完结"
+          },
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": -792,
+              "y": -419
+            },
+            "id": "FAC5D152-CB18-43C7-A80F-B3E5F0B9CD05",
+            "name": "预警查询-发起督办"
+          },
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": 765,
+              "y": -419
+            },
+            "id": "93811216-43EE-484E-A98F-4A9C214E8162",
+            "name": "预警查询-处理反馈"
+          },
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": 773,
+              "y": 2209
+            },
+            "id": "446578C5-D814-4FC5-BD9E-C5B6668AFE70",
+            "name": "退回原因弹窗"
+          },
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": -772,
+              "y": 2209
+            },
+            "id": "6C5E3809-968A-435E-AB6C-8EE93ACAEDF2",
+            "name": "标项风险详情弹窗"
+          },
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": -2329,
+              "y": 2209
+            },
+            "id": "ED8BEF09-3C43-4A78-90AC-7C730786A2E2",
+            "name": "投诉质疑详情弹窗"
+          }
+        ],
+        "symbols": []
+      },
+      "sourceArtboardId": [
+        "446578C5-D814-4FC5-BD9E-C5B6668AFE70",
+        "6C5E3809-968A-435E-AB6C-8EE93ACAEDF2",
+        "8079E759-2356-40F7-B53C-E63D65326B9C",
+        "911A6217-896E-454B-96AB-CDB13A63E39E",
+        "93811216-43EE-484E-A98F-4A9C214E8162",
+        "ED8BEF09-3C43-4A78-90AC-7C730786A2E2",
+        "FAC5D152-CB18-43C7-A80F-B3E5F0B9CD05"
+      ],
+      "sourceSymbolId": [],
+      "spacing": {
+        "bodyPadding": 24,
+        "footerButtonGap": 8,
+        "footerPadding": 24,
+        "headerPadding": 24
+      },
+      "states": {
+        "close": "icon, Escape or mask according to risk",
+        "open": "focus enters modal",
+        "submitFailed": "keep input and show error",
+        "submitting": "primary loading and duplicate submit locked",
+        "validationError": "keep modal open and focus first error"
+      },
+      "typography": {
+        "bodyFontSize": 14,
+        "titleFontSize": 18
+      }
+    },
+    "PageShell": {
+      "appearance": {
+        "backgroundFallbackToken": "--theme-brand-1",
+        "backgroundImage": "assets/bg.jpg",
+        "backgroundPosition": "right region top",
+        "backgroundRepeat": "no-repeat"
+      },
+      "category": "page-shell-navigation",
+      "componentName": "PageShell",
+      "confidence": "human-confirmed",
+      "dimensions": {
+        "contentMinWidth": 1146,
+        "minViewportWidth": 1366,
+        "sidebarWidth": 220,
+        "topbarHeight": 56
+      },
+      "evidence": [
+        {
+          "id": "CD00DB3B-CFB7-42E2-8B1A-D12BE584037D",
+          "name": "预警记录-筛选展开",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "8371E3AC-3AFD-4F5C-9239-5C2C2EF6BC9B",
+          "name": "预警记录",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "6FDD8B32-79D3-466A-A243-04B2C469CB1D",
+          "name": "预警查询-预警查询（采监）",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "4117FD63-C212-482C-AE9D-495AE0AA1EE0",
+          "name": "预警查询-预警查询（采购人）",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "8079E759-2356-40F7-B53C-E63D65326B9C",
+          "name": "预警查询-撤回",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "EF283AB9-4AF1-4765-810D-0A9AF4BCC159",
+          "name": "预警查询-流转日志",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "911A6217-896E-454B-96AB-CDB13A63E39E",
+          "name": "预警查询-核实完结",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "FAC5D152-CB18-43C7-A80F-B3E5F0B9CD05",
+          "name": "预警查询-发起督办",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "93811216-43EE-484E-A98F-4A9C214E8162",
+          "name": "预警查询-处理反馈",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "6A7FF0EA-00CB-489B-817D-0C9C080274D3",
+          "name": "数据归集",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "E89831AA-68B8-46A4-9781-5D3D41BF0DF1",
+          "name": "预警查询-我的督办（采购人）",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "2C802BEA-6E11-4AF4-BCB5-8C79112A8B98",
+          "name": "预警查询-我的督办（采监）",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "A40CFE91-1149-4FCA-A996-4201BD3737D9",
+          "name": "预警详情-无数据",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "F548738A-9447-4C91-AF95-E642DF7611B6",
+          "name": "预警详情",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "C9611F9A-AC7A-4392-B7E0-04BFC8C6D580",
+          "name": "预警监控与分析",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "relativePath": "golden-demo/supervision-warning-supervise-query.html",
+          "type": "golden-demo"
+        }
+      ],
+      "layout": {
+        "belowMinimum": "keep 1366px canvas width and allow viewport horizontal scroll",
+        "content": "fluid width and independent scroll",
+        "sidebar": "fixed width and independent scroll"
+      },
+      "override": {
+        "applied": true,
+        "reason": "Confirmed adaptive platform shell and golden demo behavior."
+      },
+      "responsive": {
+        "fixedProperties": [
+          "sidebar width",
+          "topbar height",
+          "component height"
+        ],
+        "fluidProperties": [
+          "right content width",
+          "module width"
+        ],
+        "minimumTotalWidth": 1366
+      },
+      "sketchObserved": {
+        "artboards": [
+          {
+            "frame": {
+              "height": 1132,
+              "width": 1440,
+              "x": -853,
+              "y": -2016
+            },
+            "id": "CD00DB3B-CFB7-42E2-8B1A-D12BE584037D",
+            "name": "预警记录-筛选展开"
+          },
+          {
+            "frame": {
+              "height": 1177,
+              "width": 1440,
+              "x": -2422,
+              "y": -2016
+            },
+            "id": "8371E3AC-3AFD-4F5C-9239-5C2C2EF6BC9B",
+            "name": "预警记录"
+          },
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": -3938,
+              "y": 686
+            },
+            "id": "6FDD8B32-79D3-466A-A243-04B2C469CB1D",
+            "name": "预警查询-预警查询（采监）"
+          },
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": -3938,
+              "y": -427
+            },
+            "id": "4117FD63-C212-482C-AE9D-495AE0AA1EE0",
+            "name": "预警查询-预警查询（采购人）"
+          },
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": 2354,
+              "y": -427
+            },
+            "id": "8079E759-2356-40F7-B53C-E63D65326B9C",
+            "name": "预警查询-撤回"
+          },
+          {
+            "frame": {
+              "height": 720,
+              "width": 1440,
+              "x": -792,
+              "y": 678
+            },
+            "id": "EF283AB9-4AF1-4765-810D-0A9AF4BCC159",
+            "name": "预警查询-流转日志"
+          },
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": 765,
+              "y": 678
+            },
+            "id": "911A6217-896E-454B-96AB-CDB13A63E39E",
+            "name": "预警查询-核实完结"
+          },
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": -792,
+              "y": -419
+            },
+            "id": "FAC5D152-CB18-43C7-A80F-B3E5F0B9CD05",
+            "name": "预警查询-发起督办"
+          },
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": 765,
+              "y": -419
+            },
+            "id": "93811216-43EE-484E-A98F-4A9C214E8162",
+            "name": "预警查询-处理反馈"
+          },
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": -3918,
+              "y": 2209
+            },
+            "id": "6A7FF0EA-00CB-489B-817D-0C9C080274D3",
+            "name": "数据归集"
+          },
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": -2349,
+              "y": -419
+            },
+            "id": "E89831AA-68B8-46A4-9781-5D3D41BF0DF1",
+            "name": "预警查询-我的督办（采购人）"
+          },
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": -2349,
+              "y": 686
+            },
+            "id": "2C802BEA-6E11-4AF4-BCB5-8C79112A8B98",
+            "name": "预警查询-我的督办（采监）"
+          },
+          {
+            "frame": {
+              "height": 1508,
+              "width": 1440,
+              "x": 4039,
+              "y": 678
+            },
+            "id": "A40CFE91-1149-4FCA-A996-4201BD3737D9",
+            "name": "预警详情-无数据"
+          },
+          {
+            "frame": {
+              "height": 1508,
+              "width": 1440,
+              "x": 2354,
+              "y": 678
+            },
+            "id": "F548738A-9447-4C91-AF95-E642DF7611B6",
+            "name": "预警详情"
+          },
+          {
+            "frame": {
+              "height": 800,
+              "width": 1440,
+              "x": -3938,
+              "y": -2027
+            },
+            "id": "C9611F9A-AC7A-4392-B7E0-04BFC8C6D580",
+            "name": "预警监控与分析"
+          }
+        ],
+        "symbols": []
+      },
+      "sourceArtboardId": [
+        "2C802BEA-6E11-4AF4-BCB5-8C79112A8B98",
+        "4117FD63-C212-482C-AE9D-495AE0AA1EE0",
+        "6A7FF0EA-00CB-489B-817D-0C9C080274D3",
+        "6FDD8B32-79D3-466A-A243-04B2C469CB1D",
+        "8079E759-2356-40F7-B53C-E63D65326B9C",
+        "8371E3AC-3AFD-4F5C-9239-5C2C2EF6BC9B",
+        "911A6217-896E-454B-96AB-CDB13A63E39E",
+        "93811216-43EE-484E-A98F-4A9C214E8162",
+        "A40CFE91-1149-4FCA-A996-4201BD3737D9",
+        "C9611F9A-AC7A-4392-B7E0-04BFC8C6D580",
+        "CD00DB3B-CFB7-42E2-8B1A-D12BE584037D",
+        "E89831AA-68B8-46A4-9781-5D3D41BF0DF1",
+        "EF283AB9-4AF1-4765-810D-0A9AF4BCC159",
+        "F548738A-9447-4C91-AF95-E642DF7611B6",
+        "FAC5D152-CB18-43C7-A80F-B3E5F0B9CD05"
+      ],
+      "sourceSymbolId": [],
+      "spacing": {
+        "moduleGap": 16,
+        "pagePadding": 20
+      },
+      "states": {
+        "default": "fixed sidebar and fluid right content"
+      },
+      "typography": {
+        "alphanumericFontToken": "--font-number",
+        "uiFontToken": "--font-ui"
+      }
+    },
+    "Pagination": {
+      "appearance": {
+        "activeToken": "--dcp-pagination-active-*",
+        "borderToken": "--dcp-pagination-border"
+      },
+      "category": "table-status-actions",
+      "componentName": "Pagination",
+      "confidence": "manual-calibrated",
+      "dimensions": {
+        "controlHeight": 32,
+        "radius": 4
+      },
+      "evidence": [
+        {
+          "id": "CD00DB3B-CFB7-42E2-8B1A-D12BE584037D",
+          "name": "预警记录-筛选展开",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "8371E3AC-3AFD-4F5C-9239-5C2C2EF6BC9B",
+          "name": "预警记录",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "6FDD8B32-79D3-466A-A243-04B2C469CB1D",
+          "name": "预警查询-预警查询（采监）",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "4117FD63-C212-482C-AE9D-495AE0AA1EE0",
+          "name": "预警查询-预警查询（采购人）",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "E89831AA-68B8-46A4-9781-5D3D41BF0DF1",
+          "name": "预警查询-我的督办（采购人）",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "2C802BEA-6E11-4AF4-BCB5-8C79112A8B98",
+          "name": "预警查询-我的督办（采监）",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "relativePath": "golden-demo/supervision-warning-supervise-query.html",
+          "type": "golden-demo"
+        }
+      ],
+      "layout": {
+        "alignment": "right",
+        "content": [
+          "total",
+          "previous",
+          "page numbers",
+          "next"
+        ]
+      },
+      "override": {
+        "applied": true,
+        "reason": "Aligned with Dorami pagination and current golden demo."
+      },
+      "responsive": {
+        "wrap": "keep as one group; simplify page numbers when space is constrained"
+      },
+      "sketchObserved": {
+        "artboards": [
+          {
+            "frame": {
+              "height": 1132,
+              "width": 1440,
+              "x": -853,
+              "y": -2016
+            },
+            "id": "CD00DB3B-CFB7-42E2-8B1A-D12BE584037D",
+            "name": "预警记录-筛选展开"
+          },
+          {
+            "frame": {
+              "height": 1177,
+              "width": 1440,
+              "x": -2422,
+              "y": -2016
+            },
+            "id": "8371E3AC-3AFD-4F5C-9239-5C2C2EF6BC9B",
+            "name": "预警记录"
+          },
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": -3938,
+              "y": 686
+            },
+            "id": "6FDD8B32-79D3-466A-A243-04B2C469CB1D",
+            "name": "预警查询-预警查询（采监）"
+          },
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": -3938,
+              "y": -427
+            },
+            "id": "4117FD63-C212-482C-AE9D-495AE0AA1EE0",
+            "name": "预警查询-预警查询（采购人）"
+          },
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": -2349,
+              "y": -419
+            },
+            "id": "E89831AA-68B8-46A4-9781-5D3D41BF0DF1",
+            "name": "预警查询-我的督办（采购人）"
+          },
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": -2349,
+              "y": 686
+            },
+            "id": "2C802BEA-6E11-4AF4-BCB5-8C79112A8B98",
+            "name": "预警查询-我的督办（采监）"
+          }
+        ],
+        "symbols": []
+      },
+      "sourceArtboardId": [
+        "2C802BEA-6E11-4AF4-BCB5-8C79112A8B98",
+        "4117FD63-C212-482C-AE9D-495AE0AA1EE0",
+        "6FDD8B32-79D3-466A-A243-04B2C469CB1D",
+        "8371E3AC-3AFD-4F5C-9239-5C2C2EF6BC9B",
+        "CD00DB3B-CFB7-42E2-8B1A-D12BE584037D",
+        "E89831AA-68B8-46A4-9781-5D3D41BF0DF1"
+      ],
+      "sourceSymbolId": [],
+      "spacing": {
+        "itemGap": 8,
+        "topMargin": 16
+      },
+      "states": {
+        "active": "single current page",
+        "disabled": "previous/next disabled at boundary",
+        "hover": "tokenized hover",
+        "loading": "lock page changes while data loads"
+      },
+      "typography": {
+        "fontSize": 14
+      }
+    },
+    "SearchPanel": {
+      "appearance": {
+        "cardBackgroundToken": "--theme-surface",
+        "cardBorder": "none",
+        "cardShadow": "none",
+        "controlBorderToken": "--dcp-control-border"
+      },
+      "category": "filter-form",
+      "componentName": "SearchPanel",
+      "confidence": "human-confirmed",
+      "dimensions": {
+        "cardRadius": 8,
+        "controlHeight": 32
+      },
+      "evidence": [
+        {
+          "id": "CD00DB3B-CFB7-42E2-8B1A-D12BE584037D",
+          "name": "预警记录-筛选展开",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "8371E3AC-3AFD-4F5C-9239-5C2C2EF6BC9B",
+          "name": "预警记录",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "6FDD8B32-79D3-466A-A243-04B2C469CB1D",
+          "name": "预警查询-预警查询（采监）",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "4117FD63-C212-482C-AE9D-495AE0AA1EE0",
+          "name": "预警查询-预警查询（采购人）",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "relativePath": "golden-demo/supervision-warning-supervise-query.html",
+          "type": "golden-demo"
+        }
+      ],
+      "layout": {
+        "actions": "reset then search on the right",
+        "relationship": "filters and table remain inside one work card",
+        "subtitle": "omit",
+        "titleCount": 1
+      },
+      "override": {
+        "applied": true,
+        "reason": "All filter controls are 32px and external spacing is 16px above and below."
+      },
+      "responsive": {
+        "actions": "keep grouped and visible",
+        "fields": "resize with card and wrap only when required"
+      },
+      "sketchObserved": {
+        "artboards": [
+          {
+            "frame": {
+              "height": 1132,
+              "width": 1440,
+              "x": -853,
+              "y": -2016
+            },
+            "id": "CD00DB3B-CFB7-42E2-8B1A-D12BE584037D",
+            "name": "预警记录-筛选展开"
+          },
+          {
+            "frame": {
+              "height": 1177,
+              "width": 1440,
+              "x": -2422,
+              "y": -2016
+            },
+            "id": "8371E3AC-3AFD-4F5C-9239-5C2C2EF6BC9B",
+            "name": "预警记录"
+          },
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": -3938,
+              "y": 686
+            },
+            "id": "6FDD8B32-79D3-466A-A243-04B2C469CB1D",
+            "name": "预警查询-预警查询（采监）"
+          },
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": -3938,
+              "y": -427
+            },
+            "id": "4117FD63-C212-482C-AE9D-495AE0AA1EE0",
+            "name": "预警查询-预警查询（采购人）"
+          }
+        ],
+        "symbols": []
+      },
+      "sourceArtboardId": [
+        "4117FD63-C212-482C-AE9D-495AE0AA1EE0",
+        "6FDD8B32-79D3-466A-A243-04B2C469CB1D",
+        "8371E3AC-3AFD-4F5C-9239-5C2C2EF6BC9B",
+        "CD00DB3B-CFB7-42E2-8B1A-D12BE584037D"
+      ],
+      "sourceSymbolId": [],
+      "spacing": {
+        "buttonGap": 8,
+        "cardPadding": 20,
+        "fieldGap": 16,
+        "fieldsToTable": 16,
+        "titleToFields": 16
+      },
+      "states": {
+        "disabled": "40% opacity and not-allowed cursor",
+        "focus": "tokenized focus ring",
+        "hover": "all interactive controls show tokenized hover",
+        "loading": "search button locks duplicate submission"
+      },
+      "typography": {
+        "controlFontSize": 14,
+        "labelFontSize": 14,
+        "titleFontSize": 18
+      }
+    },
+    "Sidebar": {
+      "appearance": {
+        "backgroundToken": "--theme-sidebar-gradient",
+        "hoverBackgroundToken": "--theme-sidebar-hover-white-8",
+        "iconColorToken": "--theme-white",
+        "indicatorToken": "--theme-white",
+        "selectedBackgroundToken": "--theme-sidebar-selected-white-12",
+        "shadow": "none"
+      },
+      "category": "page-shell-navigation",
+      "componentName": "Sidebar",
+      "confidence": "human-confirmed",
+      "dimensions": {
+        "menuItemHeight": 40,
+        "selectedIndicatorWidth": 3,
+        "width": 220
+      },
+      "evidence": [
+        {
+          "id": "8C7D3377-E2F6-4D45-8A91-82CE36598AE3",
+          "name": "4.导航定位/4.8侧边导航🟢/E菜单样式/1.带装饰条菜单/1级菜单/带图标/01 Normal",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "id": "6AA86917-CFC6-45C6-B2F9-FA122B8EE6B3",
+          "name": "4.导航定位/4.8侧边导航🟢/E菜单样式/1.带装饰条菜单/2级菜单/01 Normal",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "id": "A0138E62-F0EB-4E68-BE58-B5E39078E31B",
+          "name": "4.导航定位/4.8侧边导航🟢/E菜单样式/1.带装饰条菜单/2级菜单/03 select",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "id": "540EA192-3510-467F-8AC9-6E4A6896E60B",
+          "name": "4.导航定位/4.8侧边导航🟢/E菜单样式/1.带装饰条菜单/1级菜单/带图标//03 select",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "relativePath": "golden-demo/supervision-warning-supervise-query.html",
+          "type": "golden-demo"
+        }
+      ],
+      "layout": {
+        "position": "fixed left",
+        "scroll": "independent; do not scroll when menu content fits"
+      },
+      "override": {
+        "applied": true,
+        "reason": "Sidebar interaction states were confirmed against the detail-page demo."
+      },
+      "responsive": {
+        "height": "viewport height",
+        "width": "fixed"
+      },
+      "sketchObserved": {
+        "artboards": [],
+        "symbols": [
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [],
+              "observedFills": [
+                {
+                  "color": {
+                    "alpha": 0.0,
+                    "blue": 1.0,
+                    "green": 1.0,
+                    "red": 1.0
+                  },
+                  "fillType": 0
+                }
+              ],
+              "observedRadii": [
+                {
+                  "fixedRadius": 0
+                }
+              ],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 40,
+                "width": 220,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "height": 20,
+                "width": 164,
+                "x": 40,
+                "y": 10
+              },
+              {
+                "height": 16,
+                "width": 16,
+                "x": 192,
+                "y": 12
+              },
+              {
+                "height": 16,
+                "width": 16,
+                "x": 16,
+                "y": 12
+              }
+            ],
+            "frame": {
+              "height": 40,
+              "width": 220,
+              "x": 6178,
+              "y": 0
+            },
+            "id": "8C7D3377-E2F6-4D45-8A91-82CE36598AE3",
+            "name": "4.导航定位/4.8侧边导航🟢/E菜单样式/1.带装饰条菜单/1级菜单/带图标/01 Normal",
+            "resizingConstraint": 63,
+            "typography": [
+              {
+                "fontName": "PingFangSC-Regular",
+                "fontSize": 14,
+                "lineHeight": 20,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 1.0,
+                  "green": 1.0,
+                  "red": 1.0
+                }
+              }
+            ]
+          },
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [],
+              "observedFills": [
+                {
+                  "color": {
+                    "alpha": 0.0,
+                    "blue": 1.0,
+                    "green": 1.0,
+                    "red": 1.0
+                  },
+                  "fillType": 0
+                }
+              ],
+              "observedRadii": [
+                {
+                  "fixedRadius": 0
+                }
+              ],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 40,
+                "width": 220,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "height": 32,
+                "width": 96,
+                "x": 8,
+                "y": 4
+              },
+              {
+                "height": 16,
+                "width": 16,
+                "x": 192,
+                "y": 12
+              }
+            ],
+            "frame": {
+              "height": 40,
+              "width": 220,
+              "x": 6178,
+              "y": 140
+            },
+            "id": "6AA86917-CFC6-45C6-B2F9-FA122B8EE6B3",
+            "name": "4.导航定位/4.8侧边导航🟢/E菜单样式/1.带装饰条菜单/2级菜单/01 Normal",
+            "resizingConstraint": 63,
+            "typography": [
+              {
+                "fontName": "PingFangSC-Regular",
+                "fontSize": 14,
+                "lineHeight": 20,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 1.0,
+                  "green": 1.0,
+                  "red": 1.0
+                }
+              }
+            ]
+          },
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [],
+              "observedFills": [
+                {
+                  "color": {
+                    "alpha": 0.0917,
+                    "blue": 1.0,
+                    "green": 1.0,
+                    "red": 1.0
+                  },
+                  "fillType": 0
+                },
+                {
+                  "color": {
+                    "alpha": 1.0,
+                    "blue": 0.9922,
+                    "green": 0.4196,
+                    "red": 0.0
+                  },
+                  "fillType": 0
+                }
+              ],
+              "observedRadii": [
+                {
+                  "fixedRadius": 0
+                }
+              ],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 40,
+                "width": 220,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "height": 32,
+                "width": 96,
+                "x": 8,
+                "y": 4
+              },
+              {
+                "height": 16,
+                "width": 16,
+                "x": 192,
+                "y": 12
+              },
+              {
+                "height": 40,
+                "width": 4,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "frame": {
+              "height": 40,
+              "width": 220,
+              "x": 6178,
+              "y": 280
+            },
+            "id": "A0138E62-F0EB-4E68-BE58-B5E39078E31B",
+            "name": "4.导航定位/4.8侧边导航🟢/E菜单样式/1.带装饰条菜单/2级菜单/03 select",
+            "resizingConstraint": 63,
+            "typography": [
+              {
+                "fontName": "PingFangSC-Regular",
+                "fontSize": 14,
+                "lineHeight": 20,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 1.0,
+                  "green": 1.0,
+                  "red": 1.0
+                }
+              }
+            ]
+          },
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [],
+              "observedFills": [
+                {
+                  "color": {
+                    "alpha": 0.0917,
+                    "blue": 1.0,
+                    "green": 1.0,
+                    "red": 1.0
+                  },
+                  "fillType": 0
+                }
+              ],
+              "observedRadii": [
+                {
+                  "fixedRadius": 0
+                }
+              ],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 40,
+                "width": 220,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "height": 20,
+                "width": 164,
+                "x": 40,
+                "y": 10
+              },
+              {
+                "height": 16,
+                "width": 16,
+                "x": 192,
+                "y": 12
+              },
+              {
+                "height": 16,
+                "width": 16,
+                "x": 16,
+                "y": 12
+              }
+            ],
+            "frame": {
+              "height": 40,
+              "width": 220,
+              "x": 6178,
+              "y": 420
+            },
+            "id": "540EA192-3510-467F-8AC9-6E4A6896E60B",
+            "name": "4.导航定位/4.8侧边导航🟢/E菜单样式/1.带装饰条菜单/1级菜单/带图标//03 select",
+            "resizingConstraint": 63,
+            "typography": [
+              {
+                "fontName": "PingFangSC-Regular",
+                "fontSize": 14,
+                "lineHeight": 20,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 1.0,
+                  "green": 1.0,
+                  "red": 1.0
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "sourceArtboardId": [],
+      "sourceSymbolId": [
+        "540EA192-3510-467F-8AC9-6E4A6896E60B",
+        "6AA86917-CFC6-45C6-B2F9-FA122B8EE6B3",
+        "8C7D3377-E2F6-4D45-8A91-82CE36598AE3",
+        "A0138E62-F0EB-4E68-BE58-B5E39078E31B"
+      ],
+      "spacing": {
+        "childIndent": 32,
+        "menuItemHorizontalPadding": 20
+      },
+      "states": {
+        "collapsed": "white recolorable arrow points down",
+        "default": "transparent",
+        "expanded": "white recolorable arrow points up",
+        "hover": "white 8% overlay without indicator",
+        "selected": "white 12% overlay plus left indicator"
+      },
+      "typography": {
+        "fontSize": 14,
+        "textColorToken": "--theme-sidebar-text"
+      }
+    },
+    "StatusIndicator": {
+      "appearance": {
+        "background": "none",
+        "border": "none",
+        "dotColor": "semantic status token"
+      },
+      "category": "table-status-actions",
+      "componentName": "StatusIndicator",
+      "confidence": "human-confirmed",
+      "dimensions": {
+        "dotSize": 8,
+        "height": 20
+      },
+      "evidence": [
+        {
+          "id": "2A3DEC8F-B27B-410D-8CBA-46FC7A6F903E",
+          "name": "预警记录/状态/处理中",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "id": "2E1CA6FD-86C1-438C-B04A-3FA702DCE306",
+          "name": "预警记录/状态/纯文本",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "id": "1A4B3BF3-8B80-425E-942E-F81EC4579035",
+          "name": "预警记录/状态/已处理",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "id": "5A6BA72D-24E4-4B4C-B77E-CBC1D5A0E708",
+          "name": "预警记录/状态/已回复",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "id": "447BC7C2-1159-480F-B16D-1C0D1B13A9E3",
+          "name": "预警记录/状态/已通知",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "id": "855B63E3-28F8-4FB6-8CCC-CEA1BB48B2BE",
+          "name": "预警记录/状态/已撤回",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "id": "0B188981-C715-4EE3-89DC-94AAC34DEE48",
+          "name": "预警记录/状态/推送失败",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "id": "B4D3B402-B5FA-4DAB-B90E-508E85796CDA",
+          "name": "预警记录/状态/已核实",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-symbol"
+        },
+        {
+          "relativePath": "golden-demo/supervision-warning-supervise-query.html",
+          "type": "golden-demo"
+        }
+      ],
+      "layout": {
+        "alignment": "left",
+        "composition": "dot plus text",
+        "forbidden": [
+          "Tag fill",
+          "rounded container",
+          "close icon",
+          "click state"
+        ]
+      },
+      "override": {
+        "applied": true,
+        "reason": "Table lifecycle status is a dedicated status component, not Tag."
+      },
+      "responsive": {
+        "wrap": "forbidden for short lifecycle states"
+      },
+      "sketchObserved": {
+        "artboards": [],
+        "symbols": [
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [],
+              "observedFills": [
+                {
+                  "color": {
+                    "alpha": 1.0,
+                    "blue": 0.0309,
+                    "green": 0.4725,
+                    "red": 0.9684
+                  },
+                  "fillType": 0
+                }
+              ],
+              "observedRadii": [],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 20,
+                "width": 42,
+                "x": 10,
+                "y": 0
+              },
+              {
+                "height": 6,
+                "width": 6,
+                "x": 0,
+                "y": 7
+              }
+            ],
+            "frame": {
+              "height": 20,
+              "width": 56,
+              "x": 7190,
+              "y": 0
+            },
+            "id": "2A3DEC8F-B27B-410D-8CBA-46FC7A6F903E",
+            "name": "预警记录/状态/处理中",
+            "resizingConstraint": 63,
+            "typography": [
+              {
+                "fontName": "PingFangSC-Regular",
+                "fontSize": 14,
+                "lineHeight": 20,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 0.172,
+                  "green": 0.14,
+                  "red": 0.1256
+                }
+              }
+            ]
+          },
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [],
+              "observedFills": [],
+              "observedRadii": [],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 20,
+                "width": 42,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "frame": {
+              "height": 20,
+              "width": 56,
+              "x": 7190,
+              "y": 120
+            },
+            "id": "2E1CA6FD-86C1-438C-B04A-3FA702DCE306",
+            "name": "预警记录/状态/纯文本",
+            "resizingConstraint": 63,
+            "typography": [
+              {
+                "fontName": "PingFangSC-Regular",
+                "fontSize": 14,
+                "lineHeight": 20,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 0.172,
+                  "green": 0.14,
+                  "red": 0.1256
+                }
+              }
+            ]
+          },
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [],
+              "observedFills": [
+                {
+                  "color": {
+                    "alpha": 1.0,
+                    "blue": 0.4196,
+                    "green": 0.6784,
+                    "red": 0.0
+                  },
+                  "fillType": 0
+                }
+              ],
+              "observedRadii": [],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 20,
+                "width": 42,
+                "x": 10,
+                "y": 0
+              },
+              {
+                "height": 6,
+                "width": 6,
+                "x": 0,
+                "y": 7
+              }
+            ],
+            "frame": {
+              "height": 20,
+              "width": 56,
+              "x": 7190,
+              "y": 240
+            },
+            "id": "1A4B3BF3-8B80-425E-942E-F81EC4579035",
+            "name": "预警记录/状态/已处理",
+            "resizingConstraint": 63,
+            "typography": [
+              {
+                "fontName": "PingFangSC-Regular",
+                "fontSize": 14,
+                "lineHeight": 20,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 0.172,
+                  "green": 0.14,
+                  "red": 0.1256
+                }
+              }
+            ]
+          },
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [],
+              "observedFills": [
+                {
+                  "color": {
+                    "alpha": 1.0,
+                    "blue": 0.0309,
+                    "green": 0.4725,
+                    "red": 0.9684
+                  },
+                  "fillType": 0
+                }
+              ],
+              "observedRadii": [],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 20,
+                "width": 46,
+                "x": 10,
+                "y": 0
+              },
+              {
+                "height": 6,
+                "width": 6,
+                "x": 0,
+                "y": 7
+              }
+            ],
+            "frame": {
+              "height": 20,
+              "width": 56,
+              "x": 7190,
+              "y": 672
+            },
+            "id": "5A6BA72D-24E4-4B4C-B77E-CBC1D5A0E708",
+            "name": "预警记录/状态/已回复",
+            "resizingConstraint": 63,
+            "typography": [
+              {
+                "fontName": "PingFangSC-Regular",
+                "fontSize": 14,
+                "lineHeight": 20,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 0.172,
+                  "green": 0.14,
+                  "red": 0.1256
+                }
+              }
+            ]
+          },
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [],
+              "observedFills": [
+                {
+                  "color": {
+                    "alpha": 1.0,
+                    "blue": 1.0,
+                    "green": 0.3255,
+                    "red": 0.2627
+                  },
+                  "fillType": 0
+                }
+              ],
+              "observedRadii": [],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 20,
+                "width": 46,
+                "x": 10,
+                "y": 0
+              },
+              {
+                "height": 6,
+                "width": 6,
+                "x": 0,
+                "y": 7
+              }
+            ],
+            "frame": {
+              "height": 20,
+              "width": 56,
+              "x": 7190,
+              "y": 792
+            },
+            "id": "447BC7C2-1159-480F-B16D-1C0D1B13A9E3",
+            "name": "预警记录/状态/已通知",
+            "resizingConstraint": 63,
+            "typography": [
+              {
+                "fontName": "PingFangSC-Regular",
+                "fontSize": 14,
+                "lineHeight": 20,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 0.172,
+                  "green": 0.14,
+                  "red": 0.1256
+                }
+              }
+            ]
+          },
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [],
+              "observedFills": [
+                {
+                  "color": {
+                    "alpha": 1.0,
+                    "blue": 0.5993,
+                    "green": 0.5439,
+                    "red": 0.5144
+                  },
+                  "fillType": 0
+                }
+              ],
+              "observedRadii": [],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 20,
+                "width": 42,
+                "x": 10,
+                "y": 0
+              },
+              {
+                "height": 6,
+                "width": 6,
+                "x": 0,
+                "y": 7
+              }
+            ],
+            "frame": {
+              "height": 20,
+              "width": 56,
+              "x": 7190,
+              "y": 912
+            },
+            "id": "855B63E3-28F8-4FB6-8CCC-CEA1BB48B2BE",
+            "name": "预警记录/状态/已撤回",
+            "resizingConstraint": 63,
+            "typography": [
+              {
+                "fontName": "PingFangSC-Regular",
+                "fontSize": 14,
+                "lineHeight": 20,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 0.172,
+                  "green": 0.14,
+                  "red": 0.1256
+                }
+              }
+            ]
+          },
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [],
+              "observedFills": [
+                {
+                  "color": {
+                    "alpha": 1.0,
+                    "blue": 0.051,
+                    "green": 0.2275,
+                    "red": 0.9412
+                  },
+                  "fillType": 0
+                }
+              ],
+              "observedRadii": [],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 20,
+                "width": 56,
+                "x": 10,
+                "y": 0
+              },
+              {
+                "height": 6,
+                "width": 6,
+                "x": 0,
+                "y": 7
+              }
+            ],
+            "frame": {
+              "height": 20,
+              "width": 68,
+              "x": 9351,
+              "y": 0
+            },
+            "id": "0B188981-C715-4EE3-89DC-94AAC34DEE48",
+            "name": "预警记录/状态/推送失败",
+            "resizingConstraint": 63,
+            "typography": [
+              {
+                "fontName": "PingFangSC-Regular",
+                "fontSize": 14,
+                "lineHeight": 20,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 0.172,
+                  "green": 0.14,
+                  "red": 0.1256
+                }
+              }
+            ]
+          },
+          {
+            "appearance": {
+              "observedBlurs": [],
+              "observedBorders": [],
+              "observedFills": [
+                {
+                  "color": {
+                    "alpha": 1.0,
+                    "blue": 0.4196,
+                    "green": 0.6784,
+                    "red": 0.0
+                  },
+                  "fillType": 0
+                }
+              ],
+              "observedRadii": [],
+              "observedShadows": []
+            },
+            "class": "symbolMaster",
+            "directChildFrames": [
+              {
+                "height": 20,
+                "width": 46,
+                "x": 10,
+                "y": 0
+              },
+              {
+                "height": 6,
+                "width": 6,
+                "x": 0,
+                "y": 7
+              }
+            ],
+            "frame": {
+              "height": 20,
+              "width": 56,
+              "x": 7190,
+              "y": 1188
+            },
+            "id": "B4D3B402-B5FA-4DAB-B90E-508E85796CDA",
+            "name": "预警记录/状态/已核实",
+            "resizingConstraint": 63,
+            "typography": [
+              {
+                "fontName": "PingFangSC-Regular",
+                "fontSize": 14,
+                "lineHeight": 20,
+                "textColor": {
+                  "alpha": 1.0,
+                  "blue": 0.172,
+                  "green": 0.14,
+                  "red": 0.1256
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "sourceArtboardId": [],
+      "sourceSymbolId": [
+        "0B188981-C715-4EE3-89DC-94AAC34DEE48",
+        "1A4B3BF3-8B80-425E-942E-F81EC4579035",
+        "2A3DEC8F-B27B-410D-8CBA-46FC7A6F903E",
+        "2E1CA6FD-86C1-438C-B04A-3FA702DCE306",
+        "447BC7C2-1159-480F-B16D-1C0D1B13A9E3",
+        "5A6BA72D-24E4-4B4C-B77E-CBC1D5A0E708",
+        "855B63E3-28F8-4FB6-8CCC-CEA1BB48B2BE",
+        "B4D3B402-B5FA-4DAB-B90E-508E85796CDA"
+      ],
+      "spacing": {
+        "dotTextGap": 8
+      },
+      "states": {
+        "default": "display only",
+        "disabled": "not applicable",
+        "hover": "none"
+      },
+      "typography": {
+        "fontSize": 14,
+        "textColorToken": "--theme-text-secondary",
+        "whiteSpace": "nowrap"
+      }
+    },
+    "TopNavigation": {
+      "appearance": {
+        "backdropBlur": 6,
+        "backgroundToken": "--theme-topbar-bg-60",
+        "shadow": "none"
+      },
+      "category": "page-shell-navigation",
+      "componentName": "TopNavigation",
+      "confidence": "golden-demo-confirmed",
+      "dimensions": {
+        "height": 56,
+        "organizationSelectorHeight": 40
+      },
+      "evidence": [
+        {
+          "id": "CD00DB3B-CFB7-42E2-8B1A-D12BE584037D",
+          "name": "预警记录-筛选展开",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "8371E3AC-3AFD-4F5C-9239-5C2C2EF6BC9B",
+          "name": "预警记录",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "6FDD8B32-79D3-466A-A243-04B2C469CB1D",
+          "name": "预警查询-预警查询（采监）",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "4117FD63-C212-482C-AE9D-495AE0AA1EE0",
+          "name": "预警查询-预警查询（采购人）",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "8079E759-2356-40F7-B53C-E63D65326B9C",
+          "name": "预警查询-撤回",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "EF283AB9-4AF1-4765-810D-0A9AF4BCC159",
+          "name": "预警查询-流转日志",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "911A6217-896E-454B-96AB-CDB13A63E39E",
+          "name": "预警查询-核实完结",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "FAC5D152-CB18-43C7-A80F-B3E5F0B9CD05",
+          "name": "预警查询-发起督办",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "93811216-43EE-484E-A98F-4A9C214E8162",
+          "name": "预警查询-处理反馈",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "6A7FF0EA-00CB-489B-817D-0C9C080274D3",
+          "name": "数据归集",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "E89831AA-68B8-46A4-9781-5D3D41BF0DF1",
+          "name": "预警查询-我的督办（采购人）",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "2C802BEA-6E11-4AF4-BCB5-8C79112A8B98",
+          "name": "预警查询-我的督办（采监）",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "A40CFE91-1149-4FCA-A996-4201BD3737D9",
+          "name": "预警详情-无数据",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "id": "F548738A-9447-4C91-AF95-E642DF7611B6",
+          "name": "预警详情",
+          "relativePath": "references/sketch/监管平台.sketch",
+          "type": "sketch-artboard"
+        },
+        {
+          "relativePath": "golden-demo/supervision-warning-supervise-query.html",
+          "type": "golden-demo"
+        }
+      ],
+      "layout": {
+        "position": "sticky top of right region",
+        "stacking": "above content and page background"
+      },
+      "override": {
+        "applied": true,
+        "reason": "Top bar starts over the page background and uses 60% white plus 6px blur."
+      },
+      "responsive": {
+        "height": "fixed",
+        "width": "follow right content width"
+      },
+      "sketchObserved": {
+        "artboards": [
+          {
+            "frame": {
+              "height": 1132,
+              "width": 1440,
+              "x": -853,
+              "y": -2016
+            },
+            "id": "CD00DB3B-CFB7-42E2-8B1A-D12BE584037D",
+            "name": "预警记录-筛选展开"
+          },
+          {
+            "frame": {
+              "height": 1177,
+              "width": 1440,
+              "x": -2422,
+              "y": -2016
+            },
+            "id": "8371E3AC-3AFD-4F5C-9239-5C2C2EF6BC9B",
+            "name": "预警记录"
+          },
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": -3938,
+              "y": 686
+            },
+            "id": "6FDD8B32-79D3-466A-A243-04B2C469CB1D",
+            "name": "预警查询-预警查询（采监）"
+          },
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": -3938,
+              "y": -427
+            },
+            "id": "4117FD63-C212-482C-AE9D-495AE0AA1EE0",
+            "name": "预警查询-预警查询（采购人）"
+          },
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": 2354,
+              "y": -427
+            },
+            "id": "8079E759-2356-40F7-B53C-E63D65326B9C",
+            "name": "预警查询-撤回"
+          },
+          {
+            "frame": {
+              "height": 720,
+              "width": 1440,
+              "x": -792,
+              "y": 678
+            },
+            "id": "EF283AB9-4AF1-4765-810D-0A9AF4BCC159",
+            "name": "预警查询-流转日志"
+          },
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": 765,
+              "y": 678
+            },
+            "id": "911A6217-896E-454B-96AB-CDB13A63E39E",
+            "name": "预警查询-核实完结"
+          },
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": -792,
+              "y": -419
+            },
+            "id": "FAC5D152-CB18-43C7-A80F-B3E5F0B9CD05",
+            "name": "预警查询-发起督办"
+          },
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": 765,
+              "y": -419
+            },
+            "id": "93811216-43EE-484E-A98F-4A9C214E8162",
+            "name": "预警查询-处理反馈"
+          },
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": -3918,
+              "y": 2209
+            },
+            "id": "6A7FF0EA-00CB-489B-817D-0C9C080274D3",
+            "name": "数据归集"
+          },
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": -2349,
+              "y": -419
+            },
+            "id": "E89831AA-68B8-46A4-9781-5D3D41BF0DF1",
+            "name": "预警查询-我的督办（采购人）"
+          },
+          {
+            "frame": {
+              "height": 964,
+              "width": 1440,
+              "x": -2349,
+              "y": 686
+            },
+            "id": "2C802BEA-6E11-4AF4-BCB5-8C79112A8B98",
+            "name": "预警查询-我的督办（采监）"
+          },
+          {
+            "frame": {
+              "height": 1508,
+              "width": 1440,
+              "x": 4039,
+              "y": 678
+            },
+            "id": "A40CFE91-1149-4FCA-A996-4201BD3737D9",
+            "name": "预警详情-无数据"
+          },
+          {
+            "frame": {
+              "height": 1508,
+              "width": 1440,
+              "x": 2354,
+              "y": 678
+            },
+            "id": "F548738A-9447-4C91-AF95-E642DF7611B6",
+            "name": "预警详情"
+          }
+        ],
+        "symbols": []
+      },
+      "sourceArtboardId": [
+        "2C802BEA-6E11-4AF4-BCB5-8C79112A8B98",
+        "4117FD63-C212-482C-AE9D-495AE0AA1EE0",
+        "6A7FF0EA-00CB-489B-817D-0C9C080274D3",
+        "6FDD8B32-79D3-466A-A243-04B2C469CB1D",
+        "8079E759-2356-40F7-B53C-E63D65326B9C",
+        "8371E3AC-3AFD-4F5C-9239-5C2C2EF6BC9B",
+        "911A6217-896E-454B-96AB-CDB13A63E39E",
+        "93811216-43EE-484E-A98F-4A9C214E8162",
+        "A40CFE91-1149-4FCA-A996-4201BD3737D9",
+        "CD00DB3B-CFB7-42E2-8B1A-D12BE584037D",
+        "E89831AA-68B8-46A4-9781-5D3D41BF0DF1",
+        "EF283AB9-4AF1-4765-810D-0A9AF4BCC159",
+        "F548738A-9447-4C91-AF95-E642DF7611B6",
+        "FAC5D152-CB18-43C7-A80F-B3E5F0B9CD05"
+      ],
+      "sourceSymbolId": [],
+      "spacing": {
+        "horizontalPadding": 20
+      },
+      "states": {
+        "default": "translucent",
+        "dropdownOpen": "popup above page content"
+      },
+      "typography": {
+        "fontSize": 14,
+        "textColorToken": "--theme-text-primary"
+      }
+    }
+  },
+  "contractVersion": "1.0.0",
+  "normativeColorRule": "Normative appearance values must use existing Theme or DCP component tokens. Raw Sketch colors may appear only under sketchObserved evidence.",
+  "priority": [
+    "user-confirmed-rule",
+    "golden-demo",
+    "manual-override",
+    "sketch-extraction",
+    "dorami-protocol",
+    "generic-ai-judgement"
+  ],
+  "schemaVersion": "1.0.0",
+  "source": {
+    "locatorCandidates": [
+      "codex-skills/supervision-page-builder/references/sketch/监管平台.sketch",
+      "install/codex-skills/supervision-platform-ai-skill/references/sketch/监管平台.sketch",
+      "references/sketch/监管平台.sketch"
+    ],
+    "logicalPath": "references/sketch/监管平台.sketch",
+    "sha256": "8c8616df04b6994b181a7836076afe55150f3aa0c80c075fb563e3f2c8b05c23",
+    "sketchAppVersion": "93",
+    "sketchFormatVersion": 144
+  }
+}

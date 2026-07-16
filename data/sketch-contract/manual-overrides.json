@@ -1,0 +1,200 @@
+{
+  "schemaVersion": "1.0.0",
+  "priority": [
+    "user-confirmed-rule",
+    "golden-demo",
+    "manual-override",
+    "sketch-extraction",
+    "dorami-protocol",
+    "generic-ai-judgement"
+  ],
+  "components": {
+    "PageShell": {
+      "dimensions": {"minViewportWidth": 1366, "sidebarWidth": 220, "topbarHeight": 56, "contentMinWidth": 1146},
+      "spacing": {"pagePadding": 20, "moduleGap": 16},
+      "appearance": {"backgroundImage": "assets/bg.jpg", "backgroundPosition": "right region top", "backgroundRepeat": "no-repeat", "backgroundFallbackToken": "--theme-brand-1"},
+      "typography": {"uiFontToken": "--font-ui", "alphanumericFontToken": "--font-number"},
+      "states": {"default": "fixed sidebar and fluid right content"},
+      "layout": {"sidebar": "fixed width and independent scroll", "content": "fluid width and independent scroll", "belowMinimum": "keep 1366px canvas width and allow viewport horizontal scroll"},
+      "responsive": {"fluidProperties": ["right content width", "module width"], "fixedProperties": ["sidebar width", "topbar height", "component height"], "minimumTotalWidth": 1366},
+      "confidence": "human-confirmed",
+      "override": {"applied": true, "reason": "Confirmed adaptive platform shell and golden demo behavior."}
+    },
+    "TopNavigation": {
+      "dimensions": {"height": 56, "organizationSelectorHeight": 40},
+      "spacing": {"horizontalPadding": 20},
+      "appearance": {"backgroundToken": "--theme-topbar-bg-60", "backdropBlur": 6, "shadow": "none"},
+      "typography": {"fontSize": 14, "textColorToken": "--theme-text-primary"},
+      "states": {"default": "translucent", "dropdownOpen": "popup above page content"},
+      "layout": {"position": "sticky top of right region", "stacking": "above content and page background"},
+      "responsive": {"width": "follow right content width", "height": "fixed"},
+      "confidence": "golden-demo-confirmed",
+      "override": {"applied": true, "reason": "Top bar starts over the page background and uses 60% white plus 6px blur."}
+    },
+    "Sidebar": {
+      "dimensions": {"width": 220, "menuItemHeight": 40, "selectedIndicatorWidth": 3},
+      "spacing": {"menuItemHorizontalPadding": 20, "childIndent": 32},
+      "appearance": {"backgroundToken": "--theme-sidebar-gradient", "hoverBackgroundToken": "--theme-sidebar-hover-white-8", "selectedBackgroundToken": "--theme-sidebar-selected-white-12", "indicatorToken": "--theme-white", "iconColorToken": "--theme-white", "shadow": "none"},
+      "typography": {"fontSize": 14, "textColorToken": "--theme-sidebar-text"},
+      "states": {"default": "transparent", "hover": "white 8% overlay without indicator", "selected": "white 12% overlay plus left indicator", "expanded": "white recolorable arrow points up", "collapsed": "white recolorable arrow points down"},
+      "layout": {"position": "fixed left", "scroll": "independent; do not scroll when menu content fits"},
+      "responsive": {"width": "fixed", "height": "viewport height"},
+      "confidence": "human-confirmed",
+      "override": {"applied": true, "reason": "Sidebar interaction states were confirmed against the detail-page demo."}
+    },
+    "BusinessSwitch": {
+      "dimensions": {"outerHeight": 40, "innerHeight": 32, "outerPadding": 4},
+      "spacing": {"innerGap": 0, "equalInset": 4},
+      "appearance": {"outerFillToken": "--theme-frosted-white-60-100", "outerStrokeToken": "--theme-white", "outerStrokeMode": "inner", "outerRadius": 20, "innerRadius": 16, "selectedFillToken": "--theme-primary", "shadow": "none"},
+      "typography": {"fontSize": 14, "selectedTextToken": "--theme-white", "defaultTextToken": "--theme-text-secondary"},
+      "states": {"default": "unselected text", "hover": "tokenized low-emphasis hover", "selected": "filled active segment", "active": "sliding indicator animation"},
+      "layout": {"contentSync": "switch page content with selection", "indicator": "slide between equal-width segments"},
+      "responsive": {"height": "fixed", "segmentWidth": "equal within component"},
+      "confidence": "human-confirmed",
+      "override": {"applied": true, "reason": "Outer frame stays 40px, inner item stays 32px, uses no shadow."}
+    },
+    "MetricCard": {
+      "dimensions": {"referenceWidth": 224, "referenceHeight": 106, "radius": 4},
+      "spacing": {"padding": 16, "contentGap": 8},
+      "appearance": {"fillToken": "--theme-frosted-white-60-100", "strokeToken": "--theme-white", "backdropBlur": 6, "shadow": "none"},
+      "typography": {"numberFontToken": "--font-number", "numberFirst": true, "labelFontSize": 14},
+      "states": {"default": "display only", "hover": "none unless the product explicitly adds interaction"},
+      "layout": {"order": ["number", "status dot and label"], "title": "no separate section title"},
+      "responsive": {"width": "stretch evenly with sibling cards", "height": "fixed"},
+      "confidence": "human-confirmed",
+      "override": {"applied": true, "reason": "Metric cards are non-clickable frosted display cards by default."}
+    },
+    "SearchPanel": {
+      "dimensions": {"controlHeight": 32, "cardRadius": 8},
+      "spacing": {"cardPadding": 20, "titleToFields": 16, "fieldsToTable": 16, "fieldGap": 16, "buttonGap": 8},
+      "appearance": {"cardBackgroundToken": "--theme-surface", "cardBorder": "none", "cardShadow": "none", "controlBorderToken": "--dcp-control-border"},
+      "typography": {"titleFontSize": 18, "labelFontSize": 14, "controlFontSize": 14},
+      "states": {"hover": "all interactive controls show tokenized hover", "focus": "tokenized focus ring", "disabled": "40% opacity and not-allowed cursor", "loading": "search button locks duplicate submission"},
+      "layout": {"titleCount": 1, "subtitle": "omit", "relationship": "filters and table remain inside one work card", "actions": "reset then search on the right"},
+      "responsive": {"fields": "resize with card and wrap only when required", "actions": "keep grouped and visible"},
+      "confidence": "human-confirmed",
+      "override": {"applied": true, "reason": "All filter controls are 32px and external spacing is 16px above and below."}
+    },
+    "Button": {
+      "dimensions": {
+        "sizes": {
+          "28": {"height": 28, "fontSize": 12, "horizontalPadding": 12, "minWidthText": 56, "minWidthIconText": 76},
+          "32": {"height": 32, "fontSize": 14, "horizontalPadding": 12, "minWidthText": 64, "minWidthIconText": 84},
+          "36": {"height": 36, "fontSize": 14, "horizontalPadding": 16, "minWidthText": 72, "minWidthIconText": 92},
+          "40": {"height": 40, "fontSize": 16, "horizontalPadding": 16, "minWidthText": 80, "minWidthIconText": 96},
+          "44": {"height": 44, "fontSize": 16, "horizontalPadding": 20, "minWidthText": 88, "minWidthIconText": 104},
+          "48": {"height": 48, "fontSize": 16, "horizontalPadding": 20, "minWidthText": 96, "minWidthIconText": 108}
+        },
+        "radius": 4
+      },
+      "spacing": {"iconTextGap": 4, "sameGroupGap": 8, "controlGroupGap": 16},
+      "appearance": {"primary": "--dcp-button-primary-*", "secondary": "--dcp-button-secondary-*", "danger": "--dcp-button-danger-*", "disabledOpacity": 0.4},
+      "typography": {"weight": 400, "fontBySize": "see dimensions.sizes"},
+      "states": {"hover": "use component hover token", "focus": "visible focus ring", "active": "pressed token", "disabled": "40% opacity and no action", "loading": "show loading and lock repeat click"},
+      "layout": {"rowActionPrimaryLimit": 1, "rowActionDirectLimit": 3, "overflow": "use More menu", "danger": "never solid primary"},
+      "responsive": {"width": "content adaptive but not below minimum width", "height": "fixed by size"},
+      "confidence": "human-confirmed",
+      "override": {"applied": true, "reason": "Exact button size, padding and table-action hierarchy were confirmed from the backend component rules."}
+    },
+    "DataTable": {
+      "dimensions": {"width": "100%", "headerHeight": 48, "singleLineRowMinHeight": 56, "headerTopRadius": 4, "operationColumnWidth": 224},
+      "spacing": {"cellPaddingTop": 14, "cellPaddingBottom": 14, "cellHorizontalPadding": 16, "rowActionGap": 8},
+      "appearance": {"headerBackgroundToken": "--theme-table-header", "rowDividerToken": "--theme-divider", "headerTopDivider": "none", "headerBottomDivider": "none", "outerBorder": "none"},
+      "typography": {"headerFontSize": 14, "bodyFontSize": 14, "cellVerticalAlign": "top", "statusWhiteSpace": "nowrap"},
+      "states": {"loading": "table-local loading", "empty": "quiet local Empty", "filteredEmpty": "preserve filters and show filtered empty", "error": "retryable table-local error", "selection": "selected rows enable valid batch actions"},
+      "layout": {"tableLayout": "fixed", "operationColumn": "fixed width right column", "otherColumns": "stretch proportionally from parent card width", "multiline": "expand downward while preserving 14px vertical padding", "time": "independent column", "status": "StatusIndicator only"},
+      "responsive": {"measurement": "observe parent work-card width", "fluidProperties": ["all non-operation column widths"], "fixedProperties": ["operation column width", "row minimum height"], "overflow": "remain inside work card; use internal overflow only as guard"},
+      "confidence": "human-confirmed",
+      "override": {"applied": true, "reason": "Latest confirmed table contract replaces legacy 44px metrics and intrinsic-width behavior."}
+    },
+    "StatusIndicator": {
+      "dimensions": {"height": 20, "dotSize": 8},
+      "spacing": {"dotTextGap": 8},
+      "appearance": {"background": "none", "border": "none", "dotColor": "semantic status token"},
+      "typography": {"fontSize": 14, "textColorToken": "--theme-text-secondary", "whiteSpace": "nowrap"},
+      "states": {"default": "display only", "hover": "none", "disabled": "not applicable"},
+      "layout": {"alignment": "left", "composition": "dot plus text", "forbidden": ["Tag fill", "rounded container", "close icon", "click state"]},
+      "responsive": {"wrap": "forbidden for short lifecycle states"},
+      "confidence": "human-confirmed",
+      "override": {"applied": true, "reason": "Table lifecycle status is a dedicated status component, not Tag."}
+    },
+    "Pagination": {
+      "dimensions": {"controlHeight": 32, "radius": 4},
+      "spacing": {"itemGap": 8, "topMargin": 16},
+      "appearance": {"activeToken": "--dcp-pagination-active-*", "borderToken": "--dcp-pagination-border"},
+      "typography": {"fontSize": 14},
+      "states": {"hover": "tokenized hover", "active": "single current page", "disabled": "previous/next disabled at boundary", "loading": "lock page changes while data loads"},
+      "layout": {"alignment": "right", "content": ["total", "previous", "page numbers", "next"]},
+      "responsive": {"wrap": "keep as one group; simplify page numbers when space is constrained"},
+      "confidence": "manual-calibrated",
+      "override": {"applied": true, "reason": "Aligned with Dorami pagination and current golden demo."}
+    },
+    "Modal": {
+      "dimensions": {"confirmWidth": 400, "defaultWidth": 520, "formWidth": 640, "maxWidth": "calc(100vw - 48px)", "maxHeight": "calc(100vh - 48px)", "radius": 12, "footerButtonHeight": 32, "closeIconSize": 16},
+      "spacing": {"headerPadding": 24, "bodyPadding": 24, "footerPadding": 24, "footerButtonGap": 8},
+      "appearance": {"backgroundToken": "--theme-surface", "divider": "none", "overlayToken": "--dcp-overlay-mask", "closeIcon": "assets/icons/close.svg"},
+      "typography": {"titleFontSize": 18, "bodyFontSize": 14},
+      "states": {"open": "focus enters modal", "validationError": "keep modal open and focus first error", "submitting": "primary loading and duplicate submit locked", "submitFailed": "keep input and show error", "close": "icon, Escape or mask according to risk"},
+      "layout": {"header": "stable", "body": "scroll when content exceeds max height", "footer": "stable and right aligned", "closeControl": "icon only"},
+      "responsive": {"width": "use size variant up to maxWidth", "bodyScroll": "internal"},
+      "confidence": "manual-calibrated",
+      "override": {"applied": true, "reason": "Base Modal shell follows Dorami; supervision theme only supplies atomic tokens."}
+    },
+    "Drawer": {
+      "dimensions": {"defaultWidth": 520, "wideWidth": 640, "maxWidth": "90vw", "radius": 12, "closeIconSize": 16},
+      "spacing": {"headerPadding": 24, "bodyPadding": 24, "footerPadding": 24},
+      "appearance": {"backgroundToken": "--theme-surface", "divider": "none", "overlayToken": "--dcp-overlay-mask", "closeIcon": "assets/icons/close.svg"},
+      "typography": {"titleFontSize": 18, "bodyFontSize": 14},
+      "states": {"open": "focus enters drawer", "loading": "body-local loading", "close": "restore focus to trigger", "disabledAction": "show reason with Tooltip when required"},
+      "layout": {"placement": "right", "header": "stable", "body": "independent scroll", "footer": "stable when actions exist", "closeControl": "icon only"},
+      "responsive": {"width": "variant width up to maxWidth", "height": "viewport height"},
+      "confidence": "manual-calibrated",
+      "override": {"applied": true, "reason": "Base Drawer shell follows Dorami; business content remains in slots."}
+    },
+    "DescriptionList": {
+      "dimensions": {"singleLineHeight": 48, "multiLineMinHeight": 68, "labelReferenceWidth": 112, "contentReferenceWidth": 216},
+      "spacing": {"cellHorizontalPadding": 16, "cellVerticalPadding": 12},
+      "appearance": {"backgroundToken": "--theme-surface", "borderToken": "--theme-divider", "radius": 4},
+      "typography": {"labelFontSize": 14, "valueFontSize": 14, "labelColorToken": "--theme-text-secondary", "valueColorToken": "--theme-text-primary"},
+      "states": {"emptyValue": "use a consistent dash", "truncated": "show full value in Tooltip", "link": "preserve row height"},
+      "layout": {"label": "fixed reference width", "value": "fluid and top aligned", "multiline": "expand downward"},
+      "responsive": {"valueWidth": "fluid", "labelWidth": "fixed unless page pattern explicitly changes columns"},
+      "confidence": "sketch-and-manual-confirmed",
+      "override": {"applied": true, "reason": "Uses Sketch description-list dimensions plus confirmed inline-link behavior."}
+    }
+  },
+  "knownConflicts": [
+    {
+      "component": "DataTable",
+      "property": "dimensions.singleLineRowMinHeight",
+      "candidates": [{"value": 44, "source": "legacy data/design-token.json"}, {"value": 56, "source": "user-confirmed rule and golden demo"}],
+      "resolution": 56,
+      "status": "resolved",
+      "reason": "Use the latest confirmed single-line table height."
+    },
+    {
+      "component": "DataTable",
+      "property": "dimensions.headerHeight",
+      "candidates": [{"value": 44, "source": "legacy data/design-token.json"}, {"value": 48, "source": "current supervision component contract"}],
+      "resolution": 48,
+      "status": "resolved",
+      "reason": "Keep the current table header metric and remove header divider lines."
+    },
+    {
+      "component": "SearchPanel",
+      "property": "dimensions.controlHeight",
+      "candidates": [{"value": 40, "source": "earlier demo controls"}, {"value": 32, "source": "latest user-confirmed filter rule"}],
+      "resolution": 32,
+      "status": "resolved",
+      "reason": "All filter inputs, selects and buttons use 32px."
+    },
+    {
+      "component": "BusinessSwitch",
+      "property": "appearance.shadow",
+      "candidates": [{"value": "shadow", "source": "earlier demo"}, {"value": "none", "source": "latest user annotation"}],
+      "resolution": "none",
+      "status": "resolved",
+      "reason": "The scope switch has no shadow."
+    }
+  ]
+}

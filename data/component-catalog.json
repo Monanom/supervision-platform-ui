@@ -38,7 +38,6 @@
       "TrendChart 缺少图表类型、状态色和坐标规则。",
       "AnalysisPanel 缺少结构定义。",
       "Timeline 缺少操作记录字段结构。",
-      "Pagination 缺少尺寸和位置规则。",
       "FormGroup 与 ActionBar 缺少表单布局细则。"
     ]
   },

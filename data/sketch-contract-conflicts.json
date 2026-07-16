@@ -1,0 +1,81 @@
+{
+  "conflicts": [
+    {
+      "candidates": [
+        {
+          "source": "legacy data/design-token.json",
+          "value": 44
+        },
+        {
+          "source": "user-confirmed rule and golden demo",
+          "value": 56
+        }
+      ],
+      "component": "DataTable",
+      "property": "dimensions.singleLineRowMinHeight",
+      "reason": "Use the latest confirmed single-line table height.",
+      "resolution": 56,
+      "status": "resolved"
+    },
+    {
+      "candidates": [
+        {
+          "source": "legacy data/design-token.json",
+          "value": 44
+        },
+        {
+          "source": "current supervision component contract",
+          "value": 48
+        }
+      ],
+      "component": "DataTable",
+      "property": "dimensions.headerHeight",
+      "reason": "Keep the current table header metric and remove header divider lines.",
+      "resolution": 48,
+      "status": "resolved"
+    },
+    {
+      "candidates": [
+        {
+          "source": "earlier demo controls",
+          "value": 40
+        },
+        {
+          "source": "latest user-confirmed filter rule",
+          "value": 32
+        }
+      ],
+      "component": "SearchPanel",
+      "property": "dimensions.controlHeight",
+      "reason": "All filter inputs, selects and buttons use 32px.",
+      "resolution": 32,
+      "status": "resolved"
+    },
+    {
+      "candidates": [
+        {
+          "source": "earlier demo",
+          "value": "shadow"
+        },
+        {
+          "source": "latest user annotation",
+          "value": "none"
+        }
+      ],
+      "component": "BusinessSwitch",
+      "property": "appearance.shadow",
+      "reason": "The scope switch has no shadow.",
+      "resolution": "none",
+      "status": "resolved"
+    }
+  ],
+  "priority": [
+    "user-confirmed-rule",
+    "golden-demo",
+    "manual-override",
+    "sketch-extraction",
+    "dorami-protocol",
+    "generic-ai-judgement"
+  ],
+  "schemaVersion": "1.0.0"
+}

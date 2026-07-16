@@ -1,0 +1,1555 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>预警查询 / 督办查询</title>
+  <style>
+    :root {
+      --brand-1: #F7F7FF;
+      --brand-2: #EEF0FF;
+      --brand-3: #E3E7FF;
+      --brand-4: #CED4FF;
+      --brand-5: #B0B8FF;
+      --brand-6: #8691FF;
+      --brand-7: #5D6AFF;
+      --brand-8: #4353FF;
+      --brand-9: #2C0DF1;
+      --brand-10: #1B00C7;
+      --nav-gradient-start: #181C4F;
+      --nav-gradient-end: #394183;
+      --gray-1: #F7F8FA;
+      --gray-2: #F2F4F7;
+      --gray-3: #ECEEF2;
+      --gray-4: #E3E6EB;
+      --gray-5: #D8DCE2;
+      --gray-6: #C2C7D1;
+      --gray-7: #A7AEBB;
+      --gray-8: #838B99;
+      --gray-9: #505663;
+      --gray-10: #20242C;
+      --theme-primary: var(--brand-8);
+      --theme-primary-hover: var(--brand-7);
+      --theme-primary-active: var(--brand-9);
+      --theme-primary-deep: var(--brand-10);
+      --theme-bg: var(--brand-1);
+      --theme-bg-soft: var(--brand-1);
+      --theme-bg-tint: var(--brand-2);
+      --theme-bg-image: url("../../assets/bg.jpg");
+      --theme-surface: #FFFFFF;
+      --theme-surface-metric-from: rgba(255,255,255,.60);
+      --theme-surface-metric-to: #FFFFFF;
+      --theme-border: var(--gray-4);
+      --theme-border-soft: var(--gray-3);
+      --theme-table-head: var(--gray-1);
+      --theme-text: var(--gray-10);
+      --theme-text-secondary: var(--gray-9);
+      --theme-text-muted: var(--gray-8);
+      --theme-nav-start: var(--nav-gradient-start);
+      --theme-nav-end: var(--nav-gradient-end);
+      --theme-focus-ring: rgba(67,83,255,.10);
+      --theme-overlay: rgba(32,36,44,.45);
+      --theme-success: #00B552;
+      --theme-warning: #F0770B;
+      --theme-danger: #DF1F1F;
+      --theme-surface-72: rgba(255,255,255,.72);
+      --theme-surface-08: rgba(255,255,255,.08);
+      --theme-surface-76: rgba(255,255,255,.76);
+      --theme-surface-66: rgba(255,255,255,.66);
+      --theme-surface-transparent: rgba(255,255,255,0);
+      --theme-nav-subtle: rgba(0,0,0,.10);
+      --theme-nav-hover: color-mix(in srgb, var(--theme-surface) 8%, transparent);
+      --theme-nav-active: color-mix(in srgb, var(--theme-surface) 12%, transparent);
+      --theme-primary-95: rgba(67,83,255,.95);
+      --theme-primary-45: rgba(67,83,255,.45);
+      --theme-primary-14: rgba(67,83,255,.14);
+      --theme-primary-13: rgba(51,137,253,.13);
+      --theme-primary-08: rgba(67,83,255,.08);
+      --theme-shadow-soft: rgba(24,28,79,.08);
+      --theme-shadow-focus: rgba(24,28,79,.14);
+      --theme-shadow-elevated: rgba(24,28,79,.18);
+      --dcp-radius-sm: 4px;
+      --dcp-radius-lg: 8px;
+      --dcp-control-height-sm: 28px;
+      --dcp-control-height-md: 32px;
+      --dcp-control-height-lg: 40px;
+      --dcp-modal-bg: var(--theme-surface);
+      --dcp-modal-mask-bg: var(--theme-overlay);
+      --dcp-modal-shadow: 0 16px 48px var(--theme-shadow-elevated);
+      --dcp-modal-close-size: 32px;
+      --dcp-modal-close-offset: 12px;
+      --dcp-modal-footer-button-height: 32px;
+      --table-code-width: 15%;
+      --table-related-width: 24%;
+      --table-target-width: 26%;
+      --table-time-width: 18%;
+      --table-status-width: 9%;
+      --table-action-width: 220px;
+      --font-number: "D-DIN-PRO-Numeric";
+      --theme-text-disabled: var(--gray-6);
+      --success: var(--theme-success);
+      --warning: var(--theme-warning);
+      --danger: var(--theme-danger);
+      --blue: var(--brand-7);
+      --glass: var(--theme-surface-72);
+      --glass-strong: var(--theme-surface);
+      --glass-soft: var(--theme-surface-metric-from);
+      --shadow-soft: 0 8px 24px var(--theme-shadow-soft);
+      --primary: var(--theme-primary);
+      --primary-hover: var(--theme-primary-hover);
+      --page: var(--theme-bg);
+      --surface: var(--theme-surface);
+      --soft: var(--theme-table-head);
+      --soft-blue: var(--theme-bg-soft);
+      --border: var(--theme-border);
+      --text: var(--theme-text);
+      --sub: var(--theme-text-secondary);
+      --muted: var(--theme-text-muted);
+    }
+
+    @font-face {
+      font-family: "D-DIN-PRO-Numeric";
+      src: url("../../assets/fonts/D-DIN-PRO-400-Regular.otf") format("opentype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+      unicode-range: U+0030-0039, U+0025, U+002C, U+002D, U+002E, U+002F, U+003A, U+FF10-FF19;
+    }
+
+    @font-face {
+      font-family: "D-DIN-PRO-Numeric";
+      src: url("../../assets/fonts/D-DIN-PRO-500-Medium.otf") format("opentype");
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+      unicode-range: U+0030-0039, U+0025, U+002C, U+002D, U+002E, U+002F, U+003A, U+FF10-FF19;
+    }
+
+    @font-face {
+      font-family: "D-DIN-PRO-Numeric";
+      src: url("../../assets/fonts/D-DIN-PRO-600-SemiBold.otf") format("opentype");
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+      unicode-range: U+0030-0039, U+0025, U+002C, U+002D, U+002E, U+002F, U+003A, U+FF10-FF19;
+    }
+
+    @font-face {
+      font-family: "D-DIN-PRO-Numeric";
+      src: url("../../assets/fonts/D-DIN-PRO-700-Bold.otf") format("opentype");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+      unicode-range: U+0030-0039, U+0025, U+002C, U+002D, U+002E, U+002F, U+003A, U+FF10-FF19;
+    }
+
+    @font-face {
+      font-family: "D-DIN-PRO-Numeric";
+      src: url("../../assets/fonts/D-DIN-PRO-800-ExtraBold.otf") format("opentype");
+      font-weight: 800;
+      font-style: normal;
+      font-display: swap;
+      unicode-range: U+0030-0039, U+0025, U+002C, U+002D, U+002E, U+002F, U+003A, U+FF10-FF19;
+    }
+
+    @font-face {
+      font-family: "D-DIN-PRO-Numeric";
+      src: url("../../assets/fonts/D-DIN-PRO-900-Heavy.otf") format("opentype");
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+      unicode-range: U+0030-0039, U+0025, U+002C, U+002D, U+002E, U+002F, U+003A, U+FF10-FF19;
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      font-family: var(--font-number), "PingFang SC", -apple-system, BlinkMacSystemFont, "Microsoft YaHei", sans-serif;
+      color: var(--theme-text);
+      background: var(--theme-bg);
+      font-size: 14px;
+    }
+
+    body { min-width: 1366px; }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible,
+    [role="button"]:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 3px var(--theme-focus-ring);
+    }
+
+    .app {
+      min-height: 100vh;
+      min-width: 1366px;
+      display: flex;
+      background: var(--theme-bg);
+    }
+
+    .side {
+      width: 220px;
+      flex: 0 0 220px;
+      background: linear-gradient(180deg, var(--nav-gradient-start) 0%, var(--nav-gradient-end) 100%);
+      color: var(--theme-surface-72);
+    }
+
+    .logo {
+      height: 56px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 18px;
+      color: var(--theme-surface);
+      font-size: 16px;
+      font-weight: 600;
+      border-bottom: 1px solid var(--theme-surface-08);
+    }
+
+    .logo-mark {
+      width: 24px;
+      height: 24px;
+      display: block;
+      flex: 0 0 24px;
+      border-radius: 4px;
+      object-fit: contain;
+    }
+
+    .icon {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      vertical-align: middle;
+      flex: 0 0 auto;
+    }
+
+    .icon-sm {
+      width: 12px;
+      height: 12px;
+    }
+
+    .icon-mask {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      flex: 0 0 auto;
+      background: transparent var(--icon-url) center / contain no-repeat;
+    }
+
+    .icon-mask.icon-sm {
+      width: 12px;
+      height: 12px;
+    }
+
+    .icon-down {
+      --icon-url: url("../../assets/icons/arrow-down.svg");
+    }
+
+    .icon-up {
+      --icon-url: url("../../assets/icons/arrow-up.svg");
+    }
+
+    .icon-close {
+      --icon-url: url("../../assets/icons/close.svg");
+    }
+
+    .nav {
+      padding: 12px 0;
+    }
+
+    .nav-parent,
+    .nav-item {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 18px;
+      color: var(--theme-surface-76);
+      cursor: pointer;
+      transition: background-color .16s ease, color .16s ease;
+    }
+
+    .nav-parent {
+      justify-content: space-between;
+    }
+
+    .side .icon-mask {
+      color: var(--theme-surface);
+      opacity: 1;
+      filter: brightness(0) invert(1);
+    }
+
+    .nav-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-sub {
+      padding: 2px 0;
+      background: var(--theme-nav-subtle);
+    }
+
+    .nav-sub .nav-item {
+      padding-left: 52px;
+      color: var(--theme-surface-66);
+    }
+
+    .nav-parent:hover,
+    .nav-item:hover {
+      background: var(--theme-nav-hover);
+      color: var(--theme-surface);
+    }
+
+    .nav-sub .nav-item:hover {
+      background: var(--theme-nav-hover);
+      color: var(--theme-surface);
+    }
+
+    .nav-item.active {
+      position: relative;
+      background: var(--theme-nav-active);
+      color: var(--theme-surface);
+      font-weight: 500;
+    }
+
+    .nav-item.active::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 3px;
+      height: 40px;
+      border-radius: 0 2px 2px 0;
+      background: var(--theme-surface);
+    }
+
+    .main {
+      flex: 1;
+      min-width: calc(1366px - 220px);
+      display: flex;
+      flex-direction: column;
+      background-color: var(--theme-bg);
+      background-image: var(--theme-bg-image);
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: 100% auto;
+    }
+
+    .top {
+      position: relative;
+      z-index: 20;
+      height: 56px;
+      flex: 0 0 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      background: var(--theme-surface-metric-from);
+      border-bottom: 0;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    .top-left,
+    .top-right,
+    .user {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .dcp-input,
+    .select,
+    .input {
+      height: 40px;
+      border: 1px solid var(--theme-border);
+      border-radius: 4px;
+      background: var(--theme-surface-72);
+      color: var(--theme-text);
+      outline: none;
+      box-shadow: none;
+    }
+
+    .dcp-input:focus,
+    .select:focus,
+    .input:focus {
+      border-color: var(--theme-primary-45);
+      box-shadow: 0 0 0 3px var(--theme-focus-ring);
+    }
+
+    .top .select,
+    .top .custom-select {
+      width: 220px;
+      height: 40px;
+      padding: 0 12px;
+    }
+
+    .top-link {
+      color: var(--theme-text-secondary);
+      cursor: pointer;
+      transition: color .16s ease;
+    }
+
+    .top-link:hover {
+      color: var(--theme-primary);
+    }
+
+    .divider {
+      width: 1px;
+      height: 18px;
+      background: var(--theme-border);
+    }
+
+    .avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gray-3);
+      color: var(--theme-text-secondary);
+      font-weight: 600;
+    }
+
+    .user-info strong {
+      display: block;
+      line-height: 18px;
+      font-weight: 600;
+    }
+
+    .user-info span {
+      display: block;
+      color: var(--theme-text-muted);
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    .content {
+      flex: 1;
+      padding: 24px 20px;
+      overflow: auto;
+      background: transparent;
+      position: relative;
+    }
+
+    .workspace {
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-head {
+      height: 52px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 36px;
+      font-weight: 600;
+    }
+
+    .switch {
+      position: relative;
+      height: 40px;
+      display: inline-flex;
+      align-items: center;
+      padding: 4px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, var(--theme-surface-metric-from), var(--theme-surface-metric-to));
+      border: 0;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      box-shadow: inset 0 0 0 1px var(--theme-surface);
+    }
+
+    .switch::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 4px;
+      width: 96px;
+      height: 32px;
+      border-radius: 20px;
+      background: var(--theme-primary);
+      transition: transform .2s ease;
+    }
+
+    .switch[data-active="supervise"]::before {
+      transform: translateX(96px);
+    }
+
+    .switch button {
+      position: relative;
+      z-index: 1;
+      width: 96px;
+      height: 32px;
+      border: 0;
+      border-radius: 20px;
+      background: transparent;
+      color: var(--theme-text-secondary);
+      cursor: pointer;
+      transition: color .2s ease;
+    }
+
+    .switch button:not(.active):hover {
+      color: var(--theme-primary);
+    }
+
+    .switch button.active {
+      color: var(--theme-surface);
+    }
+
+    .overview {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .metric {
+      min-height: 104px;
+      padding: 16px 18px;
+      border: 1px solid var(--theme-surface);
+      border-radius: 4px;
+      background: linear-gradient(180deg, var(--theme-surface-metric-from), var(--theme-surface-metric-to));
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      box-shadow: none;
+    }
+
+    .metric-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--theme-text-secondary);
+      line-height: 20px;
+    }
+
+    .metric-value {
+      margin-top: 0;
+      font-size: 32px;
+      line-height: 36px;
+      font-weight: 600;
+      color: var(--theme-text);
+    }
+
+    .metric-hint {
+      margin-top: 8px;
+      color: var(--theme-text-muted);
+      font-size: 12px;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      display: inline-block;
+      margin-right: 6px;
+      border-radius: 50%;
+      background: var(--theme-primary);
+      vertical-align: middle;
+    }
+
+    .dot.reply { background: var(--brand-7); }
+    .dot.done { background: var(--theme-success); }
+    .dot.cancel { background: var(--theme-text-muted); }
+
+    .card {
+      border: 0;
+      border-radius: 8px;
+      background: var(--theme-surface);
+      box-shadow: none;
+    }
+
+    .work-card {
+      padding: 20px 24px;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+
+    .filter-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .filter-title h2 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 28px;
+      font-weight: 600;
+    }
+
+    .filter-title span {
+      color: var(--theme-text-muted);
+      font-size: 12px;
+    }
+
+    .filter-row {
+      height: 32px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 16px;
+    }
+
+    .field {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .field label {
+      white-space: nowrap;
+      color: var(--theme-text-secondary);
+    }
+
+    .field .input,
+    .field .select,
+    .field .custom-select {
+      width: 220px;
+      padding: 0 12px;
+    }
+
+    .filter-row .dcp-input,
+    .filter-row .input,
+    .filter-row .dcp-select,
+    .filter-row .custom-select,
+    .filter-row .dcp-button,
+    .filter-row .btn {
+      height: 32px;
+    }
+
+    .filter-row .dcp-select-menu,
+    .filter-row .custom-select-menu {
+      top: 36px;
+    }
+
+    .dcp-select,
+    .custom-select {
+      position: relative;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid var(--theme-border);
+      border-radius: 4px;
+      background: var(--theme-surface-72);
+      color: var(--theme-text);
+      cursor: pointer;
+      transition: border-color .16s ease, box-shadow .16s ease, background-color .16s ease;
+    }
+
+    .dcp-select:hover,
+    .custom-select:hover {
+      border-color: var(--theme-primary-45);
+      background: var(--theme-surface);
+    }
+
+    .dcp-select .icon,
+    .custom-select .icon {
+      margin-left: auto;
+      opacity: .72;
+    }
+
+    .dcp-select.open,
+    .custom-select.open {
+      border-color: var(--theme-primary-45);
+      box-shadow: 0 0 0 3px var(--theme-focus-ring);
+    }
+
+    .dcp-select-menu,
+    .custom-select-menu {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 44px;
+      z-index: 60;
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      padding: 6px;
+      border-radius: 8px;
+      background: var(--theme-surface);
+      box-shadow: 0 8px 24px var(--theme-shadow-focus);
+    }
+
+    .dcp-select.open .dcp-select-menu,
+    .custom-select.open .custom-select-menu { display: flex; }
+
+    .dcp-option,
+    .custom-option {
+      height: 32px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      border-radius: 4px;
+      color: var(--theme-text-secondary);
+      cursor: pointer;
+      transition: background-color .16s ease, color .16s ease;
+    }
+
+    .dcp-option:hover,
+    .dcp-option.active,
+    .custom-option:hover,
+    .custom-option.active {
+      background: var(--theme-bg-soft);
+      color: var(--theme-primary);
+    }
+
+    .actions {
+      margin-left: auto;
+      display: flex;
+      gap: 8px;
+    }
+
+    .dcp-button,
+    .btn {
+      height: 32px;
+      min-width: 64px;
+      padding: 0 12px;
+      border: 1px solid var(--theme-border);
+      border-radius: 4px;
+      background: var(--theme-surface);
+      color: var(--theme-text-secondary);
+      cursor: pointer;
+      font-size: 14px;
+      transition: border-color .16s ease, background-color .16s ease, color .16s ease, box-shadow .16s ease;
+    }
+
+    .dcp-button:hover,
+    .btn:hover {
+      border-color: var(--theme-primary-45);
+      color: var(--theme-primary);
+      background: var(--theme-bg-soft);
+    }
+
+    .dcp-button.primary,
+    .btn.primary {
+      border-color: var(--theme-primary);
+      background: var(--theme-primary);
+      color: var(--theme-surface);
+    }
+
+    .dcp-button.primary:hover,
+    .btn.primary:hover {
+      border-color: var(--theme-primary-hover);
+      background: var(--theme-primary-hover);
+      color: var(--theme-surface);
+    }
+
+    .dcp-button.danger,
+    .btn.danger {
+      border-color: var(--theme-border);
+      background: var(--theme-surface);
+      color: var(--theme-danger);
+    }
+
+    .dcp-button.danger:hover,
+    .btn.danger:hover {
+      border-color: var(--theme-danger);
+      color: var(--theme-danger);
+      background: var(--theme-bg-soft);
+    }
+
+    .dcp-button.small,
+    .btn.small {
+      height: 28px;
+      min-width: 56px;
+      padding: 0 12px;
+      font-size: 12px;
+    }
+
+    .dcp-button:disabled,
+    .btn:disabled,
+    .dcp-button.disabled,
+    .btn.disabled {
+      opacity: .4;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    .table-scroll {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+
+    .dcp-table,
+    table {
+      width: 100%;
+      min-width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      table-layout: fixed;
+      font-size: 14px;
+    }
+
+    col.col-code {
+      width: var(--table-code-width);
+    }
+
+    col.col-related {
+      width: var(--table-related-width);
+    }
+
+    col.col-target {
+      width: var(--table-target-width);
+    }
+
+    col.col-time {
+      width: var(--table-time-width);
+    }
+
+    col.col-status {
+      width: var(--table-status-width);
+    }
+
+    col.col-action {
+      width: var(--table-action-width);
+    }
+
+    thead th {
+      height: 48px;
+      padding: 0 16px;
+      text-align: left;
+      background: var(--theme-table-head);
+      border-bottom: 0;
+      color: var(--theme-text-secondary);
+      font-weight: 600;
+    }
+
+    thead th:first-child {
+      border-top-left-radius: 4px;
+    }
+
+    thead th:last-child {
+      border-top-right-radius: 4px;
+    }
+
+    tbody td {
+      height: 56px;
+      padding: 14px 16px;
+      vertical-align: top;
+      border-bottom: 1px solid var(--theme-border-soft);
+      line-height: 20px;
+      min-width: 0;
+      overflow-wrap: break-word;
+    }
+
+    thead th:nth-child(4),
+    thead th:nth-child(5),
+    thead th:nth-child(6),
+    tbody td:nth-child(4),
+    tbody td:nth-child(5),
+    tbody td:nth-child(6) {
+      white-space: nowrap;
+    }
+
+    tbody tr:hover {
+      background: var(--brand-1);
+    }
+
+    .code {
+      font-weight: 600;
+      color: var(--theme-text);
+    }
+
+    .subline {
+      margin-top: 6px;
+      color: var(--theme-text-muted);
+      font-size: 12px;
+    }
+
+    .warning-link {
+      color: var(--theme-primary);
+      cursor: pointer;
+      transition: color .16s ease;
+    }
+
+    .warning-link:hover {
+      color: var(--theme-primary-active);
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      height: 20px;
+      white-space: nowrap;
+      color: var(--theme-text-secondary);
+    }
+
+    .op {
+      display: grid;
+      grid-template-columns: repeat(2, max-content);
+      gap: 8px;
+      align-items: start;
+      min-width: 0;
+    }
+
+    .empty {
+      display: none;
+      height: 220px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: var(--theme-text-muted);
+      border-bottom: 1px solid var(--theme-border-soft);
+    }
+
+    .empty-mark {
+      width: 56px;
+      height: 40px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      background: var(--theme-bg-soft);
+      border: 1px solid var(--theme-border);
+    }
+
+    .dcp-pagination,
+    .pagination {
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      color: var(--theme-text-muted);
+      font-size: 12px;
+    }
+
+    .dcp-page-button,
+    .page-btn {
+      min-width: 32px;
+      height: 32px;
+      border: 1px solid var(--theme-border);
+      border-radius: 4px;
+      background: var(--theme-surface);
+      color: var(--theme-text-secondary);
+      cursor: pointer;
+      transition: border-color .16s ease, background-color .16s ease, color .16s ease;
+    }
+
+    .dcp-page-button:hover:not(:disabled):not(.active),
+    .page-btn:hover:not(:disabled):not(.active) {
+      border-color: var(--theme-primary-45);
+      color: var(--theme-primary);
+      background: var(--theme-bg-soft);
+    }
+
+    .dcp-page-button.active,
+    .page-btn.active {
+      background: var(--theme-primary);
+      border-color: var(--theme-primary);
+      color: var(--theme-surface);
+    }
+
+    .dcp-page-button:disabled,
+    .page-btn:disabled {
+      color: var(--theme-text-disabled);
+      cursor: not-allowed;
+      background: var(--gray-1);
+    }
+
+    .dcp-modal-mask,
+    .mask {
+      position: fixed;
+      inset: 0;
+      z-index: 80;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: var(--dcp-modal-mask-bg);
+    }
+
+    .dcp-modal-mask.is-open,
+    .mask.is-open {
+      display: flex;
+    }
+
+    .dcp-modal,
+    .modal {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 520px;
+      max-height: calc(100vh - 96px);
+      padding: 20px 24px;
+      border-radius: var(--dcp-radius-lg);
+      background: var(--dcp-modal-bg);
+      border: 0;
+      box-shadow: var(--dcp-modal-shadow);
+    }
+
+    .dcp-modal.wide,
+    .modal.wide { width: 720px; }
+
+    .dcp-modal-head,
+    .modal-head {
+      min-height: 22px;
+      padding: 0 40px 0 0;
+      margin-bottom: 12px;
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 600;
+    }
+
+    .dcp-modal-close,
+    .modal-close {
+      position: absolute;
+      top: var(--dcp-modal-close-offset);
+      right: var(--dcp-modal-close-offset);
+      width: var(--dcp-modal-close-size);
+      height: var(--dcp-modal-close-size);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      border-radius: var(--dcp-radius-sm);
+      background: transparent;
+      color: var(--theme-text-secondary);
+      cursor: pointer;
+      transition: background-color .16s ease, color .16s ease;
+    }
+
+    .dcp-modal-close:hover,
+    .modal-close:hover {
+      background: var(--theme-bg-soft);
+      color: var(--theme-primary);
+    }
+
+    .dcp-modal-body,
+    .modal-body {
+      min-height: 0;
+      padding: 0;
+      overflow: auto;
+    }
+
+    .dcp-modal-foot,
+    .modal-foot {
+      min-height: var(--dcp-modal-footer-button-height);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      padding: 0;
+      margin-top: 16px;
+    }
+
+    .dcp-modal-foot .dcp-button,
+    .modal-foot .btn {
+      height: var(--dcp-modal-footer-button-height);
+      min-width: 64px;
+    }
+
+    .timeline {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .timeline li {
+      position: relative;
+      padding: 0 0 20px 20px;
+      border-left: 1px solid var(--theme-border);
+    }
+
+    .timeline li:last-child { padding-bottom: 0; }
+
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: -4px;
+      top: 2px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--theme-primary);
+    }
+
+    .timeline strong {
+      display: block;
+      line-height: 20px;
+    }
+
+    .timeline p {
+      margin: 6px 0 0;
+      color: var(--theme-text-secondary);
+    }
+
+    .timeline time {
+      display: block;
+      margin-top: 4px;
+      color: var(--theme-text-muted);
+      font-size: 12px;
+    }
+
+    .confirm-text {
+      margin: 0;
+      line-height: 24px;
+      color: var(--theme-text-secondary);
+    }
+
+    .toast {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      z-index: 30;
+      display: none;
+      transform: translateX(-50%);
+      height: 40px;
+      align-items: center;
+      padding: 0 18px;
+      border-radius: 4px;
+      color: var(--theme-surface);
+      background: var(--gray-10);
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="side">
+      <div class="logo"><img class="logo-mark" src="../../assets/supervision-platform-logo-2x.png" alt="乐采云采购监管平台 Logo"><span>乐采云采购监管平台</span></div>
+      <nav class="nav">
+        <div class="nav-parent"><span class="nav-label">数据中心</span><span class="icon-mask icon-sm icon-down" aria-hidden="true"></span></div>
+        <div class="nav-parent"><span class="nav-label">预警</span><span class="icon-mask icon-sm icon-up" aria-hidden="true"></span></div>
+        <div class="nav-sub">
+          <div class="nav-item">总览</div>
+          <div class="nav-item">预警记录</div>
+          <div class="nav-item active">预警查询</div>
+        </div>
+        <div class="nav-item">数据归集</div>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="top">
+        <div class="top-left">
+          <div class="custom-select dcp-select" id="orgSelect" data-value="财政厅文化处" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false">
+            <span class="custom-value">财政厅文化处</span><img class="icon icon-sm" src="../../assets/icons/arrow-down.svg" alt="" aria-hidden="true">
+            <div class="custom-select-menu dcp-select-menu" role="listbox">
+              <div class="custom-option dcp-option active" data-value="财政厅文化处" role="option" aria-selected="true">财政厅文化处</div>
+              <div class="custom-option dcp-option" data-value="财政厅采购监管处" role="option">财政厅采购监管处</div>
+              <div class="custom-option dcp-option" data-value="省级预算单位" role="option">省级预算单位</div>
+            </div>
+          </div>
+        </div>
+        <div class="top-right">
+          <span class="top-link">待办</span>
+          <span class="top-link">消息</span>
+          <span class="divider"></span>
+          <div class="user">
+            <span class="avatar">监</span>
+            <div class="user-info"><strong>用户名称/昵称</strong><span>用户所属机构</span></div>
+          </div>
+        </div>
+      </header>
+
+      <section class="content">
+        <div class="workspace">
+          <div class="page-head">
+            <h1>预警查询</h1>
+            <div class="switch" id="businessSwitch" data-active="supervise">
+              <button id="warningTab">预警</button>
+              <button id="superviseTab" class="active">督办</button>
+            </div>
+          </div>
+
+          <div class="overview" id="overview"></div>
+
+          <section class="card work-card">
+            <div class="filter-title">
+              <div>
+                <h2 id="workTitle">我发起的督办</h2>
+              </div>
+            </div>
+            <div class="filter-row">
+              <div class="field">
+                <label id="targetLabel">督办对象</label>
+                <div class="custom-select dcp-select" id="targetSelect" data-value="" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="custom-value">全部对象</span><img class="icon icon-sm" src="../../assets/icons/arrow-down.svg" alt="" aria-hidden="true">
+                  <div class="custom-select-menu dcp-select-menu" role="listbox">
+                    <div class="custom-option dcp-option active" data-value="" role="option" aria-selected="true">全部对象</div>
+                    <div class="custom-option dcp-option" data-value="杭州市萧山区人民法院" role="option">杭州市萧山区人民法院</div>
+                    <div class="custom-option dcp-option" data-value="浙江钱塘投资开发有限公司" role="option">浙江钱塘投资开发有限公司</div>
+                    <div class="custom-option dcp-option" data-value="杭州政采供应链有限公司" role="option">杭州政采供应链有限公司</div>
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <label id="codeLabel">督办编号</label>
+                <input id="codeFilter" class="input dcp-input" placeholder="请输入或选择督办编号" />
+              </div>
+              <div class="field">
+                <label>状态</label>
+                <div class="custom-select dcp-select" id="statusSelect" data-value="" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="custom-value">全部状态</span><img class="icon icon-sm" src="../../assets/icons/arrow-down.svg" alt="" aria-hidden="true">
+                  <div class="custom-select-menu dcp-select-menu" role="listbox">
+                    <div class="custom-option dcp-option active" data-value="" role="option" aria-selected="true">全部状态</div>
+                    <div class="custom-option dcp-option" data-value="已通知" role="option">已通知</div>
+                    <div class="custom-option dcp-option" data-value="已回复" role="option">已回复</div>
+                    <div class="custom-option dcp-option" data-value="已核实" role="option">已核实</div>
+                    <div class="custom-option dcp-option" data-value="已撤回" role="option">已撤回</div>
+                  </div>
+                </div>
+              </div>
+              <div class="actions">
+                <button class="btn dcp-button" id="resetBtn">重置</button>
+                <button class="btn dcp-button primary" id="searchBtn">搜索</button>
+              </div>
+            </div>
+            <div class="table-scroll">
+            <table class="dcp-table">
+              <colgroup>
+                <col id="colCode" class="col-code">
+                <col id="colRelated" class="col-related">
+                <col id="colTarget" class="col-target">
+                <col id="colTime" class="col-time">
+                <col id="colStatus" class="col-status">
+                <col id="colAction" class="col-action">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th id="codeHead">督办编号</th>
+                  <th id="relatedHead">关联预警</th>
+                  <th id="targetHead">督办对象</th>
+                  <th>时间</th>
+                  <th>状态</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody"></tbody>
+            </table>
+            </div>
+            <div class="empty" id="emptyState">
+              <div class="empty-mark"></div>
+              <div>暂无符合条件的督办记录</div>
+            </div>
+            <div class="pagination dcp-pagination">
+              <span id="pageTotal">共 0 条</span>
+              <button class="page-btn dcp-page-button" id="prevPage">上一页</button>
+              <button class="page-btn dcp-page-button active">1</button>
+              <button class="page-btn dcp-page-button" id="nextPage">下一页</button>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="mask dcp-modal-mask" id="logModal" aria-hidden="true">
+    <div class="modal dcp-modal wide" role="dialog" aria-modal="true" aria-labelledby="logModalTitle" tabindex="-1">
+      <div class="modal-head dcp-modal-head"><span id="logModalTitle">流转记录</span><button class="modal-close dcp-modal-close" data-close="logModal" aria-label="关闭"><i class="icon-mask icon-close"></i></button></div>
+      <div class="modal-body dcp-modal-body">
+        <ul class="timeline">
+          <li><strong>发起督办</strong><p>监管人员向督办对象发送核查要求。</p><time>2026-06-12 10:23:12</time></li>
+          <li><strong>对象回复</strong><p>督办对象提交情况说明和佐证材料。</p><time>2026-06-13 15:42:08</time></li>
+          <li><strong>等待核实</strong><p>当前记录进入核实确认阶段。</p><time>2026-06-14 09:18:36</time></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="mask dcp-modal-mask" id="confirmModal" aria-hidden="true">
+    <div class="modal dcp-modal" role="dialog" aria-modal="true" aria-labelledby="confirmTitle" tabindex="-1">
+      <div class="modal-head dcp-modal-head"><span id="confirmTitle">操作确认</span><button class="modal-close dcp-modal-close" data-close="confirmModal" aria-label="关闭"><i class="icon-mask icon-close"></i></button></div>
+      <div class="modal-body dcp-modal-body">
+        <p class="confirm-text" id="confirmText">确认执行该操作？</p>
+      </div>
+      <div class="modal-foot dcp-modal-foot">
+        <button class="btn dcp-button" data-close="confirmModal">取消</button>
+        <button class="btn dcp-button primary" id="confirmAction">确认</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">操作成功</div>
+
+  <script>
+    const datasets = {
+      supervise: [
+        { code: "DB20260612001", relatedCode: "000093483822", relatedName: "专家打分畸高畸低", target: "杭州市萧山区人民法院", time: "2026-06-12 10:23:12", status: "已通知", actions: ["流转记录", "撤回督办", "催办", "查看详情"] },
+        { code: "DB20260612002", relatedCode: "000093483823", relatedName: "采购文件异常变更", target: "浙江钱塘投资开发有限公司", time: "2026-06-12 10:23:12", status: "已回复" },
+        { code: "DB20260612003", relatedCode: "000093483824", relatedName: "供应商报价异常", target: "杭州政采供应链有限公司", time: "2026-06-12 10:23:12", status: "已核实" },
+        { code: "DB20260612004", relatedCode: "000093483825", relatedName: "评审专家异常操作", target: "杭州市萧山区人民法院", time: "2026-06-12 10:23:12", status: "已撤回" },
+        { code: "DB20260612005", relatedCode: "000093483826", relatedName: "同类项目价格波动异常", target: "浙江钱塘投资开发有限公司", time: "2026-06-12 10:23:12", status: "已通知" }
+      ],
+      warning: [
+        { code: "YJ20260612001", relatedCode: "000093483822", relatedName: "专家打分畸高畸低", target: "杭州市萧山区人民法院", time: "2026-06-12 10:23:12", status: "待处理" },
+        { code: "YJ20260612002", relatedCode: "000093483823", relatedName: "采购文件异常变更", target: "浙江钱塘投资开发有限公司", time: "2026-06-12 10:23:12", status: "处理中" },
+        { code: "YJ20260612003", relatedCode: "000093483824", relatedName: "供应商报价异常", target: "杭州政采供应链有限公司", time: "2026-06-12 10:23:12", status: "已处理" },
+        { code: "YJ20260612004", relatedCode: "000093483825", relatedName: "评审专家异常操作", target: "杭州市萧山区人民法院", time: "2026-06-12 10:23:12", status: "已关闭" }
+      ]
+    };
+
+    let currentMode = "supervise";
+    let filtered = [...datasets.supervise];
+    let pendingAction = null;
+
+    const statusClass = {
+      "已通知": "",
+      "已回复": "reply",
+      "已核实": "done",
+      "已撤回": "cancel",
+      "待处理": "",
+      "处理中": "reply",
+      "已处理": "done",
+      "已关闭": "cancel"
+    };
+
+    function renderOverview() {
+      const total = filtered.length;
+      const stats = currentMode === "supervise"
+        ? [
+          ["督办总数", total, ""],
+          ["已通知", filtered.filter(item => item.status === "已通知").length, ""],
+          ["已回复", filtered.filter(item => item.status === "已回复").length, "reply"],
+          ["已核实", filtered.filter(item => item.status === "已核实").length, "done"],
+          ["已撤回", filtered.filter(item => item.status === "已撤回").length, "cancel"]
+        ]
+        : [
+          ["预警总数", total, ""],
+          ["待处理", filtered.filter(item => item.status === "待处理").length, ""],
+          ["处理中", filtered.filter(item => item.status === "处理中").length, "reply"],
+          ["已处理", filtered.filter(item => item.status === "已处理").length, "done"],
+          ["已关闭", filtered.filter(item => item.status === "已关闭").length, "cancel"]
+        ];
+      document.getElementById("overview").innerHTML = stats.map(([label, value, tone]) => `
+        <div class="metric">
+          <div class="metric-value">${value}</div>
+          <div class="metric-hint"><i class="dot ${tone}"></i>${label}</div>
+        </div>
+      `).join("");
+    }
+
+    function renderTable() {
+      const body = document.getElementById("tableBody");
+      const empty = document.getElementById("emptyState");
+      body.innerHTML = filtered.map(item => {
+        const actions = (item.actions || [
+          "流转记录",
+          ...(item.status === "已回复" ? ["核实完结"] : []),
+          ...(item.status === "已通知" ? ["撤回督办"] : [])
+        ]).slice(0, 4);
+        let hasPrimaryAction = false;
+        return `
+        <tr>
+          <td><div class="code">${item.code}</div></td>
+          <td><div class="warning-link">${item.relatedCode}</div><div class="subline">${item.relatedName}</div></td>
+          <td>${item.target}</td>
+          <td>${item.time}</td>
+          <td><span class="status"><i class="dot ${statusClass[item.status]}"></i>${item.status}</span></td>
+          <td>
+            <div class="op">
+              ${actions.map(label => {
+                if (label === "流转记录") return `<button class="btn dcp-button small" data-log>流转记录</button>`;
+                if (label === "核实完结") {
+                  const buttonClass = hasPrimaryAction ? "btn dcp-button small" : "btn dcp-button small primary";
+                  hasPrimaryAction = true;
+                  return `<button class="${buttonClass}" data-done="${item.code}">核实完结</button>`;
+                }
+                if (label === "撤回督办") return `<button class="btn dcp-button small danger" data-cancel="${item.code}">撤回督办</button>`;
+                return `<button class="btn dcp-button small">${label}</button>`;
+              }).join("")}
+            </div>
+          </td>
+        </tr>
+      `;
+      }).join("");
+      empty.style.display = filtered.length ? "none" : "flex";
+      document.getElementById("pageTotal").textContent = `共 ${filtered.length} 条`;
+      document.querySelectorAll("[data-log]").forEach(btn => btn.addEventListener("click", () => openModal("logModal")));
+      document.querySelectorAll("[data-done]").forEach(btn => btn.addEventListener("click", () => ask("核实完结", `确认将 ${btn.dataset.done} 核实完结？`, () => updateStatus(btn.dataset.done, "已核实"))));
+      document.querySelectorAll("[data-cancel]").forEach(btn => btn.addEventListener("click", () => ask("撤回督办", `确认撤回 ${btn.dataset.cancel}？撤回后状态将变更为已撤回。`, () => updateStatus(btn.dataset.cancel, "已撤回"))));
+      syncTableColumns();
+    }
+
+    function syncTableColumns() {
+      const table = document.querySelector("table");
+      if (!table) return;
+      const container = table.closest(".table-scroll");
+      const containerWidth = container ? container.clientWidth : table.parentElement.clientWidth;
+      const actionWidth = 220;
+      const availableWidth = Math.max(containerWidth - actionWidth, 0);
+      const columns = [
+        ["colCode", 0.15],
+        ["colRelated", 0.24],
+        ["colTarget", 0.29],
+        ["colTime", 0.20],
+        ["colStatus", 0.12]
+      ];
+      columns.forEach(([id, ratio]) => {
+        document.getElementById(id).style.width = `${Math.floor(availableWidth * ratio)}px`;
+      });
+      document.getElementById("colAction").style.width = `${actionWidth}px`;
+    }
+
+    function applyFilter() {
+      const target = document.getElementById("targetSelect").dataset.value;
+      const code = document.getElementById("codeFilter").value.trim();
+      const status = document.getElementById("statusSelect").dataset.value;
+      const rows = datasets[currentMode];
+      filtered = rows.filter(item => {
+        return (!target || item.target === target)
+          && (!code || item.code.includes(code) || item.relatedCode.includes(code))
+          && (!status || item.status === status);
+      });
+      renderOverview();
+      renderTable();
+    }
+
+    function updateStatus(code, status) {
+      const item = datasets[currentMode].find(row => row.code === code);
+      if (item) item.status = status;
+      closeModal("confirmModal");
+      applyFilter();
+      showToast("操作成功，列表和统计数据已刷新");
+    }
+
+    function ask(title, text, action) {
+      document.getElementById("confirmTitle").textContent = title;
+      document.getElementById("confirmText").textContent = text;
+      pendingAction = action;
+      openModal("confirmModal");
+    }
+
+    function openModal(id) {
+      const modal = document.getElementById(id);
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      const dialog = modal.querySelector(".dcp-modal");
+      if (dialog) dialog.focus();
+    }
+
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+    }
+
+    function showToast(text) {
+      const toast = document.getElementById("toast");
+      toast.textContent = text;
+      toast.style.display = "flex";
+      window.setTimeout(() => { toast.style.display = "none"; }, 1800);
+    }
+
+    document.getElementById("searchBtn").addEventListener("click", applyFilter);
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      setCustomSelect("targetSelect", "", "全部对象");
+      document.getElementById("codeFilter").value = "";
+      setCustomSelect("statusSelect", "", "全部状态");
+      applyFilter();
+    });
+    function switchBusiness(mode) {
+      currentMode = mode;
+      document.getElementById("businessSwitch").dataset.active = mode;
+      document.getElementById("warningTab").classList.toggle("active", mode === "warning");
+      document.getElementById("superviseTab").classList.toggle("active", mode === "supervise");
+      document.getElementById("workTitle").textContent = mode === "supervise" ? "我发起的督办" : "预警记录";
+      document.getElementById("targetLabel").textContent = mode === "supervise" ? "督办对象" : "预警对象";
+      document.getElementById("codeLabel").textContent = mode === "supervise" ? "督办编号" : "预警编号";
+      document.getElementById("codeFilter").placeholder = mode === "supervise" ? "请输入或选择督办编号" : "请输入或选择预警编号";
+      document.getElementById("codeHead").textContent = mode === "supervise" ? "督办编号" : "预警编号";
+      document.getElementById("relatedHead").textContent = mode === "supervise" ? "关联预警" : "预警事项";
+      document.getElementById("targetHead").textContent = mode === "supervise" ? "督办对象" : "预警对象";
+      setCustomSelect("statusSelect", "", "全部状态");
+      applyFilter();
+    }
+
+    document.getElementById("warningTab").addEventListener("click", () => switchBusiness("warning"));
+    document.getElementById("superviseTab").addEventListener("click", () => switchBusiness("supervise"));
+    document.getElementById("prevPage").disabled = true;
+    document.getElementById("nextPage").addEventListener("click", () => showToast("分页切换后保留当前筛选条件"));
+    document.querySelectorAll("[data-close]").forEach(btn => btn.addEventListener("click", () => closeModal(btn.dataset.close)));
+    document.querySelectorAll(".dcp-modal-mask").forEach(mask => {
+      mask.addEventListener("click", event => {
+        if (event.target === mask) closeModal(mask.id);
+      });
+    });
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        document.querySelectorAll(".dcp-modal-mask.is-open").forEach(mask => closeModal(mask.id));
+        document.querySelectorAll(".custom-select.open").forEach(select => {
+          select.classList.remove("open");
+          select.setAttribute("aria-expanded", "false");
+        });
+      }
+    });
+    document.getElementById("confirmAction").addEventListener("click", () => pendingAction && pendingAction());
+
+    function setCustomSelect(id, value, label) {
+      const select = document.getElementById(id);
+      select.dataset.value = value;
+      select.querySelector(".custom-value").textContent = label;
+      select.querySelectorAll(".custom-option").forEach(option => {
+        option.classList.toggle("active", option.dataset.value === value);
+        option.setAttribute("aria-selected", option.dataset.value === value ? "true" : "false");
+      });
+    }
+
+    document.querySelectorAll(".custom-select").forEach(select => {
+      select.addEventListener("click", event => {
+        event.stopPropagation();
+        document.querySelectorAll(".custom-select").forEach(item => {
+          if (item !== select) {
+            item.classList.remove("open");
+            item.setAttribute("aria-expanded", "false");
+          }
+        });
+        const option = event.target.closest(".custom-option");
+        if (option) {
+          setCustomSelect(select.id, option.dataset.value, option.textContent);
+          select.classList.remove("open");
+          select.setAttribute("aria-expanded", "false");
+          if (select.id === "orgSelect") {
+            applyFilter();
+            showToast("机构已切换，统计数据和列表已刷新");
+          }
+          return;
+        }
+        select.classList.toggle("open");
+        select.setAttribute("aria-expanded", select.classList.contains("open") ? "true" : "false");
+      });
+      select.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          select.click();
+        }
+      });
+    });
+
+    document.addEventListener("click", () => {
+      document.querySelectorAll(".custom-select").forEach(select => {
+        select.classList.remove("open");
+        select.setAttribute("aria-expanded", "false");
+      });
+    });
+    const tableScroll = document.querySelector(".table-scroll");
+    if ("ResizeObserver" in window && tableScroll) {
+      new ResizeObserver(syncTableColumns).observe(tableScroll);
+    }
+    window.addEventListener("resize", syncTableColumns);
+
+    applyFilter();
+  </script>
+</body>
+</html>

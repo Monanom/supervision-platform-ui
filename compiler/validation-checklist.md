@@ -16,12 +16,23 @@
 
 ## 组件一致性
 
+- [ ] 是否读取 `knowledge/component-parameters/index.md` 和本页涉及的参数表？
+- [ ] 组件尺寸、间距、状态和响应式是否符合 `data/sketch-component-contract.json` 的最终值？
+- [ ] 是否只把 `sketchObserved` 当原始证据，而没有用它覆盖人工确认值？
 - [ ] 是否使用 `data/component-library.json` 已有组件？
 - [ ] 字段、状态、操作是否按 `data/field-component-map.json` 映射？
 - [ ] 表格生命周期状态是否默认使用 StatusIndicator，而不是 Tag？
 - [ ] 风险等级是否使用 RiskTag 或高权重状态表达？
 - [ ] 操作过多时是否使用 More / Dropdown？
 - [ ] 危险操作是否使用 Popconfirm 或 Modal 二次确认？
+
+## 黄金样例一致性
+
+- [ ] 是否已读取 `golden-demo/supervision-warning-supervise-query.html`？
+- [ ] 是否已对照 `golden-demo/page-structure.md` 选择页面骨架？
+- [ ] 是否已对照 `golden-demo/token-component-notes.md` 使用平台资源、token 和组件表现？
+- [ ] 是否已通过 `compiler/golden-demo-checklist.md` 检查背景、侧边栏、顶栏、卡片、表格、筛选、按钮、弹窗、状态展示、字体和图标？
+- [ ] 是否避免从零自由设计，而是优先复用 `templates/static-demo/` 的结构和样式层？
 
 ## Token 一致性
 
@@ -31,6 +42,7 @@
 - [ ] Card 是否使用 8px 或更小圆角？
 - [ ] Dialog / Drawer 是否使用 12px 圆角？
 - [ ] 是否避免硬编码新颜色、阴影、圆角和控件高度？
+- [ ] 组件颜色是否映射现有 Theme / DCP token，而不是从 Sketch 原始色直接生成新色？
 
 ## 交互完整性
 
